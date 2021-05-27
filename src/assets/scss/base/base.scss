@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Make all elements inherit from `html` box-sizing
+ */
+* {
+  box-sizing: inherit;
+
+  & :before {
+      box-sizing: inherit;
+  }
+
+  & :after {
+      box-sizing: inherit;
+  }
+}
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    scrollbar-width: none;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+button {
+    outline: none;
+}
+
+a {
+    color: $color;
+    text-decoration: none;
+
+    & :hover {
+        color: inherit;
+        cursor: hand;
+        outline: none;
+    }
+    & :active {
+        color: inherit;
+        outline: none;
+    }
+    & :focus {
+        color: inherit;
+        outline: none;
+    }
+}
+

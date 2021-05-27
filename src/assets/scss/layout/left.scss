@@ -1,0 +1,182 @@
+.content--left {
+    border-right: 1px solid $color;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    transition: width $rythm2 $rythm1 ease-in-out;
+
+    // Header de navigation avec les différents boutons
+    // o + connexion + inscription
+    .content--left-header {
+        align-items: center;
+        margin: calc( #{$ratio} / 2 ) calc( #{$ratio} / 2 ) $ratio;
+        display: flex;
+        width: max-content;
+
+        @include respond(tablet) {
+            display: none;
+            margin: calc( #{$ratio} * 0.2 ) calc( #{$ratio} *0.2 ) $ratio;
+        }
+
+        #left--button {
+            cursor: pointer;
+        }
+
+        #left--connexion,
+        #left--inscription {
+            opacity: 0;
+            pointer-events: none;
+            transition: transform $rythm1 $rythm1 ease-in-out, opacity $rythm1 $rythm3 ease-in-out !important;
+
+        }
+
+        #left--connexion {
+            transform: translateX(-100%);
+        }
+
+        #left--inscription {
+            transform: translateX(-200%);
+        }
+    }
+
+    // Quand le bandeau est fermé
+    // Loupe + Filtres
+    .content--left-cover {
+        align-items: center;
+        display: flex;
+        height: 100px;
+        justify-content: flex-end;
+        opacity: 1;
+        position: absolute;
+        writing-mode: tb;
+        text-orientation: mixed;
+        top: 60px;
+        transform: rotate(180deg);
+        transform-origin: center;
+        transition: opacity $rythm1 ease-in-out;
+        width: 50px;
+
+        @include respond(tablet) {
+            width: inherit;
+        }
+
+        h3 {
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+
+        img {
+            height: 20px;
+            transform: rotate(180deg);
+            width: 20px;
+
+            @include respond(tablet) {
+                height: 13px;
+                width: 13px;
+            }
+        }
+    }
+
+    // Etat Actif du bandeau
+    &.is-open {
+        width: calc( 360px - 1px );
+
+        @include respond(tablet) {
+            width: calc( 100% - 25px );
+        }
+
+        .content--left-header {
+            align-items: center;
+            justify-content: flex-start;
+
+            #left--button {
+                margin: 0 20px 0 0;
+            }
+
+            #left--connexion {
+                margin: 0 5px 0 0;
+                transform: translate(0);
+            }
+
+            #left--inscription {
+                transform: translate(0);
+            }
+
+            #left--connexion,
+            #left--inscription {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+
+        .content--left-cover {
+            opacity: 0;
+            pointer-events: none;
+
+        }
+
+        // Mobile
+        .tagsearch--container {
+            @include respond(tablet) {
+                margin: calc( 30px / 2 ) 30px;
+                width: calc( 100% - 60px);
+            }
+        }
+
+        .tagitems--container,
+        .lucidite--container {
+            @include respond(tablet) {
+                margin: 0 30px calc( 30px / 2 );
+                width: calc( 100% - 60px);
+            }
+        }
+
+        .typopologie--container,
+        .calendrier--container {
+            @include respond(tablet) {
+                margin: 0 30px calc( 30px / 2 );
+                width: calc( 100% - 60px);
+
+                .swiper-container {
+                    @include respond(tablet) {
+                        width: 100%;
+
+                        .swiper-slide {
+                            border: 1px solid black;
+                            background-color: red;
+                            width: 100%; // temporaire
+                        }
+                    }
+                }
+            }
+        }
+
+        .tagsearch--container,
+        .tagitems--container,
+        .lucidite--container,
+        .typopologie--container,
+        .calendrier--container,
+        .button--download,
+        .button--select {
+            opacity: 1;
+            pointer-events: auto;
+
+        }
+
+        // Mobile
+        & + .content--home {
+
+            @include respond(tablet) {
+                width: 25px !important;
+            }
+
+            .article-reve {
+               @include respond(tablet) {
+                   display: none;
+               }
+            }
+        }
+    }
+
+}

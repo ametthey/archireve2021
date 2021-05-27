@@ -1,0 +1,241 @@
+.right--container-propos {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    left: 50px;
+    margin: auto;
+    opacity: 1 !important;
+    overflow: scroll;
+    pointer-events: none;
+    position: absolute !important;
+    transform: translateX(100%);
+    transition: transform $rythm1 ease-in-out !important;
+    width: calc( 100% - 100px );
+    z-index: 2 !important;
+
+    &.is-visible {
+        pointer-events: auto!important;
+        transform: translateX(0);
+
+        .propos--section {
+            align-items: center;
+            // background-color: $color;
+            color: $bg;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+        width: 100%;
+
+            h2 {
+                font-family: $solid;
+                margin: 5% 0;
+                overflow: hidden;
+
+                &.colored-hover {
+                    span {
+                        font-family: inherit;
+                        font-size: inherit;
+
+                        &.char {
+                            text-transform: uppercase;
+                            &:hover {
+                                text-transform: lowercase;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            &.propos--section-1 {
+            }
+
+            &.propos--section-2 {
+            }
+
+
+
+        }
+    }
+
+
+}
+
+.propos--collapse-container {
+    // border: 1px solid $bg;
+    color: $color;
+    display: flex;
+    flex-direction: column;
+
+
+    .collapse--element {
+        height: 86px;
+        width: 100%;
+
+        .collapse--element-title {
+            align-items: center;
+            border-left: 1px solid $bg;
+            border-right: 1px solid $bg;
+            border-top: 1px solid $bg;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+
+            .collapse-title {
+                display: grid;
+                height: 100%;
+                place-items: center;
+
+                &:first-child {
+                    border-right: 1px solid $bg;
+                    width: 7%;
+
+                    h1 {
+                        color: $bg;
+                        font-family: $covik;
+                        font-size: 50px !important;
+                    }
+                }
+
+                &:last-child {
+                    width: 93%;
+
+                    h1 {
+                        color: $bg;
+                        font-size: 37px !important;
+                        font-family: $solid;
+                        line-height: 37px !important;
+                        text-transform: uppercase;
+                        width: 93%;
+                    }
+                }
+            }
+        }
+
+        .collapse--element-texte {
+            border-bottom: 1px solid $bg;
+            border-left: 1px solid $bg;
+            border-right: 1px solid $bg;
+            margin: 0;
+            max-height: 0;
+            // padding: 20px 0;
+            transition: all $rythm1 ease-out, padding $rythm1 ease-in-out;
+            width: 100%;
+        }
+
+        h3 {
+            border-left: 1px solid $bg;
+            // background-color: red;
+            color: $bg;
+            font-family: $covik !important;
+            max-height: 0;
+            margin: 0 auto 0 calc( 7% - 1px )!important;
+            overflow: hidden;
+            transition: all $rythm1 ease-out, padding $rythm1 ease-in-out;
+            width: auto;
+
+            &.is-active {
+            }
+        }
+    }
+
+
+}
+
+.propos--section-3 {
+    align-items: initial;
+    justify-content: flex-start;
+
+    h3 {
+        align-self: flex-start !important;
+        margin: 2% 0 0 0;
+        text-align: left !important;
+        text-transform: uppercase;
+    }
+
+    ///////// CODE FROM COLLAPSE
+
+    // Titre
+    .collapsible {
+        background-color: $color;
+        border: 1px solid $bg;
+        color: $bg;
+        cursor: pointer;
+        padding: 18px;
+        margin: 18px;
+        width: 100%;
+        text-align: left;
+        outline: none;
+        font-size: 37px !important;
+        font-family: $solid;
+        line-height: 37px !important;
+        text-transform: uppercase;
+
+        span {
+            border-right: 1px solid $bg;
+            font-size: 37px !important;
+            font-family: $solid;
+            line-height: 37px !important;
+            text-transform: uppercase;
+        }
+    }
+
+    // Paragraphe
+    .content {
+        border: 1px solid $bg;
+        color: $bg;
+        font-family: $covik !important;
+        // padding: 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height $rythm1 ease-out;
+    }
+
+
+
+
+}
+
+.propos--section-4 {
+    h2 {
+        font-family: $covik !important;
+        align-self: flex-start;
+    }
+
+    .collapse-title {
+
+        &:first-child {
+            h1 {
+                font-family: $good !important;
+            }
+        }
+    }
+
+}
+
+.propos--section-5 {
+    h1 {
+        &.bigger {
+            margin: 0 0 5% 0;
+        }
+
+        &:not(:first-child) {
+            font-family: $covik !important;
+
+            & > * {
+                color: $bg;
+            }
+        }
+    }
+    h2 {
+        font-family: $covik !important;
+        margin: auto;
+        text-align: center;
+        width: 80%;
+    }
+
+}

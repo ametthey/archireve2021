@@ -1,0 +1,516 @@
+body {
+    &.page-template-page-inscription-informations {
+        overflow: auto;
+    }
+}
+
+
+.container--inscription-informations {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin: auto;
+    width: 42%;
+
+    @include respond(tablet) {
+        margin: auto;
+        width: 90%;
+    }
+
+    h1 {
+        margin: calc( #{$ratio} *  3 ) 0 0 0;
+    }
+
+    h2 {
+        text-align: center;
+        margin: calc( #{$ratio} / 2 ) 0 0 0;
+
+        &.container--inscription-informations {
+            margin: calc( #{$ratio} *  4 ) 0 0 0;
+        }
+
+        &.questionnaire-categorie {
+            margin: calc( #{$ratio} *  3 ) 0 0 0;
+        }
+
+        &.questionnaire-subtitle {
+            margin: calc( #{$ratio} *  4 ) 0 0 0;
+        }
+
+        @include respond(tablet) {
+            font-size: $h4;
+            line-height: $h4;
+        }
+    }
+
+    .questionnaire-categorie-tooltip {
+        margin: calc( #{$ratio} *  4 ) 0 0 0;
+        position: relative;
+
+        h2 {
+        }
+
+        .tooltip-icon {
+            position: absolute;
+            top: 12px;
+            right: -13px;
+
+            &:hover {
+                & + .tooltip-text {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .tooltip-text {
+            background-color: $bg;
+            border: 1px solid $color;
+            border-radius: 7px;
+            bottom: 20%;
+            color: $color;
+            font-family: $covik;
+            font-size: $small;
+            height: max-content;
+            line-height: $small;
+            opacity: 0;
+            padding: 10px;
+            position: absolute;
+            text-align: left;
+            text-transform: uppercase;
+            transform: translateX( 63% ) translateY( -15% );
+            transition: opacity 0.3s;
+            visibility: hidden;
+            width: 200px;
+            z-index: 1;
+
+            @include respond(tablet) {
+                bottom: 50px;
+                transform: translateX( 0 ) translateY( 0 );
+                width: 90%;
+            }
+        }
+    }
+
+}
+
+
+
+.container--range {
+    align-items: center;
+    display: flex;
+    font-family: $covik;
+    font-size: $h3;
+    line-height: $h3;
+    flex-direction: column;
+    justify-content: center;
+    margin: $ratio 0;
+    position: relative;
+    width: 100%;
+
+    @include respond(tablet) {
+        width: 90%;
+    }
+
+    &:before {
+        bottom: 22px;
+        content: '0';
+        position: absolute;
+        width: max-content;
+        height: max-content;
+        left: -14px;
+    }
+
+    &:after {
+        bottom: 22px;
+        content: '100+';
+        position: absolute;
+        width: max-content;
+        height: max-content;
+        right: -35px;
+    }
+
+    label {
+        font-size: $h2;
+        line-height: $h2;
+    }
+
+    input {
+        margin: calc( #{$ratio} * 2 ) 0 0 0;
+        width: 100%;
+
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        width: 100%; /* Full-width */
+        height: 2px; /* Specified height */
+        background: $color; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+
+        // barre horizontal du range
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            background: $bg;
+            border: 1px solid $color;
+            border-radius: 50%;
+            width: 19px; /* Set a specific slider handle width */
+            height: 19px; /* Slider handle height */
+            cursor: pointer; /* Cursor on hover */
+        }
+
+        // point de sélection pour changer de valeurs
+        &::-moz-range-thumb {
+            border: 1px solid $color;
+            border-radius: 50%;
+            width: 19px;
+            height: 19px;
+            background: $bg;
+            cursor: pointer;
+        }
+        &::-webkit-range-thumb {
+            border: 1px solid $color;
+            border-radius: 50%;
+            width: 19px;
+            height: 19px;
+            background: $bg;
+            cursor: pointer;
+        }
+    }
+
+    .range {
+    }
+
+    .bubble {
+        bottom: 0;
+        color: $color;
+        font-family: $covik;
+        font-size: $h3;
+        line-height: $h3;
+        // padding: 4px 12px;
+        margin-bottom: 22px;
+        position: absolute;
+        border-radius: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            // top: -1px;
+            left: 50%;
+        }
+    }
+
+    .bubble-endpoints {
+        border-radius: 50%;
+        width: 19px;
+        height: 19px;
+        background: $color;
+
+        &.bubble-start {
+            bottom: -9px;
+            left: -18px;
+            position: absolute;
+        }
+
+        &.bubble-end {
+            bottom: -9px;
+            right: -19px;
+            position: absolute;
+        }
+
+    }
+
+
+    &.range-genre {
+        &:before {
+            content: 'F';
+        }
+
+        &:after {
+            content: 'H';
+            right: -16px;
+        }
+
+        input {
+            margin: $ratio 0 0 0;
+        }
+
+        .bubble {
+            display: none;
+        }
+
+    }
+
+    &.range-origine {
+        &:before {
+            content: 'Modeste';
+        }
+
+        &:after {
+            content: 'Aisé';
+        }
+
+        // input {
+        //     margin: $ratio 0 0 0;
+        // }
+
+        .bubble {
+            display: none;
+        }
+
+    }
+
+    &.range-actuel {
+        &:before {
+            content: 'Modeste';
+        }
+
+        &:after {
+            content: 'Aisé';
+        }
+
+        // input {
+        //     margin: $ratio 0 0 0;
+        // }
+
+        .bubble {
+            display: none;
+        }
+    }
+
+    &.rapport1 {
+        &:before {
+            content: 'Travailleur';
+        }
+
+        &:after {
+            content: 'Patron';
+        }
+
+        // input {
+        //     margin: $ratio 0 0 0;
+        // }
+
+        .bubble {
+            display: none;
+        }
+    }
+
+    &.rapport2 {
+        &:before {
+            content: 'Indépendant';
+        }
+
+        &:after {
+            content: 'Salarié';
+        }
+
+        // input {
+        //     margin: $ratio 0 0 0;
+        // }
+
+        .bubble {
+            display: none;
+        }
+    }
+}
+
+// LANGUES MATERNELLES
+.questionnaire-langue {
+    position: relative;
+    width: 100%;
+
+    button {
+        // all: unset;
+    }
+}
+
+// zone de texte
+.questionnaire-langue-input {
+    border: none;
+    border-bottom: 2px solid $color;
+    color: #000;
+    font-family: $covik;
+    font-size: $h4;
+    height: 35px;
+    outline: none;
+    margin: 10px 0 0 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+
+    &::-webkit-placeholder { /* Chrome/Opera/Safari */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $color;
+        font-family: $covik;
+        font-size: /$h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &:-ms-placeholder { /* IE 10+ */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::placeholder {
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+
+    &::-moz-placeholder {
+        color: #000;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+}
+
+// bouton ajouter un nouvel element
+.questionnaire-langue-button {
+    position: absolute !important;
+    right: 0;
+    top: 15px;
+
+    img {
+        height: 19px !important;
+        width: 19px !important;
+    }
+}
+
+// new item ajouter en desous
+.questionnaire-langue-list {
+    width: 100%;
+
+}
+.questionnaire-langue-list-item {
+    display: grid;
+    place-items: center;
+
+    border: none;
+    border-bottom: 2px solid $color;
+    color: #000;
+    font-family: $covik;
+    font-size: $h4;
+    height: 35px;
+    outline: none;
+    margin: 0 0 0 0;
+    // padding: 10px 27px 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+// PAYS D'ENFANCE
+.questionnaire-pays {
+    width: 100%;
+}
+
+.questionnaire-pays-input {
+    border: none;
+    border-bottom: 2px solid $color;
+    color: #000;
+    font-family: $covik;
+    font-size: $h4;
+    height: 35px;
+    outline: none;
+    margin: 10px 0 0 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+
+    &::-webkit-placeholder { /* Chrome/Opera/Safari */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $color;
+        font-family: $covik;
+        font-size: /$h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &:-ms-placeholder { /* IE 10+ */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::placeholder {
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+
+    &::-moz-placeholder {
+        color: #000;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+}
+
+// RAPPORT AU TRAVAIL
+.button--select-rapport {
+    opacity: 1;
+    pointer-events: auto;
+
+    p {
+        font-size: $h3;
+        line-height: $h3;
+        margin: 0 0 0 8px;
+    }
+}

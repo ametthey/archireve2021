@@ -1,0 +1,86 @@
+// -----------------------------------------------------------------------------
+// Basic Typography Style For Copy Text
+// -----------------------------------------------------------------------------
+
+
+p {
+    // @include margin;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: $bg;
+    color: $color;
+    font-weight: 400;
+    line-height: $lh;
+}
+
+p {
+    font-family: covik-sans-mono, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+span {
+    font-family: covik-sans-mono, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2, h3, h4{
+    font-family: covik-sans-mono, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'Solide Mirage';
+    font-size: $h1;
+    line-height: $h1;
+
+    &.bigger {
+        font-size: $bigger;
+        line-height: $bigger;
+    }
+
+    &.huge{
+        font-size: $huge;
+        line-height: $huge;
+        overflow: hidden;
+    }
+
+    @include respond(tablet) {
+        font-size: $mh1;
+        line-height: $mh1;
+    }
+}
+
+h2 {
+    font-size: $h2;
+    line-height: 36px;
+}
+
+h3 {
+    font-size: $h3;
+
+    @include respond(tablet) {
+        font-size: $mh3;
+    }
+}
+
+h4 {
+    font-size: $h4;
+}
+
+span {
+    font-size: $small;
+    line-height: $small;
+}
+
+.gg {
+    font-family: 'GoodGlyphs';
+}
+

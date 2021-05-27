@@ -1,0 +1,77 @@
+/****************************************************
+ *
+ * Header
+ *
+ * *************************************************/
+
+#masthead {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX( -50% );
+    transition: background-color $rythm1 ease-in-out;
+    width: calc( 100% - calc( 70px * 2 ) ); // en attente des bandeau latéraux
+    z-index: 2;
+
+    @include respond(tablet) {
+        background-color: rgba(255, 255, 255, 1);
+        border-bottom: 1px solid $color;
+        height: 32px;
+        justify-content: space-between;
+        left: 0;
+        padding: 0 6px;
+        position: relative;
+        transform: translateX( 0);
+        width: 100%;
+        z-index: 3;
+    }
+
+    &.right-is-open {
+        background-color: rgba(255, 255, 255, 0) !important;
+
+        img {
+            filter: invert(100%);
+        }
+    }
+}
+
+
+.site-branding {
+    img {
+        transition: filter $rythm2 ease-in-out;
+        height: 19px;
+
+        @include respond(tablet) {
+            height: 10px;
+        }
+    }
+}
+
+// Bouton connexion mobile
+#mobile--connexion {
+    display: none;
+
+    // position: absolute;
+    // right: 6px;
+
+    @include respond(tablet) {
+        display: block;
+    }
+}
+
+// Bouton a propos mobile
+#header--mobile-apropos{
+    display: none;
+
+    // position: absolute;
+    // left: 6px;
+
+    @include respond(tablet) {
+        display: block;
+    }
+}

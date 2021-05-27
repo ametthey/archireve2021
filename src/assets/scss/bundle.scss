@@ -1,0 +1,182 @@
+/*
+ * SCSS Structures
+ *
+ * # Sass Guidelines
+ * @link: https://sass-guidelin.es/fr/#architecture
+ *
+ * # Sass Boilereplate
+ * @link: https://github.com/HugoGiraudel/sass-boilerplate/tree/master/stylesheets/abstracts
+ */
+
+
+
+// Abstracts
+@import 'abstract/mixins';
+@import 'abstract/variables';
+@import 'abstract/functions';
+
+// Vendors
+@import 'vendors/reset';
+@import 'vendors/normalize';
+@import 'vendors/wordpress-core';
+// @import 'vendors/hamburger';
+@import 'vendors/swiper';
+
+// Base
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/helpers';
+@import 'base/typography';
+@import 'base/colors';
+
+
+// Components
+@import 'components/article';
+@import 'components/article/article-header';
+@import 'components/article/article-text';
+@import 'components/article/article-taxonomies';
+
+@import 'components/right/a-propos';
+
+@import 'components/left/filtres';
+@import 'components/left/flatpickr';
+
+@import 'components/buttons';
+
+// Layout
+@import 'layout/header';
+@import 'layout/home';
+@import 'layout/left';
+@import 'layout/right';
+
+// Pages
+@import 'pages/front-page';
+@import 'pages/front-articles';
+@import 'pages/connexion';
+@import 'pages/inscription-informations';
+@import 'pages/single';
+
+
+@import 'pages/connexion-hwk';
+
+
+
+// ACF Extended Form test
+#form-title,
+#form-date {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    // Text descriptif
+    .acf-label {
+        label {
+            font-family: $covik;
+            font-size: $h2;
+            font-weight: normal;
+            line-height: $h2;
+            text-transform: uppercase;
+        }
+    }
+
+    // Champ du texte
+    .acf-input {
+        input {
+            border: none;
+            border-bottom: 2px solid $color;
+            color: #000;
+            font-family: $covik;
+            font-size: $h4;
+            height: 28px;
+            outline: none;
+            padding: 10px 27px 10px 0;
+            width: 100%;
+
+            &::-webkit-placeholder { /* Chrome/Opera/Safari */
+                color: $color;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::-moz-placeholder { /* Firefox 19+ */
+                color: $color;
+                font-family: $covik;
+                font-size: /$h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &:-ms-placeholder { /* IE 10+ */
+                color: $color;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &:-moz-placeholder { /* Firefox 18- */
+                color: $color;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::placeholder { /* Firefox 18- */
+                color: $color;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::placeholder {
+                color: $color;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+
+            &::-moz-placeholder {
+                color: #000;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+
+        }
+    }
+}
+
+// Bouton submit
+.acf-form-submit {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: $covik;
+    font-size: $h1;
+    justify-content: center;
+    line-height: $h1;
+    width: 100%;
+
+    @include respond(tablet) {
+        font-size: $h2;
+        line-height: $h2;
+    }
+
+
+    button {
+        background-color: $bg;
+        border: 1px solid #303030;
+        padding: 10px 30px;
+        border-radius: 100px 100px 100px 100px;
+        transition: all 0.325s ease-in-out;
+        text-transform: uppercase;
+    }
+}
+
+
+// Fake class for testing search input
+.has-tag {
+    background-color: red;
+}
+

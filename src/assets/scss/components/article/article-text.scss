@@ -1,0 +1,30 @@
+// TEXT
+.article-reve--text {
+    width: 84%;
+
+    // ADD AND REMOVE BORDER ON ACTIVE STATE
+    border-bottom: none !important;
+
+    // COLLAPSE CODE
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+
+    @include respond(tablet) {
+        width: 95%;
+        // margin: 2.5%;
+    }
+
+    p {
+        font-size: $h2;
+        line-height: 35px;
+
+        margin: 4% 4% 4% 10%;
+
+        @include respond(tablet) {
+            font-size: $mh2;
+            line-height: 26px;
+        }
+    }
+
+}

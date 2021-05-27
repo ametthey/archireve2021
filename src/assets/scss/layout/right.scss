@@ -1,0 +1,82 @@
+.content--right {
+    border-right: 1px solid $color;
+    display: flex;
+    justify-content: space-evenly;
+    overflow: scroll;
+    position: relative;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: width $rythm2 $rythm2 ease-in-out, background-color $rythm2 $rythm2 ease-in-out;
+    writing-mode: tb;
+
+    @include respond(tablet) {
+        display: none;
+    }
+
+    &.is-open {
+        background-color: $color;
+        width: calc( 100% - 99px );
+
+        & > * {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    &.-is-changing-color {
+        background: $violet;
+    }
+
+    &.is-back {
+        text-orientation: initial;
+        transform: rotate(0);
+        writing-mode: initial;
+
+    }
+
+    & > * {
+        opacity: 1;
+        pointer-events: auto;
+        position: relative;
+        transition: opacity $rythm1 ease-in-out;
+        z-index: 1;
+    }
+
+    .right--empty {
+        flex: 1.2;
+    }
+
+    h3 {
+        align-self: center;
+        flex: 0.8;
+        text-align: center;
+    }
+
+    .right--credits {
+        align-items: center;
+        display: flex;
+        flex: 1.2;
+        font-family: $solid;
+        font-size: $smaller;
+        margin: 10px 0 0 0;
+        text-transform: uppercase;
+
+        p {
+            font-family: $solid;
+        }
+
+        .credits--contact {
+
+            &:before {
+                content:'-';
+                margin: 5px 0;
+            }
+
+            &:after {
+                content: '-';
+                margin: 5px 0;
+            }
+        }
+    }
+}
