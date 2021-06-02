@@ -13,7 +13,7 @@
     width: calc( 100% - 100px );
     z-index: 2 !important;
 
-    &.is-visible {
+    &.-is-visible {
         pointer-events: auto!important;
         transform: translateX(0);
 
@@ -25,7 +25,7 @@
             flex-direction: column;
             height: 100vh;
             justify-content: center;
-        width: 100%;
+            width: 100%;
 
             h2 {
                 font-family: $solid;
@@ -45,7 +45,10 @@
                         }
                     }
                 }
+            }
 
+            .button--rounded {
+                background: transparent;
             }
 
             &.propos--section-1 {
@@ -161,7 +164,7 @@
 
     // Titre
     .collapsible {
-        background-color: $color;
+        background-color: transparent;
         border: 1px solid $bg;
         color: $bg;
         cursor: pointer;
@@ -190,7 +193,7 @@
         color: $bg;
         font-family: $covik !important;
         // padding: 18px;
-        max-height: 0;
+        // max-height: 0;
         overflow: hidden;
         transition: max-height $rythm1 ease-out;
     }
