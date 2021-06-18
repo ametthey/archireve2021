@@ -19,19 +19,25 @@ body {
 }
 
 p {
-    font-family: covik-sans-mono, sans-serif;
+    font-family: $covik, sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
+b {
+    font-family: $covik, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
 span {
-    font-family: covik-sans-mono, sans-serif;
+    font-family: $covik, sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 h2, h3, h4{
-    font-family: covik-sans-mono, sans-serif;
+    font-family: $covik, sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -61,6 +67,11 @@ h1 {
 h2 {
     font-size: $h2;
     line-height: 36px;
+
+    @include respond(tablet) {
+        font-size: $mh2;
+        line-height: $mh2;
+    }
 }
 
 h3 {
@@ -82,5 +93,9 @@ span {
 
 .gg {
     font-family: 'GoodGlyphs';
+}
+
+a {
+    color: $bg;
 }
 

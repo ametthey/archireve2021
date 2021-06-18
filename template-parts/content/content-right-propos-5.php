@@ -1,14 +1,7 @@
-<div class="propos--section propos--section-5">
+<div class="propos--section is-hidden propos--section-5">
     <h1 class="bigger">contact</h1>
     <h1><a href="mailto:contact@archireve.com">contact@archireve.com</a></h1>
     <h1><a href="https://www.instagram.com/archireve/" target="_blank">@archireve</a></h1>
-    <h1><a href="#" target="_blank">newsletter</a></h1>
-    <h2>Nous remercions tous nos amis et passionnés des songes, développeurs abandonnés, imprimeurs de contenu conseillés d’abandon d’éveil, famille panseur de sommeil et visions abandonnées. nous remercions aussi particulièrement ces personnages de rêves, qui nous ont aidé financièrement à réaliser ce projet, conseillé sur les aspects techniques, qui ont permis un dialogue et un maintien dans du rêve dans un effort commun amateur, c’est à dire qui aime, qui se passionne et qui cherche au delà de sa réalité parfois trop ordinaire
-        <br>
-        <span class="gg">HH</span>
-
-    </h2>
-
-
-
+    <h1><a href="#" target="_blank">Newsletter</a></h1>
+    <h2>Nous remercions tous·tes nos amis·es et passionné·ée·s des songes, développeur·euse·s abandonné·ée·s, imprimeur·euse·s de contenu invisible, conseillé·ère·s d’abandon d’éveil, famille panseuse de sommeil et visions d’oublié·ée·s. Nous remercions aussi particulièrement ces êtres diurnes, qui nous ont aidé financièrement à réaliser ce projet, conseillé sur les aspects techniques, qui ont permis un dialogue et un maintien du rêve dans un effort commun et amateur - c’est à dire qui aime, qui se passionne et qui cherche au dedans de sa réalité faussement ordinaire.</h2>
 </div>

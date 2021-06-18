@@ -37,6 +37,11 @@ body {
     ::-webkit-scrollbar {
         display: none;
     }
+
+    // Temp for a propos in header
+    @include respond(tablet) {
+        overflow: scroll;
+    }
 }
 
 img {

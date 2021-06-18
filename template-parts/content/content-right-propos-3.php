@@ -1,9 +1,9 @@
-<div class="propos--section propos--section-3">
+<div class="propos--section is-hidden propos--section-3">
     <!-- le questionnaire utilisateur -->
     <div class="collapse-container">
-        <input type="checkbox" id="questionnaire-utilisateur">
+        <input type="checkbox" id="questionnaire-utilisateur-desktop">
         <h1>
-            <label for="questionnaire-utilisateur">
+            <label for="questionnaire-utilisateur-desktop">
                 <!-- Numéro -->
                 <span>1</span>
 
@@ -20,9 +20,9 @@
 
     <!-- les modalités du sommeil -->
     <div class="collapse-container">
-        <input type="checkbox" id="modalite-sommeil">
+        <input type="checkbox" id="modalite-sommeil-desktop">
         <h1>
-            <label for="modalite-sommeil">
+            <label for="modalite-sommeil-desktop">
                 <!-- Numéro -->
                 <span>2</span>
 
@@ -38,9 +38,9 @@
 
     <!-- Lucidite -->
     <div class="collapse-container">
-        <input type="checkbox" id="lucidite">
+        <input type="checkbox" id="lucidite-desktop">
         <h1>
-            <label for="lucidite">
+            <label for="lucidite-desktop">
                 <!-- Numéro -->
                 <span>3</span>
 
@@ -56,9 +56,9 @@
 
     <!-- les typologies de rêves -->
     <div class="collapse-container">
-        <input type="checkbox" id="typologie-reve">
+        <input type="checkbox" id="typologie-reve-desktop">
         <h1>
-            <label for="typologie-reve">
+            <label for="typologie-reve-desktop">
                 <!-- Numéro -->
                 <span>4</span>
 
@@ -75,9 +75,9 @@
 
     <!-- Le rappel -->
     <div class="collapse-container">
-        <input type="checkbox" id="rappel">
+        <input type="checkbox" id="rappel-desktop">
         <h1>
-            <label for="rappel">
+            <label for="rappel-desktop">
                 <!-- Numéro -->
                 <span>5</span>
 
@@ -92,9 +92,9 @@
 
     <!-- Le dessin -->
     <div class="collapse-container">
-        <input type="checkbox" id="dessin">
+        <input type="checkbox" id="dessin-desktop">
         <h1>
-            <label for="dessin">
+            <label for="dessin-desktop">
                 <!-- Numéro -->
                 <span>6</span>
 
@@ -110,8 +110,6 @@
     </div>
 
     <div class="collapse-texte-follow">
-        <p>Définir de manière impressionniste chaque archireveur·euse permet d’éviter toute catégorisation vulgaire par des questions trop simplistes et réductrices.
-            Ce questionnaire permet d’être renseigné sur chaque archireveur·euse, tout en conservant une politique d’anonymat stricte. Il ne suffit de le remplir qu’une seule fois, lors de la création de son compte.
-        </p>
+        <p>Toutes ces informations permettent, tout en individualisant chaque archireveur·euse, de comprendre un instant de notre histoire commune et d’y voir l'altérité de nos alteregos, tous·tes en chœur.</p>
     </div>
 </div>

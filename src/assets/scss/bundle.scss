@@ -38,6 +38,7 @@
 
 @import 'components/right/a-propos';
 @import 'components/right/collapse';
+@import 'components/right/collapse-header';
 
 @import 'components/left/filtres';
 @import 'components/left/flatpickr';
@@ -55,129 +56,25 @@
 @import 'pages/front-articles';
 @import 'pages/connexion';
 @import 'pages/inscription-informations';
-@import 'pages/single';
+// @import 'pages/inscription-informations/age';
+// @import 'pages/inscription-informations/genre';
+// @import 'pages/inscription-informations/langues';
+// @import 'pages/inscription-informations/pays';
+// @import 'pages/inscription-informations/milieux';
+// @import 'pages/inscription-informations/travail';
+// @import 'pages/inscription-informations/paysage';
+// @import 'pages/inscription-informations/foi';
+// @import 'pages/inscription-informations/sommeil';
+// @import 'pages/inscription-informations/reve';
+// @import 'pages/single';
+// @import 'pages/connexion-hwk';
 
-
-@import 'pages/connexion-hwk';
-
-
-
-// ACF Extended Form test
-#form-title,
-#form-date {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
-    // Text descriptif
-    .acf-label {
-        label {
-            font-family: $covik;
-            font-size: $h2;
-            font-weight: normal;
-            line-height: $h2;
-            text-transform: uppercase;
-        }
-    }
-
-    // Champ du texte
-    .acf-input {
-        input {
-            border: none;
-            border-bottom: 2px solid $color;
-            color: #000;
-            font-family: $covik;
-            font-size: $h4;
-            height: 28px;
-            outline: none;
-            padding: 10px 27px 10px 0;
-            width: 100%;
-
-            &::-webkit-placeholder { /* Chrome/Opera/Safari */
-                color: $color;
-                font-family: $covik;
-                font-size: $h4;
-                opacity: 1;
-                padding: 10px 0;
-            }
-            &::-moz-placeholder { /* Firefox 19+ */
-                color: $color;
-                font-family: $covik;
-                font-size: /$h4;
-                opacity: 1;
-                padding: 10px 0;
-            }
-            &:-ms-placeholder { /* IE 10+ */
-                color: $color;
-                font-family: $covik;
-                font-size: $h4;
-                opacity: 1;
-                padding: 10px 0;
-            }
-            &:-moz-placeholder { /* Firefox 18- */
-                color: $color;
-                font-family: $covik;
-                font-size: $h4;
-                opacity: 1;
-                padding: 10px 0;
-            }
-            &::placeholder { /* Firefox 18- */
-                color: $color;
-                font-family: $covik;
-                font-size: $h4;
-                opacity: 1;
-                padding: 10px 0;
-            }
-            &::placeholder {
-                color: $color;
-                font-family: $covik;
-                font-size: $h4;
-                opacity: 1;
-                padding: 10px 0;
-            }
-
-            &::-moz-placeholder {
-                color: #000;
-                font-family: $covik;
-                font-size: $h4;
-                opacity: 1;
-                padding: 10px 0;
-            }
-
-        }
-    }
-}
-
-// Bouton submit
-.acf-form-submit {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    font-family: $covik;
-    font-size: $h1;
-    justify-content: center;
-    line-height: $h1;
-    width: 100%;
-
-    @include respond(tablet) {
-        font-size: $h2;
-        line-height: $h2;
-    }
-
-
-    button {
-        background-color: $bg;
-        border: 1px solid #303030;
-        padding: 10px 30px;
-        border-radius: 100px 100px 100px 100px;
-        transition: all 0.325s ease-in-out;
-        text-transform: uppercase;
-    }
-}
-
-
-// Fake class for testing search input
-.has-tag {
-    background-color: red;
-}
-
+@import 'pages/profil';
+@import 'pages/reves/acf-overwrite';
+@import 'pages/reves/title';
+@import 'pages/reves/date';
+@import 'pages/reves/typologie';
+@import 'pages/reves/lucidite';
+@import 'pages/reves/contenu';
+@import 'pages/reves/tag';
+@import 'pages/reves/tag-texte';

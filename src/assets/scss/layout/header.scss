@@ -29,6 +29,9 @@
         transform: translateX( 0);
         width: 100%;
         z-index: 3;
+
+        // temp for a propos
+        // overflow: scroll;
     }
 
     &.right-is-open {
@@ -42,6 +45,13 @@
 
 
 .site-branding {
+
+    @include respond(tablet) {
+        position: absolute;
+        left: 50%;
+        transform: translateX( -50% );
+    }
+
     img {
         transition: filter $rythm2 ease-in-out;
         height: 19px;
@@ -56,8 +66,9 @@
 #mobile--connexion {
     display: none;
 
-    // position: absolute;
-    // right: 6px;
+    a {
+        color: $color;
+    }
 
     @include respond(tablet) {
         display: block;

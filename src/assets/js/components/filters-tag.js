@@ -23,13 +23,15 @@ function filterTags(e) {
 
             // Si container a le tag correspondant
             if ( filterTag ) {
-                console.log(`le mot trouvé est ${filterTagsValue} et son container est ${reveContainer.id}`);
+                // console.log(`le mot trouvé est ${filterTagsValue} et son container est ${reveContainer.id}`);
                 element.style.color = '#f00';
+                // console.log( filterTag );
             } else if ( filterTagNoTag ){
                 // console.log(`le container des mots est ${reveContainer.id}`);
                 // si le container n'a pas de mot trouvé, dégage
                 // 3 - si pas de mot trouvé, cacher le container
-                console.log(`What is going on`);
+                // console.log(`What is going on`);
+                console.log( reveContainer );
             }
             else {
                 console.log(`le mot n'a pas été trouvé et son container est ${reveContainer.id}`);

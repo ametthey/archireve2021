@@ -25,13 +25,14 @@ $sexuel: #D67083;
 $ratio: 30px;
 $ratio2: 12px;
 $collapseN: 100px;
+$collapseMN: 50px;
 
 /*
  * Typography
  */
 
 $solid: 'Solide Mirage';
-$covik: covik-sans-mono, sans-serif;
+$covik: covik-sans-mono, helvetica, sans-serif;
 $good: 'GoodGlyphs';
 
 $huge: 124px;
@@ -55,6 +56,7 @@ $mh3: 17px;
  * Ryhtm
  */
 
+$rythm0: 0.325s;
 $rythm1: 0.650s;
 $rythm2: 0.850s;
 $rythm3: 1.950s;

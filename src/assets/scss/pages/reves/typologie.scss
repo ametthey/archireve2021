@@ -1,0 +1,142 @@
+#reve--typologie {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 70%;
+
+    .acf-label {
+        margin: 0;
+
+        label {
+            font-family: $covik;
+            font-size: $h2;
+            font-weight: normal;
+            line-height: $h2;
+            text-transform: uppercase;
+            text-align: center;
+
+            margin: 0;
+        }
+    }
+
+    .acf-input {
+        .categorychecklist-holder {
+            border: none;
+            border-radius: 0px;
+            max-height: max-content;
+
+            // LISTE DES DIFFENTS ELEMENTS
+            .acf-checkbox-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                li {
+                    margin: 0 calc( #{$ratio} / 3 ) calc( #{$ratio} / 3 ) 0;
+
+                    // SELECTION DES DIFFERENTS TYPES DE TYPOLOGIES
+                    label {
+                        &:before {
+                            height: 70px;
+                            width: 70px;
+                        }
+                    }
+
+                    // Cauchemar
+                    &:nth-of-type(1) {
+                        label {
+                            &:before {
+                                content: url(../images/Cauchemar.svg);
+                            }
+                        }
+                    }
+
+                    // ReveConcomitant
+                    &:nth-of-type(2) {
+                        label {
+                            &:before {
+                                content: url(../images/ReveConcomitant.svg);
+                            }
+                        }
+                    }
+
+                    // ReveCréatif
+                    &:nth-of-type(3) {
+                        label {
+                            &:before {
+                                content: url(../images/ReveCréatif.svg);
+                            }
+                        }
+                    }
+
+                    // ReveActualite
+                    &:nth-of-type(4) {
+                        label {
+                            &:before {
+                                content: url(../images/ReveActualite.svg);
+                            }
+                        }
+                    }
+
+                    // ReveLucide
+                    &:nth-of-type(5) {
+                        label {
+                            &:before {
+                                content: url(../images/ReveLucide.svg);
+                            }
+                        }
+                    }
+
+                    // RevePremonitoire
+                    &:nth-of-type(6) {
+                        label {
+                            &:before {
+                                content: url(../images/RevePremonitoire.svg);
+                            }
+                        }
+                    }
+
+                    // ReveRecurrent
+                    &:nth-of-type(7) {
+                        label {
+                            &:before {
+                                content: url(../images/ReveRecurrent.svg);
+                            }
+                        }
+                    }
+
+                    // ReveSexuel
+                    &:nth-of-type(8) {
+                        label {
+                            &:before {
+                                content: url(../images/ReveSexuel.svg);
+                            }
+                        }
+                    }
+                }
+
+                label {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: $h3;
+                    line-height: $h3;
+
+                    input {
+                        font-size: inherit;
+                        line-height: inherit;
+                        order: 2;
+                    }
+
+                    span {
+                        font-size: inherit;
+                        line-height: inherit;
+                        order: 1;
+                    }
+                }
+            }
+        }
+    }
+}

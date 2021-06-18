@@ -43,3 +43,49 @@ if ( langueButton ){
 
     }, false);
 }
+
+// Verify if element is checked
+const foiSpirituelItems = document.querySelectorAll('.radio--item input');
+foiSpirituelItems.forEach( item => {
+    // console.log(item);
+    item.addEventListener( 'change', (e) => {
+        // console.log( item.value );
+        // if ( item.checked = true ) {
+        //     console.log(`L'élément ${item.id.innerHTML} a été checké`);
+        // } else if ( item.checked = false ) {
+        //     console.log(`L'élément ${item.id.innerHTML} n'a pas été checké`);
+        // }
+    });
+});
+
+// Tooltip
+// In Mobile, the hover is not working so we need to transform it into a click
+
+const tooltipIcons = document.querySelectorAll('.questionnaire-categorie-tooltip');
+tooltipIcons.forEach( tooltip => {
+    const icon = tooltip.querySelector('.tooltip-icon');
+    const text = tooltip.querySelector('.tooltip-text');
+
+    if ( icon ) {
+
+        // Click Event for Mobile
+        icon.addEventListener( 'click', (e) => {
+            e.preventDefault();
+            text.classList.toggle( 'is-clicked' );
+        });
+
+        // Mouseenter (hover) for Desktop
+        icon.addEventListener( 'mouseenter', (e) => {
+            e.preventDefault();
+            text.classList.add( 'is-clicked' );
+        });
+
+        // Mouseleave (hover) for Desktop
+        icon.addEventListener( 'mouseleave', (e) => {
+            e.preventDefault();
+            text.classList.remove( 'is-clicked' );
+        });
+    }
+
+});
+

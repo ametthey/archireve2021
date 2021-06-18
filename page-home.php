@@ -12,7 +12,18 @@ get_header(); ?>
     <div class="content--home-text-border">
         <h3>LES RÊVES</h3>
     </div>
+
     <?php
+
+        /*
+         *
+         * ATTENTION, LE CONTENU DE LA QUERY EST LA MEME
+         * QUE DANS LE TEMPLATE-PARTS
+         *
+         *
+         */
+
+
         $args = array(
             'post_type'      => 'reve',
             'posts_per_page' => -1

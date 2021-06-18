@@ -6,13 +6,13 @@
     <!-- Section 2 -->
     <?php get_template_part( 'template-parts/content/content', 'right-propos-2' ); ?>
 
-    <!-- Section 3 -->
+    <!-- Section 3  1er collapse -->
     <?php get_template_part( 'template-parts/content/content', 'right-propos-3' ); ?>
 
-    <!-- Section 4 -->
+    <!-- Section 4 - pour aller plus loin -->
     <?php get_template_part( 'template-parts/content/content', 'right-propos-4' ); ?>
 
-    <!-- Section 5 -->
+    <!-- Section 5 - contact -->
     <?php get_template_part( 'template-parts/content/content', 'right-propos-5' ); ?>
 
     <!-- Section 6 -->

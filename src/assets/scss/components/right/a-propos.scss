@@ -17,53 +17,61 @@
         pointer-events: auto!important;
         transform: translateX(0);
 
-        .propos--section {
-            align-items: center;
-            // background-color: $color;
-            color: $bg;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            justify-content: center;
-            width: 100%;
+    }
 
-            h2 {
-                font-family: $solid;
-                margin: 5% 0;
-                overflow: hidden;
+    .propos--section {
+        align-items: center;
+        // background-color: $color;
+        color: $bg;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        width: 100%;
 
-                &.colored-hover {
-                    span {
-                        font-family: inherit;
-                        font-size: inherit;
+        opacity: 1;
+        transition: opacity $rythm1 ease-in-out !important;
 
-                        &.char {
-                            text-transform: uppercase;
-                            &:hover {
-                                text-transform: lowercase;
-                            }
+        &.is-hidden {
+            opacity: 0;
+        }
+
+        h2 {
+            font-family: $solid;
+            margin: 5% 0;
+            overflow: hidden;
+
+            &.colored-hover {
+                span {
+                    font-family: inherit;
+                    font-size: inherit;
+
+                    &.char {
+                        cursor: pointer;
+                        text-transform: uppercase;
+                        transition: all $rythm0 ease-in-out !important;
+
+                        &:hover {
+                            text-transform: lowercase;
                         }
                     }
                 }
             }
+        }
 
-            .button--rounded {
-                background: transparent;
-            }
+        .button--rounded {
+            background: transparent;
+        }
 
-            &.propos--section-1 {
-            }
+        &.propos--section-1 {
+        }
 
-            &.propos--section-2 {
-            }
-
-
-
+        &.propos--section-2 {
         }
     }
-
-
 }
+
+
 
 .propos--collapse-container {
     // border: 1px solid $bg;
@@ -149,78 +157,46 @@
 
 }
 
+
+// 1er collapse
 .propos--section-3 {
     align-items: initial;
     justify-content: flex-start;
-
-    h3 {
-        align-self: flex-start !important;
-        margin: 2% 0 0 0;
-        text-align: left !important;
-        text-transform: uppercase;
-    }
-
-    ///////// CODE FROM COLLAPSE
-
-    // Titre
-    .collapsible {
-        background-color: transparent;
-        border: 1px solid $bg;
-        color: $bg;
-        cursor: pointer;
-        padding: 18px;
-        margin: 18px;
-        width: 100%;
-        text-align: left;
-        outline: none;
-        font-size: 37px !important;
-        font-family: $solid;
-        line-height: 37px !important;
-        text-transform: uppercase;
-
-        span {
-            border-right: 1px solid $bg;
-            font-size: 37px !important;
-            font-family: $solid;
-            line-height: 37px !important;
-            text-transform: uppercase;
-        }
-    }
-
-    // Paragraphe
-    .content {
-        border: 1px solid $bg;
-        color: $bg;
-        font-family: $covik !important;
-        // padding: 18px;
-        // max-height: 0;
-        overflow: hidden;
-        transition: max-height $rythm1 ease-out;
-    }
-
-
-
-
 }
 
+
+// Pour aller plus loin
+// 2eme collapse
 .propos--section-4 {
-    h2 {
-        font-family: $covik !important;
-        align-self: flex-start;
-    }
+    align-items: flex-start !important;
+}
 
-    .collapse-title {
+// Contact
+.propos--section-5 {
+    h1 {
+        &.bigger {
+            margin: 0 0 5% 0;
+        }
 
-        &:first-child {
-            h1 {
-                font-family: $good !important;
+        &:not(:first-child) {
+            font-family: $covik !important;
+
+            & > * {
+                color: $bg;
             }
         }
     }
+    h2 {
+        font-family: $covik !important;
+        margin: auto;
+        text-align: center;
+        width: 80%;
+    }
 
 }
 
-.propos--section-5 {
+// Projection et droit
+.propos--section-6 {
     h1 {
         &.bigger {
             margin: 0 0 5% 0;

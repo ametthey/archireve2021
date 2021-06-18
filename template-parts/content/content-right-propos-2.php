@@ -1,4 +1,4 @@
-<div class="propos--section propos--section-2">
+<div class="propos--section is-hidden propos--section-2">
     <h1 class="huge">Archirêve</h1>
     <h2 class="colored-hover">Archireve.fr est très simple d’utilisation, tant pour les archireveurs, les archichercheurs que pour tout autres archihumains. aussi, plus les données entrées sont précises, mieux le système d’archirecherche fonctioxve.
         <br>

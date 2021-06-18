@@ -1,4 +1,4 @@
-<div class="propos--section propos--section-1">
+<div class="propos--section propos--section-1 is-hidden">
     <h1 class="huge">Archirêve</h1>
     <h2 class="colored-hover">bienvenue sur archireve.fr, fond d’archives de rêves, écrits et dessinés. archirêve.fr est libre, incontrôlable, utile, indépendante, participative, hérétique, sécurisée, générezse, anonyme, bavarde, efficace, buissonnière, francophone, gratuite, insoumise.
         <br>

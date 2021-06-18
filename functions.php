@@ -19,6 +19,7 @@ require_once( 'lib/sidebar.php' );
 require_once( 'lib/custom-admin-bar.php' );
 require_once( 'lib/custom-post-type.php' );
 require_once( 'lib/custom-taxonomy.php' );
+require_once( 'lib/custom-taxonomy-lucidite.php' );
 require_once( 'lib/images.php' );
 require_once( 'lib/acf.php' );
 require_once( 'lib/users.php' );
@@ -30,10 +31,10 @@ require_once( 'lib/users.php' );
 require_once( 'lib/login-custom.php' );
 
 
-require_once( 'lib/configurationgeneral-hwk.php' );
-require_once( 'lib/connexion-hwk.php' );
-require_once( 'lib/inscription-hwk.php' );
-require_once( 'lib/redirection-hwk.php' );
+// require_once( 'lib/configurationgeneral-hwk.php' );
+// require_once( 'lib/connexion-hwk.php' );
+// require_once( 'lib/inscription-hwk.php' );
+// require_once( 'lib/redirection-hwk.php' );
 
 // https://gist.github.com/Rarst/1739714
 require_once( 'lib/r-debug.php' );

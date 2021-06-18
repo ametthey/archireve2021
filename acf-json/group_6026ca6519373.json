@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_602ba6887d298",
-            "label": "Titre du rêve",
+            "label": "Titre",
             "name": "titre_du_reve",
             "type": "text",
             "instructions": "",
@@ -13,14 +13,30 @@
             "wrapper": {
                 "width": "",
                 "class": "",
-                "id": ""
+                "id": "reve--title"
             },
-            "hide_admin": 0,
             "default_value": "",
             "placeholder": "",
             "prepend": "",
             "append": "",
             "maxlength": 35
+        },
+        {
+            "key": "field_60c0cf32fd0d9",
+            "label": "Date",
+            "name": "date_du_reve",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "reve--date"
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "d\/m\/Y",
+            "first_day": 1
         },
         {
             "key": "field_6026ca9b2228c",
@@ -31,13 +47,12 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
-                "id": ""
+                "id": "reve--typologie"
             },
-            "hide_admin": 0,
             "taxonomy": "typologiedereve",
-            "field_type": "select",
+            "field_type": "radio",
             "allow_null": 0,
             "add_term": 0,
             "save_terms": 1,
@@ -54,13 +69,12 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
-                "id": ""
+                "id": "reve--lucidite"
             },
-            "hide_admin": 0,
             "taxonomy": "niveaudelucidite",
-            "field_type": "select",
+            "field_type": "radio",
             "allow_null": 0,
             "add_term": 0,
             "save_terms": 1,
@@ -79,13 +93,12 @@
             "wrapper": {
                 "width": "",
                 "class": "",
-                "id": ""
+                "id": "reve--tag"
             },
-            "hide_admin": 0,
             "taxonomy": "customtag",
             "field_type": "checkbox",
             "add_term": 1,
-            "save_terms": 1,
+            "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
             "multiple": 0,
@@ -93,7 +106,7 @@
         },
         {
             "key": "field_602ba70b7d299",
-            "label": "Choix du contenu",
+            "label": "contenu",
             "name": "choix_du_contenu",
             "type": "flexible_content",
             "instructions": "Choisir le contenu",
@@ -102,7 +115,7 @@
             "wrapper": {
                 "width": "",
                 "class": "",
-                "id": ""
+                "id": "reve--contenu"
             },
             "layouts": {
                 "layout_602ba77aa6f79": {
@@ -189,8 +202,8 @@
                 }
             },
             "button_label": "Contenu",
-            "min": "",
-            "max": ""
+            "min": 1,
+            "max": 2
         },
         {
             "key": "field_602baa190226a",
@@ -203,7 +216,7 @@
             "wrapper": {
                 "width": "",
                 "class": "",
-                "id": ""
+                "id": "reve--aliment"
             },
             "taxonomy": "modalite_aliment",
             "field_type": "checkbox",
@@ -222,13 +235,6 @@
                 "operator": "==",
                 "value": "reve"
             }
-        ],
-        [
-            {
-                "param": "af_form",
-                "operator": "==",
-                "value": "form_602bcd072ff07"
-            }
         ]
     ],
     "menu_order": 0,
@@ -241,5 +247,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1618545033
+    "modified": 1623681287
 }

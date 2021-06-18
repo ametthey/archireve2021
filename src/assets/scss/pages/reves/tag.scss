@@ -1,0 +1,76 @@
+#reve--tag {
+    align-items: center;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+
+    // Label
+    .acf-label {
+        margin: 0;
+
+        label {
+            font-family: $covik;
+            font-size: $h2;
+            font-weight: normal;
+            line-height: $h2;
+            text-transform: uppercase;
+
+            margin: 0;
+        }
+    }
+
+    // Tag list
+    .acf-input {
+        width: 100%;
+    }
+
+    .categorychecklist-holder {
+        border: none;
+        max-height: auto;
+
+        .acf-checkbox-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        li {
+            border: 1px solid $color;
+            font-size: $h3;
+            line-height: $h3;
+            margin: 0 calc( #{$ratio} / 3 ) calc( #{$ratio} / 3 ) 0;
+            padding: 1.5px 10px;
+            // border-radius: 100px 100px 100px 100px;
+            transition: all 0.325s ease-in-out;
+            width: max-content;
+
+            &:hover {
+                background-color: $color;
+                border: 1px solid $color;
+
+                & > * {
+                    color: $bg;
+                }
+            }
+
+            input {
+                font-size: inherit;
+                line-height: inherit;
+            }
+
+            span {
+                font-size: inherit;
+                line-height: inherit;
+            }
+
+        }
+    }
+
+    // Bouton ajouter un nouveau tag
+    .acf-actions {
+        &.-hover {
+            display: block;
+        }
+    }
+}

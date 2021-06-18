@@ -4,11 +4,21 @@ function hwk_acf_form_redirect(){
 
     // Logged in
     if(is_user_logged_in() && (is_page('connexion') || is_page('mot-de-passe-oublie') || is_page('inscription')))
-        wp_redirect(home_url('mon-compte'));
+        // Mon compte> Accès Profil
+        wp_redirect(home_url('mon-profil'));
 
+
+    // Inscription
     // Not logged in
-    if(!is_user_logged_in() && is_page('mon-compte'))
-        wp_redirect(home_url());
+    // if(!is_user_logged_in() && is_page('inscription'))
+    //     wp_redirect(home_url('/wp-login.php?action=register'));
+
+    // Connexion
+    // Not logged in
+    if(!is_user_logged_in() && is_page('connexion'))
+        wp_redirect(home_url('/wp-admin'));
+
+
 
 }
 add_filter('template_include', 'hwk_acf_form_lost_password_page');

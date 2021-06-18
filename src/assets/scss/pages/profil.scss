@@ -1,0 +1,75 @@
+.page-template-page-profil {
+
+    #masthead {
+        border-bottom: none;
+
+        #header--mobile-apropos {
+            display: none;
+        }
+
+        #mobile--connexion {
+            display: none;
+        }
+    }
+}
+
+.content--profil {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.profil--header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+
+    & > * {
+        text-transform: uppercase;
+    }
+
+    // Nom de l'utilisateur
+    h1 {
+        margin: calc( #{$ratio} * 3 ) 0 calc( #{$ratio} / 1 ) 0;
+        text-align: center;
+
+        @include respond(tablet) {
+            width: min-content;
+        }
+    }
+
+    // Modifier le profil
+    h3 {
+        width: max-content;
+    }
+}
+
+.profil--no-reve {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    a {
+        color: $color;
+        text-decoration: underline;
+    }
+}
+
+.profil--reve {
+    width: 100%;
+
+    .profil--reve-new {
+        border: 1px solid $color;
+        display: grid;
+        height: 200px;
+        place-items: center;
+
+        a {
+            color: $color;
+            text-decoration: underline;
+        }
+    }
+}

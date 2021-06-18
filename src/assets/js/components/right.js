@@ -9,10 +9,20 @@ if ( contentRight ){
         setTimeout( () => {
             contentRight.classList.add('is-back');
 
+            const proposSections = document.querySelectorAll('.propos--section');
+            proposSections.forEach( section => {
+                if ( contentRight.classList.contains('is-back') ) {
+                    console.log('ok on a la classe is-back');
+                    setTimeout( () => {
+                        section.classList.remove('is-hidden');
+                    }, 1000 );
+                }
+            });
         }, 1000 );
         contentHome.classList.add('right-is-open');
         header.classList.add('right-is-open');
         rightContainerPropos.classList.add('-is-visible');
+
     });
 }
 
@@ -34,22 +44,43 @@ const options = {
 const callback = (entries, observer) => {
     entries.forEach( (entry) => {
         const { target } = entry;
-        // console.log(target);
+
+        // console.log( target.isIntersecting );
+
+        if ( target.classList.contains('propos--section-1').isIntersecting ) {
+            console.log('le propos section 1 est en pleine intersection');
+        }
 
         if ( entry.intersectionRatio >= 0.25 ) {
             target.classList.add('is-visible');
-            console.log(target);
 
-            if ( target.classList.contains('propos--section-3') ) {
-               rightContainer.style.backgroundColor = violet;
-            } else if ( target.classList.contains('propos--section-4') ) {
-               rightContainer.style.backgroundColor = violet;
-            } else if ( target.classList.contains('propos--section-5') ) {
-               rightContainer.style.backgroundColor = violet;
-            } else if ( target.classList.contains('propos--section-6') ) {
-               rightContainer.style.backgroundColor = violet;
+            const targetParent = target.closest('.right--container-propos').classList.contains('-is-visible');
+
+            // if ( targetParent ) {
+            //     rightContainer.style.backgroundColor = gris;
+            // }
+            // else if ( target.classList.contains('propos--section-1') && target.classList.contains('is-visible') ) {
+            if ( target.classList.contains('propos--section-1') && target.classList.contains('is-visible') ) {
+                rightContainer.style.backgroundColor = gris;
+                console.log('grey');
+            } else if ( target.classList.contains('propos--section-2') && target.classList.contains('is-visible')) {
+                rightContainer.style.backgroundColor = gris;
+                console.log('grey');
+            } else if ( target.classList.contains('propos--section-3') && target.classList.contains('is-visible')) {
+                rightContainer.style.backgroundColor = gris;
+                console.log('grey');
+            } else if ( target.classList.contains('propos--section-4') && target.classList.contains('is-visible')) {
+                rightContainer.style.backgroundColor = violet;
+                console.log('violet');
+            } else if ( target.classList.contains('propos--section-5') && target.classList.contains('is-visible')) {
+                rightContainer.style.backgroundColor = violet;
+                console.log('violet');
+            } else if ( target.classList.contains('propos--section-6') && target.classList.contains('is-visible')) {
+                rightContainer.style.backgroundColor = violet;
+                console.log('violet');
             } else {
-               rightContainer.style.backgroundColor = gris;
+                rightContainer.style.backgroundColor = gris;
+                console.log('grey');
             }
         } else {
             target.classList.remove('is-visible');

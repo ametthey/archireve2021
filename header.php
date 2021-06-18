@@ -26,8 +26,10 @@
             <!-- Connexion pour mobile -->
             <div id="mobile--connexion" class="button--rounded"><a href="<?php echo esc_url( get_page_link( 85 ) ); ?>"><p>CONNEXION</p></a></div>
 
-
         </header>
+
+        <!-- A Propos for mobile -->
+        <?php get_template_part( 'template-parts/content/content', 'right-propos-header' ); ?>
 
         <div id="page">
 

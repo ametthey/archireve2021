@@ -11,43 +11,8 @@
 @import 'base/colors';
 
 // Login
-@import 'login/container';
+@import 'login/connexion/general';
+@import 'login/connexion/formulaire';
 
-
-
-
-// Formulaire
-#loginform {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
-    // remove wordpress style
-    background: none;
-    border: none;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-
-    // Username or Email Adress
-    p {
-        text-align: center;
-
-        input {
-            background: none;
-            border: 2px solid #303030;
-            // border: none;
-            color: #000;
-            // font-family: ;
-            // font-size
-            outline: none;
-            // padding: 10px 27px 10px 0;
-            width: 100%;
-        }
-    }
-
-    // Password
-    .user-pass-wrap {
-        text-align: center;
-    }
-}
+@import 'login/inscription/general';
+@import 'login/inscription/formulaire';

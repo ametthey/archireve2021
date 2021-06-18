@@ -1,4 +1,4 @@
-<div class="content--right is-open is-back">
+<div class="content--right">
     <div class="right--credits">
         <?php $footer_message = '&copy; ' . ' ' . get_bloginfo( 'name' ); ?>
         <p><?php echo apply_filters( '_themename_footer_message', $footer_message ); ?></p>
