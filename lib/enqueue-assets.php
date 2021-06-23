@@ -13,7 +13,7 @@
  */
 function _themename_assets() {
     wp_enqueue_style( '_themename-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', [], '1.0.0' ,  'all' );
-    wp_enqueue_script( '_themename-scripts', get_stylesheet_directory_uri() . '/dist/assets/js/main.js', [], '1.0.1' ,   true );
+    wp_enqueue_script( '_themename-scripts', get_stylesheet_directory_uri() . '/dist/assets/js/main.js', [ 'jquery' ], '1.0.1' ,   true );
 
 
 

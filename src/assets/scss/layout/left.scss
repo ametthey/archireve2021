@@ -97,6 +97,14 @@
             #left--connexion {
                 margin: 0 5px 0 0;
                 transform: translate(0);
+
+                a {
+                    color: $color;
+
+                    &:hover {
+                        color: $bg;
+                    }
+                }
             }
 
             #left--inscription {

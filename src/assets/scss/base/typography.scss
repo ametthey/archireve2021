@@ -58,6 +58,17 @@ h1 {
         overflow: hidden;
     }
 
+    &.front-page-title {
+        font-size: $h2;
+        line-height: $h2;
+        text-align: center;
+
+        @include respond(tablet) {
+            font-size: $mh3;
+            line-height: $mh3;
+        }
+    }
+
     @include respond(tablet) {
         font-size: $mh1;
         line-height: $mh1;

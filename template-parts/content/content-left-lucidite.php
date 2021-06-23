@@ -1,9 +1,16 @@
 <?php
     // https://designorbital.com/snippets/how-to-get-all-taxonomies-for-a-post-type/
     $terms = get_terms( 'niveaudelucidite' );
+    $o = 0;
     echo '<div class="lucidite--container">';
-    foreach ( $terms as $term ) {
-        echo '<div class="' . $term->slug . ' lucidite--item button--rounded"><h4>' . $term->name . '</h4></div>';
-    }
+        foreach ( $terms as $term ) {
+
+            // EACH
+            echo '<input id="radio-input-' . $o . '"type="checkbox" value=".' . $term->slug . '" class=" lucidite--label-input ' . $term->slug . ' "><label for="radio-input-' . $o . '" class="lucidite--label lucidite--label-radio lucidite--item button--rounded">' . $term->name . '</label>';
+            $o++;
+        }
+        // TOUT
+        // echo '<input id="radio-input-' . $o . '"type="checkbox" value="*" class="lucidite--label-input lucidite--item-all"><label for="radio-input-' . $o . '" class="lucidite--label lucidite--label-radio lucidite--item button--rounded">Tout</label>';
+
     echo '</div>';
 ?>

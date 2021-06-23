@@ -1,5 +1,5 @@
-<div class="content--left">
-<!-- <div class="content&#45;&#45;left is&#45;open"> -->
+<!-- <div class="content&#45;&#45;left"> -->
+<div class="content--left is-open">
     <div class="content--left-header">
         <div id="left--button" class="button--round round--black"></div>
         <div id="left--connexion" class="button--rounded"><a href="<?php echo esc_url( get_page_link( 85 ) ); ?>"><p>CONNEXION</p></a></div>

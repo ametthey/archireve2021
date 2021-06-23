@@ -113,41 +113,6 @@
     }
 }
 
-// LISTE DES DIFFERENTS NIVEAU DE LUCIDITE
-.lucidite--container {
-    align-items: flex-start;
-    display: flex;
-    flex-wrap: wrap;
-    height: auto !important;
-    margin: 0 calc( 30px / 2 ) 30px;
-    position: relative;
-    width: calc( 100% - 30px );
-
-
-    .lucidite--item {
-        cursor: pointer;
-        margin: 0 8px 8px 0;
-        width: auto;
-
-        position: relative !important;
-        top: auto !important;
-        left: 0 !important;
-
-        &.-is-selected {
-            background-color: $color;
-            border: 1px solid $color;
-
-            & > * {
-                color: $bg;
-            }
-        }
-
-        h4 {
-            font-size: $h5;
-            text-transform: uppercase;
-        }
-    }
-}
 
 // LISTES DES DIFFERENTES CATEGORIES DE TYPOLOGIE
 .typopologie--container {

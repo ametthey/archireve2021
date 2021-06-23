@@ -36,8 +36,8 @@ get_header(); ?>
     <?php $niveau_de_lucidite = get_field( 'niveau_de_lucidite' ); ?>
     <?php $term = get_term_by( 'id', $typologie_de_reve, 'typologiedereve' ); ?>
     <?php $term_lucidite = get_term_by( 'id', $niveau_de_lucidite, 'niveaudelucidite' ); ?>
-    <?php if ( $term ) : ?>
-    <article class="article-reve article-<?php echo esc_html( $term->slug); ;?> border-<?php echo esc_html( $term->slug ); ?>" id="reve--<?php echo $i; ?>">
+    <?php if ( $term and $term_lucidite ) : ?>
+    <article class="article-reve article-<?php echo esc_html( $term->slug); ;?> border-<?php echo esc_html( $term->slug ); ?> <?php echo esc_html( $term_lucidite->slug ); ?>" id="reve--<?php echo $i; ?>">
 
 
         <div class="article-reve--header border-bottom-<?php echo esc_html( $term->slug ); ?>">

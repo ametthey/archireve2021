@@ -148,7 +148,7 @@ export const scripts = () => {
 export const compress = () => {
     return gulp.src(path.package.src)
         .pipe(replace('_themename', info.name))
-    // .pipe(zip(`${info.name}.zip`))
+        .pipe(zip(`${info.name}.zip`))
         .pipe(gulp.dest(path.package.dest));
 }
 
