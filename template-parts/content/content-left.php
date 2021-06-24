@@ -8,12 +8,6 @@
 
     <div class="content--left-cover"><h3>filtres</h3> <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/loupe.svg"></div>
 
-    <div class="tagsearch--container">
-        <?php the_field('autocomplete_search_bar'); ?>
-        <input type="text" class="tagsearch" placeholder="RECHERCHER..." />
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/loupe.svg">
-    </div>
-
     <?php get_template_part('template-parts/content/content', 'left-tag'); ?>
 
     <?php get_template_part('template-parts/content/content', 'left-lucidite'); ?>

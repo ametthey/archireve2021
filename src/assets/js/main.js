@@ -10,7 +10,8 @@ import './components/calendrier.js';
 import './components/header.js';
 
 // Filtre de recherche
-// import './components/filters-tag.js';
+import './components/filters-tag.js';
+import './components/filters-tag-2.js';
 import './components/filters-lucidite.js';
 import './components/filters-typologie.js';
 import './components/filters.js';

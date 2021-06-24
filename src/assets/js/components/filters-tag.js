@@ -1,41 +1,49 @@
-// BARRE DE RECHERCHE POUR LES TAGS
-// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_list
-// 1/ https://www.youtube.com/watch?v=G1eW3Oi6uoc
-const tagSearch = document.querySelector('.tagsearch');
-tagSearch.addEventListener( 'keyup' , filterTags )
+import { Isotope } from '../main.js';
 
-function filterTags(e) {
-    e.preventDefault();
-    // Get values of tags
-    let filterTagsValue = document.querySelector('.tagsearch').value.toUpperCase();
+// Search bar
+jQuery(document).ready(function($) {
+    // quick search regex
+    var qsRegex;
 
-    // Get names of tags
-    let articleTagNames = document.querySelectorAll( '.article-taxonomies--tag' );
-
-    articleTagNames.forEach( tagContainer => {
-        const tagItems = tagContainer.querySelectorAll('.button--squared p');
-
-        [...tagItems].filter( element => {
-            const filterTag = element.innerHTML.toUpperCase().includes( filterTagsValue );
-            const filterTagNoTag = element.innerHTML.toUpperCase().includes( filterTagsValue ) && element.innerHTML.toUpperCase().includes( false );
-            const taxonomiesContainer = element.closest('.article-reve--taxonomies');
-            const reveContainer = taxonomiesContainer.closest('.article-reve');
-
-            // Si container a le tag correspondant
-            if ( filterTag ) {
-                // console.log(`le mot trouvé est ${filterTagsValue} et son container est ${reveContainer.id}`);
-                element.style.color = '#f00';
-                // console.log( filterTag );
-            } else if ( filterTagNoTag ){
-                // console.log(`le container des mots est ${reveContainer.id}`);
-                // si le container n'a pas de mot trouvé, dégage
-                // 3 - si pas de mot trouvé, cacher le container
-                // console.log(`What is going on`);
-                console.log( reveContainer );
-            }
-            else {
-                console.log(`le mot n'a pas été trouvé et son container est ${reveContainer.id}`);
-            }
-        });
+    // init Isotope
+    var $containerTag = new Isotope( '.content--home', {
+        itemSelector: '.article-reve',
+        layoutMode: 'vertical',
+        // Animation part
+        stagger: 30,
+        transitionDuration: 0,
+        hiddenStyle: {
+            opacity: 0
+        },
+        visibleStyle: {
+            opacity: 1
+        },
+        filter: function() {
+            return qsRegex ? $(this).text().match( qsRegex ) : true;
+        }
     });
-}
+
+
+    // use value of search field to filter
+    var $quicksearch = $('.tagsearch').keyup( debounce( function() {
+        qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+        $containerTag.arrange();
+    }, 200 ) );
+
+    // debounce so filtering doesn't happen every millisecond
+    function debounce( fn, threshold ) {
+        var timeout;
+        threshold = threshold || 100;
+        return function debounced() {
+            clearTimeout( timeout );
+            var args = arguments;
+            var _this = this;
+            function delayed() {
+                fn.apply( _this, args );
+            }
+            timeout = setTimeout( delayed, threshold );
+        };
+    }
+});
+
+

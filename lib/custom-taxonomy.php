@@ -112,7 +112,8 @@ function create_customtag_tax() {
 		'hierarchical' => false,
 		'public' => true,
 		'publicly_queryable' => true,
-		'show_ui' => false,
+        // Show in admin
+		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_nav_menus' => true,
 		'show_tagcloud' => true,

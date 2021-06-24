@@ -1,4 +1,11 @@
+<div class="tagsearch--container">
+    <?php the_field('autocomplete_search_bar'); ?>
+    <input type="text" class="tagsearch" placeholder="RECHERCHER..." />
+    <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/loupe.svg">
+</div>
+
 <?php
+
     // https://designorbital.com/snippets/how-to-get-all-taxonomies-for-a-post-type/
     $terms = get_terms( 'customtag' );
 
@@ -7,7 +14,7 @@
     $terms = array_slice($terms, 0, 10);
     echo '<div class="tagitems--container">';
     foreach ( $terms as $term ) {
-        echo '<div class="tagitem button--squared"><h4>' . $term->name . '</h4></div>';
+        echo '<button class="tagitem button--squared no-button-style" data-filter=".' . $term->slug . '"><h4>' . $term->name . '</h4></button>';
     }
     echo '</div>';
 ?>

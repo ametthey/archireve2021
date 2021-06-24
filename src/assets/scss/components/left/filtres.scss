@@ -102,9 +102,13 @@
     width: calc( 100% - 30px );
 
     .tagitem {
-        cursor: not-allowed;
+        // cursor: not-allowed;
         margin: 0 8px 8px 0;
         width: auto;
+
+        button {
+            all: none !important;
+        }
 
         h4 {
             font-size: $h5;
