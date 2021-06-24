@@ -47,7 +47,7 @@
 
 // Register Taxonomy Typologie de rêve
 // Taxonomy Key: typologiedereve
-function create_typologiederve_tax() {
+function create_typologiedereve_tax() {
 
 	$labels = array(
 		'name'              => _x( 'Typologies de rêve', 'taxonomy general name', '_themename' ),
@@ -68,7 +68,8 @@ function create_typologiederve_tax() {
 		'hierarchical' => true,
 		'public' => true,
 		'publicly_queryable' => true,
-		'show_ui' => false,
+        // Cacher de l'admin
+		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_nav_menus' => true,
 		'show_tagcloud' => true,
@@ -78,15 +79,15 @@ function create_typologiederve_tax() {
         // User can't add taxonomies
         'capabilities' => array(
             // 'manage_terms' => '',
-            'edit_terms' => '',
+            // SO WE CAN NOT EDIT TERMS
+            // 'edit_terms' => '',
             // 'delete_terms' => '',
-            'assign_terms' => 'edit_posts'
         ),
 	);
 	register_taxonomy( 'typologiedereve', array('reve'), $args );
 
 }
-add_action( 'init', 'create_typologiederve_tax' );
+add_action( 'init', 'create_typologiedereve_tax' );
 
 // Register Taxonomy Tag
 // Taxonomy Key: customtag

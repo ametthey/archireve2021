@@ -2,70 +2,28 @@
     <div class="swiper-container">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
-            <!-- Slides -->
-            <!-- Cauchemar -->
-            <div class="swiper-slide">
-                <div class="typologie--item typologie--item-cauchemar">
-                    <img class="typologie--iitem-image" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/Cauchemar.svg">
-                    <p>Cauchemar</p>
-                </div>
-            </div>
+        <?php
+            $terms = get_terms( 'typologiedereve');
+            $o = 0;
 
-            <!-- REVE CONCOMITANT -->
+            foreach ( $terms as $term ) {
+        ?>
             <div class="swiper-slide">
-                <div class="typologie--item typologie--item-reve-concomitant">
-                    <img class="typologie--iitem-image" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/ReveConcomitant.svg">
-                    <p>Rêve concomitant</p>
+                <div class="typologie--item typologie--item-<?php echo $term->slug; ?>">
+                    <input id="typologie-radio-input-<?php echo $o; ?>" type="checkbox" value=".<?php echo $term->slug; ?>" class="typologie--label-input <?php echo $term->slug; ?>">
+                        <label for="typologie-radio-input-<?php echo $o; ?>" class="typologie--label typologie--label-radio typologie--element">
+                            <div class="typologie--visuals">
+                                <img class="typologie--item-image" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/<?php echo esc_html( $term->slug ); ?>.svg">
+                                <p><?php echo $term->name; ?></p>
+                            </div>
+                        </label>
+                    </input>
                 </div>
             </div>
-
-            <!-- REVE CREATIF -->
-            <div class="swiper-slide">
-                <div class="typologie--item typologie--item-reve-creatif">
-                    <img class="typologie--iitem-image" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/ReveCréatif.svg">
-                    <p>rêve créatif</p>
-                </div>
-            </div>
-
-            <!-- REVE D ACTUALITE -->
-            <div class="swiper-slide">
-                <div class="typologie--item typologie--item-reve-actualite">
-                    <img class="typologie--iitem-image" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/ReveActualite.svg">
-                    <p>reve d'actualité</p>
-                </div>
-            </div>
-
-            <!-- REVE LUCIDE -->
-            <div class="swiper-slide">
-                <div class="typologie--item typologie--item-reve-lucide">
-                    <img class="typologie--iitem-image" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/ReveLucide.svg">
-                    <p>rêve lucide</p>
-                </div>
-            </div>
-
-            <!-- REVE PREMONITOIRE -->
-            <div class="swiper-slide">
-                <div class="typologie--item typologie--item-reve-premonitoire">
-                    <img class="typologie--iitem-image" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/RevePremonitoire.svg">
-                    <p>rêve prémonitoire</p>
-                </div>
-            </div>
-
-            <!-- REVE RECURRENT -->
-            <div class="swiper-slide">
-                <div class="typologie--item typologie--item-reve-recurrent">
-                    <img class="typologie--iitem-image" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/ReveRecurrent.svg">
-                    <p>rêve récurrent</p>
-                </div>
-            </div>
-
-            <!-- REVE SEXUEL -->
-            <div class="swiper-slide">
-                <div class="typologie--item typologie--item-reve-sexuel">
-                    <img class="typologie--iitem-image" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/ReveSexuel.svg">
-                    <p>rêve sexuel</p>
-                </div>
-            </div>
+        <?php
+            $o++;
+            }
+        ?>
         </div>
 
         <!-- If we need navigation buttons -->

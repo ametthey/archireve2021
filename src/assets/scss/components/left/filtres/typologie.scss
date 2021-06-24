@@ -1,0 +1,171 @@
+// LISTES DES DIFFERENTES CATEGORIES DE TYPOLOGIE
+.typopologie--container {
+    height: 100px;
+    margin: 0 calc( 30px / 2 ) 30px;
+    position: relative;
+    width: calc( 100% - 30px );
+
+    div[class^="typologie--item-"] {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+    }
+    img {
+        height: 80px;
+        object-fit: contain;
+        object-position: center;
+        width: 80px;
+
+        @include respond(tablet) {
+            height: 40px;
+            width: 40px;
+        }
+    }
+    p {
+        font-size: $small;
+        text-transform: uppercase;
+        transition: all 0.325s ease-in-out;
+    }
+
+    // INPUT
+    .typologie--label-input {
+        // display: none;
+        background-color: red;
+        left: 50%;
+        top: 50%;
+        transform: translate( -50%, -50% );
+        position: absolute;
+
+
+        &.checkbox--is-selected {
+            & + .typologie--label {
+                p {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .typologie--item {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+
+        &.-is-selected {
+            p {
+                // a affiner avec Hugo
+                font-weight: bold;
+            }
+        }
+        // LABEL
+        .typologie--element {
+            background-color: $bg;
+            cursor: pointer;
+            font-size: $h5;
+            text-transform: uppercase;
+            font-family: $covik, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-transform: uppercase;
+            margin: 0 8px 8px 0;
+            width: auto;
+
+            position: relative !important;
+            top: auto !important;
+            left: 0 !important;
+
+
+            // Checkboxes
+            &.typologie--label {
+                position: relative;
+                display: inline-block;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                }
+            }
+
+            &.typologie--label-radio {
+                padding-left: 18px;
+
+                &:before {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    border: 1px solid #222;
+                    opacity: 0;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate( -50%, -50% );
+                    z-index: 3;
+                }
+
+                .typologie--visuals {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+
+            &:hover {
+                color: $bg;
+            }
+        }
+
+        &.typologie--item-cauchemar {
+            p {
+                color: $cauchemar;
+            }
+        }
+
+        &.typologie--item-reve-concomitant {
+            p {
+                color: $concomitant;
+            }
+        }
+
+        &.typologie--item-reve-creatif {
+            p {
+                color: $creatif;
+            }
+        }
+
+        &.typologie--item-reve-dactualite {
+            p {
+                color: $actualite;
+            }
+        }
+
+        &.typologie--item-reve-lucide {
+            p {
+                color: $lucide;
+            }
+        }
+
+        &.typologie--item-reve-premonitoire {
+            p {
+                color: $premonitoire;
+            }
+        }
+
+        &.typologie--item-reve-recurrent {
+            p {
+                color: $recurrent;
+            }
+        }
+
+        &.typologie--item-reve-sexuel {
+            p {
+                color: $sexuel;
+            }
+        }
+    }
+
+}

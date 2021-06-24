@@ -4,7 +4,7 @@ import { Isotope } from '../main.js';
 jQuery(document).ready(function($) {
     // Code that uses jQuery's $ can follow here.
     // init Isotope
-    var $container = new Isotope( '.content--home', {
+    var $containerTypologie = new Isotope( '.content--home', {
         itemSelector: '.article-reve',
         layoutMode: 'vertical',
         // Animation part
@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
     });
 
     // filter with selects and checkboxes
-    var $checkboxes = $('.lucidite--container input');
+    var $checkboxes = $('.swiper-wrapper .typologie--label-input');
 
     $checkboxes.change( function() {
         // map input values to an array
@@ -38,6 +38,8 @@ jQuery(document).ready(function($) {
         // combine inclusive filters
         var filterValue = inclusives.length ? inclusives.join(', ') : '*';
 
-        $container.arrange({ filter: filterValue })
+        $containerTypologie.arrange({ filter: filterValue })
+
+        console.log( filterValue );
     });
 });
