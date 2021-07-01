@@ -34,6 +34,21 @@
             width: 90vw;
         }
 
+        .collapse-container {
+            margin: auto;
+            width: 90vw;
+        }
+
+        .collapse-texte-follow {
+            margin: auto;
+            width: 90vw;
+
+            h1 {
+                padding-left: 0;
+                text-align: left !important;
+            }
+        }
+
         .propos--section {
             align-items: center;
             // background-color: $color;
@@ -46,6 +61,12 @@
 
             opacity: 1 !important;
             transition: opacity $rythm1 ease-in-out !important;
+
+            margin-top: $ratio;
+
+            &:nth-of-type(1) {
+                margin-top: 0;
+            }
 
             @include respond(tablet) {
                 height: 100%;
@@ -125,12 +146,32 @@
     // Collapse Container
     .collapse-texte {
         p {
-            margin-left: calc( 20vw - 1px );
+            margin-left: calc( 20% - 1px );
         }
     }
 
     // Hide title
     .huge {
         display: none;
+    }
+
+    .huge-header {
+        display: block;
+        margin: $ratio auto;
+        width: 90vw;
+    }
+
+    .collapse-container {
+        label {
+            width: inherit;
+
+            span {
+                width: 20%;
+            }
+
+            .collapse-title-texte {
+                width: 80%;
+            }
+        }
     }
 }

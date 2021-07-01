@@ -11,12 +11,15 @@
 
     &.-is-active {
         border-bottom-width: 2px !important;
-
     }
 
     // TEMP HEIGHT (TEXT)
     height: 130px;
     width: 100%;
+
+    @include respond(tablet) {
+        height: 100%;
+    }
 
 
     // TITLE
@@ -32,8 +35,8 @@
 
         @include respond(tablet) {
             font-size: $mh2;
-            margin: 24px 0 0 24px;
-            height: calc( 130px - 24px );
+            margin: 24px 0 24px 24px;
+            height: calc( 100% - 24px );
             width: calc( 100% - calc( 22px + 24px ) );
 
             align-items: flex-start;

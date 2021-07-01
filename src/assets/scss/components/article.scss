@@ -16,6 +16,18 @@
     &.reve-lucidite-selected {
         // Silence is golden
     }
+
+    &.-no-match-date {
+        display: none;
+    }
+
+    &.-match-date {
+        display: flex;
+    }
+
+    &.-leave-match-date {
+        display: flex;
+    }
 }
 
 

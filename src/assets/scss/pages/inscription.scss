@@ -1,0 +1,201 @@
+// HEADER
+#header-user {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX( -50% );
+    width: 100%; // en attente des bandeau latéraux
+    z-index: 2;
+
+    .header-user {
+        @include respond(tablet) {
+            position: absolute;
+            left: 50%;
+            transform: translateX( -50% );
+        }
+
+        svg {
+            transition: filter $rythm2 ease-in-out;
+            height: 19px;
+
+            @include respond(tablet) {
+                height: 10px;
+            }
+        }
+    }
+}
+
+// STYLE GLOBAL AVEC MARGES
+.container--inscription {
+    display: grid;
+    place-items: center;
+    width: 40%;
+
+    h1 {
+        margin-bottom: $ratio2;
+        position: relative;
+        z-index: 1;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: $ratio;
+        position: relative;
+        z-index: 1;
+    }
+
+    .form--inscription {
+        position: relative;
+        z-index: 1;
+
+        .username {
+            margin-bottom: $ratio;
+        }
+
+        .email {
+            margin-bottom: $ratio;
+        }
+
+        .password {
+            margin-bottom: $ratio;
+        }
+
+        label {
+            margin-bottom: calc( #{$ratio2} / 2 );
+        }
+    }
+
+}
+
+// STYLE SPECIFIQUE
+.form--inscription {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .username,
+    .email,
+    .password {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 80%;
+
+        label {
+            font-family: $covik;
+            font-size: $h3;
+            line-height: $h3;
+        }
+
+        input {
+            background: none;
+            border-radius: 0px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 2px solid $color;
+            box-shadow: none;
+            color: $color;
+            font-family: $covik;
+            font-size: $h3;
+            line-height: $h3;
+            outline: none;
+            padding: 0 !important;
+            margin: 0 !important;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .user-submit {
+        background-color: $bg;
+        border: 1px solid #303030;
+        border-radius: 100px 100px 100px 100px;
+        cursor: pointer;
+        font-family: $covik;
+        font-size: $h1;
+        line-height: $h1;
+        padding: 10px 30px;
+        transition: all 0.325s ease-in-out;
+        text-transform: uppercase;
+        width: auto;
+
+        @include respond(tablet) {
+            font-size: $mh1;
+            line-height: $mh1;
+        }
+    }
+
+}
+
+
+// MESSAGE D'ERREUR
+.registration--error-container {
+    align-items: center;
+    background-color: $bg;
+    border: 1px solid $color;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    justify-content: center;
+    padding: $ratio2;
+    position: absolute;
+    top: 50%;
+    transform: translate( -50%, -50% );
+    transition: all $rythm0 ease-in-out;
+
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+
+    &.is-active {
+        pointer-events: auto;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .button--round {
+        cursor: pointer;
+        margin: $ratio2;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    h2 {
+        font-family: $solid;
+        font-weight: bold;
+    }
+
+    h3 {
+        color: $lucide;
+        font-family: $covik;
+        font-weight: normal;
+    }
+}
+
+// MESSAGE DE REMERCIEMENT
+.wrapper--merci {
+    background-color: $bg;
+    display: grid;
+    height: 100vh;
+    left: 50%;
+    place-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translate( -50%, -50% );
+    width: 100vw;
+    z-index: 20;
+}
+.container--merci {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    width: 40%;
+}

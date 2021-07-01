@@ -2,6 +2,11 @@
     display: flex;
     width: 100%;
 
+    @include respond(tablet) {
+        height: calc( 100vh - 32px );
+        overflow: hidden;
+    }
+
     .content--home {
         height: 100vh !important;
         overflow: auto;
@@ -13,6 +18,8 @@
 
         @include respond(tablet) {
             width: calc( 100% - calc( 50px / 2 ) );
+            padding: 30px 0 30px 0;
+            height: calc( 100vh - 60px );
         }
 
         &:after {
@@ -43,7 +50,7 @@
             // top: 60px;
             transform: rotate(180deg);
             transform-origin: center;
-            transition: opacity $rythm2 $rythm2 ease-in-out;
+            transition: opacity $rythm2 $rythm3 ease-in-out;
             writing-mode: tb;
             width: 50px;
 
@@ -74,6 +81,8 @@
     width: calc( 51px - 1px );
 
     @include respond(tablet) {
+        height: calc( 100vh - 32px );
+        overflow: hidden;
         width: 25px; // temp value
     }
 

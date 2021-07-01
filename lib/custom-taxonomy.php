@@ -76,13 +76,17 @@ function create_typologiedereve_tax() {
 		'show_in_quick_edit' => false,
 		'show_admin_column' => true,
 		'show_in_rest' => true,
+        'rest_base' => 'typologie',
+        'rest_controler_class' => 'WP_REST_Post_Controller'
+
+
         // User can't add taxonomies
-        'capabilities' => array(
+        // 'capabilities' => array(
             // 'manage_terms' => '',
             // SO WE CAN NOT EDIT TERMS
             // 'edit_terms' => '',
             // 'delete_terms' => '',
-        ),
+        // ),
 	);
 	register_taxonomy( 'typologiedereve', array('reve'), $args );
 

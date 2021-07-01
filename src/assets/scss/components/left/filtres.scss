@@ -127,6 +127,10 @@
         display: flex;
         flex-direction: column;
 
+        &.is-inactive {
+            display: none;
+        }
+
         h4 {
             margin: 0 0 calc( #{$ratio} / 2 ) 0;
         }
@@ -142,6 +146,7 @@
                 display: grid;
                 font-family: $covik;
                 font-size: $smaller;
+                overflow: hidden;
                 padding: 3px;
                 place-items: center;
                 text-transform: uppercase;
@@ -163,6 +168,12 @@
     position: relative;
     transition: transform $rythm1 $rythm1 ease-in-out, opacity $rythm1 $rythm3 ease-in-out !important;
     width: calc( 100% - 30px );
+
+    @include respond(tablet) {
+        // margin: 0 auto 30px;
+        margin: 0 auto calc( 30px / 2 );
+        width: 80%;
+    }
 
     // CLICK
     &.-is-selected {

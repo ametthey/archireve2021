@@ -50,6 +50,8 @@ function create_reve_cpt() {
 		'hierarchical' => false,
 		'exclude_from_search' => false,
 		'show_in_rest' => true,
+        // 'rest_base'          => 'reve',
+        // 'rest_controller_class' => 'WP_REST_Terms_Controller',
 		'publicly_queryable' => true,
 		'capability_type' => 'post',
 	);

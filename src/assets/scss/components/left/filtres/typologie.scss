@@ -26,6 +26,7 @@
         font-size: $small;
         text-transform: uppercase;
         transition: all 0.325s ease-in-out;
+        text-align: center;
     }
 
     // INPUT
@@ -90,7 +91,6 @@
             }
 
             &.typologie--label-radio {
-                padding-left: 18px;
 
                 &:before {
                     width: 10px;
@@ -167,5 +167,4 @@
             }
         }
     }
-
 }

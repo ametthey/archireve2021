@@ -1,5 +1,5 @@
 <div class="typopologie--container">
-    <div class="swiper-container">
+    <div class="swiper-container swiper-container-typologie">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
         <?php
@@ -27,12 +27,13 @@
         </div>
 
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev">
+        <div class="swiper-button-prev swiper-typologie-button-prev">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/fleche-gauche.svg" alt="">
         </div>
-        <div class="swiper-button-next">
+        <div class="swiper-button-next swiper-typologie-button-next">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/fleche-droite.svg" alt="">
         </div>
 
     </div>
+
 </div>

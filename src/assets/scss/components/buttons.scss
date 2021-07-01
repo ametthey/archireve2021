@@ -27,6 +27,12 @@
             // border: 1px solid $bg;
             color: $bg;
         }
+
+        &.is-active {
+            background-color: $color;
+            // border: 1px solid $bg;
+            color: $bg;
+        }
     }
 
     &.round--white-border {

@@ -36,6 +36,7 @@
             opacity: 0;
         }
 
+
         h2 {
             font-family: $solid;
             margin: 5% 0;
@@ -69,6 +70,11 @@
         &.propos--section-2 {
         }
     }
+}
+
+
+.huge-header {
+    display: none;
 }
 
 

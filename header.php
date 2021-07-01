@@ -18,8 +18,8 @@
 
             <!-- Site branding -->
             <div class="site-branding">
-                <a href="<?php echo get_post_type_archive_link( 'reve' ); ?>">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/logo-one-line.svg" alt="">
+                <a href="<?php echo esc_url( get_permalink( 134 ) ); ?>" >
+                    <?php get_template_part( 'template-parts/content', 'logo' ); ?>
                 </a>
             </div>
 

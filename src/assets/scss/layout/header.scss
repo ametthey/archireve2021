@@ -18,6 +18,33 @@
     width: calc( 100% - calc( 70px * 2 ) ); // en attente des bandeau latéraux
     z-index: 2;
 
+    &.is-faded {
+        background-color: $color;
+
+        #mobile--connexion {
+            background-color: $color;
+            border: 1px solid $bg;
+
+            a {
+                color: $bg;
+            }
+        }
+
+        .site-branding {
+            svg {
+                fill: $bg;
+            }
+        }
+    }
+
+    &.right-is-open {
+        .site-branding {
+            svg {
+                fill: $bg;
+            }
+        }
+    }
+
     @include respond(tablet) {
         background-color: rgba(255, 255, 255, 1);
         border-bottom: 1px solid $color;
@@ -52,7 +79,7 @@
         transform: translateX( -50% );
     }
 
-    img {
+    svg {
         transition: filter $rythm2 ease-in-out;
         height: 19px;
 

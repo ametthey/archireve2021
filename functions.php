@@ -30,6 +30,7 @@ require_once( 'lib/users.php' );
 
 require_once( 'lib/login-custom.php' );
 
+require_once( 'lib/inscription.php' );
 
 // require_once( 'lib/configurationgeneral-hwk.php' );
 // require_once( 'lib/connexion-hwk.php' );

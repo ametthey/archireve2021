@@ -21,15 +21,25 @@ if ( logIn ) {
  * PAGE D'INSCRIPTION
  */
 const messageInscription = document.querySelector('.login-action-register .message.register');
-messageInscription.innerHTML = `
-    <h1>INSCRIPTION</h1>
-    <h2>ENTREZ VOTRE ADRESSE MAIL POUR CRÉER VOTRE COMPTE</h2>
-`;
+if ( messageInscription ) {
+    messageInscription.innerHTML = `
+        <h1>INSCRIPTION</h1>
+        <h2>ENTREZ VOTRE ADRESSE MAIL POUR CRÉER VOTRE COMPTE</h2>
+        `;
+}
 
 const mail = document.querySelector( '.login-action-register label[for="user_email"]' );
 if ( mail ) {
     console.log( mail );
     mail.innerText = 'Mail';
+}
+
+/*
+ * MESSAGE AFTER REGISTRATION
+ */
+
+const message = document.querySelector('.login-action-checkemail #message');
+if ( message ) {
 }
 
 

@@ -16,15 +16,13 @@ get_header(); ?>
     <?php
 
         /*
-         *
          * ATTENTION, LE CONTENU DE LA QUERY EST LA MEME
          * QUE DANS LE TEMPLATE-PARTS
-         *
-         *
          */
 
-
         $args = array(
+            'orderby' => 'date',
+            'order'   => 'DESC',
             'post_type'      => 'reve',
             'posts_per_page' => -1
         );
@@ -33,15 +31,12 @@ get_header(); ?>
 
     ?>
 
-    <!-- Typologie -->
     <?php $typologie_de_reve = get_field( 'typologie_de_reve' ); ?>
     <?php $term = get_term_by( 'id', $typologie_de_reve, 'typologiedereve' ); ?>
 
-    <!-- Lucidité -->
     <?php $niveau_de_lucidite = get_field( 'niveau_de_lucidite' ); ?>
     <?php $term_lucidite = get_term_by( 'id', $niveau_de_lucidite, 'niveaudelucidite' ); ?>
 
-    <!-- TAGS -->
     <?php $tagElement = get_field( 'tag' ); ?>
     <?php $get_terms_args = array(
         'taxonomy' => 'customtag',
@@ -63,13 +58,14 @@ get_header(); ?>
             ?>
         "
         id="reve--<?php echo $i; ?>"
+        data-filter-date=""
     >
 
 
         <div class="article-reve--header border-bottom-<?php echo esc_html( $term->slug ); ?>">
         <!-- AUTHOR ET DATE DU POST -->
         <div class="article-header--author-and-date background-<?php echo esc_html( $term->slug ); ?>">
-            <span><?php echo get_the_author_meta( 'nickname', false ); ?></span> - <span><?php the_time( 'd/m/Y' );?></span>
+            <span><?php echo get_the_author_meta( 'nickname', false ); ?></span> - <span class="article-header-date"><?php echo get_the_date( 'd/m/Y' );?></span>
         </div>
 
         <!-- TITRE DU REVE -->

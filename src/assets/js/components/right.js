@@ -5,24 +5,11 @@ const header = document.querySelector('#masthead');
 const rightContainerPropos = document.querySelector('.right--container-propos');
 if ( contentRight ){
     contentRight.addEventListener( 'mouseenter', () => {
-        contentRight.classList.add('is-open');
-        setTimeout( () => {
-            contentRight.classList.add('is-back');
+        contentRightEvents();
+    });
 
-            const proposSections = document.querySelectorAll('.propos--section');
-            proposSections.forEach( section => {
-                if ( contentRight.classList.contains('is-back') ) {
-                    console.log('ok on a la classe is-back');
-                    setTimeout( () => {
-                        section.classList.remove('is-hidden');
-                    }, 1000 );
-                }
-            });
-        }, 1000 );
-        contentHome.classList.add('right-is-open');
-        header.classList.add('right-is-open');
-        rightContainerPropos.classList.add('-is-visible');
-
+    contentHome.addEventListener( 'mouseenter', () => {
+        // contentRightEventsOff();
     });
 }
 
@@ -45,7 +32,6 @@ const callback = (entries, observer) => {
     entries.forEach( (entry) => {
         const { target } = entry;
 
-        // console.log( target.isIntersecting );
 
         if ( target.classList.contains('propos--section-1').isIntersecting ) {
             console.log('le propos section 1 est en pleine intersection');
@@ -56,10 +42,6 @@ const callback = (entries, observer) => {
 
             const targetParent = target.closest('.right--container-propos').classList.contains('-is-visible');
 
-            // if ( targetParent ) {
-            //     rightContainer.style.backgroundColor = gris;
-            // }
-            // else if ( target.classList.contains('propos--section-1') && target.classList.contains('is-visible') ) {
             if ( target.classList.contains('propos--section-1') && target.classList.contains('is-visible') ) {
                 rightContainer.style.backgroundColor = gris;
                 console.log('grey');
@@ -91,6 +73,50 @@ const callback = (entries, observer) => {
 const observer = new IntersectionObserver( callback, options );
 
 sections.forEach( (section, index) => {
-    observer.observe(section);
+    // observer.observe(section);
 });
 
+function contentRightEvents(){
+    contentRight.classList.add('is-open');
+    setTimeout( () => {
+        contentRight.classList.add('is-back');
+
+        const proposSections = document.querySelectorAll('.propos--section');
+        proposSections.forEach( section => {
+            if ( contentRight.classList.contains('is-back') ) {
+                setTimeout( () => {
+                    section.classList.remove('is-hidden');
+                }, 1000 );
+            }
+        });
+    }, 1000 );
+    contentHome.classList.add('right-is-open');
+    header.classList.add('right-is-open');
+    rightContainerPropos.classList.add('-is-visible');
+}
+function contentRightEventsOff(){
+    contentRight.classList.remove('is-open');
+    setTimeout( () => {
+        contentRight.classList.remove('is-back');
+
+        const proposSections = document.querySelectorAll('.propos--section');
+        proposSections.forEach( section => {
+            if ( contentRight.classList.contains('is-back') ) {
+                setTimeout( () => {
+                    section.classList.add('is-hidden');
+                }, 1000 );
+            }
+        });
+    }, 1000 );
+    contentHome.classList.remove('right-is-open');
+    header.classList.remove('right-is-open');
+    rightContainerPropos.classList.remove('-is-visible');
+}
+
+
+
+
+
+
+
+// FADING CRAZY

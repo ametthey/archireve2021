@@ -15,6 +15,8 @@
                 "class": "",
                 "id": "reve--title"
             },
+            "show_in_rest": 1,
+            "edit_in_rest": 1,
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -34,6 +36,8 @@
                 "class": "",
                 "id": "reve--date"
             },
+            "show_in_rest": 1,
+            "edit_in_rest": 1,
             "display_format": "d\/m\/Y",
             "return_format": "d\/m\/Y",
             "first_day": 1
@@ -51,6 +55,8 @@
                 "class": "",
                 "id": "reve--typologie"
             },
+            "show_in_rest": 1,
+            "edit_in_rest": 1,
             "taxonomy": "typologiedereve",
             "field_type": "radio",
             "allow_null": 0,
@@ -73,6 +79,8 @@
                 "class": "",
                 "id": "reve--lucidite"
             },
+            "show_in_rest": 1,
+            "edit_in_rest": 1,
             "taxonomy": "niveaudelucidite",
             "field_type": "radio",
             "allow_null": 0,
@@ -95,6 +103,8 @@
                 "class": "",
                 "id": "reve--tag"
             },
+            "show_in_rest": 1,
+            "edit_in_rest": 1,
             "taxonomy": "customtag",
             "field_type": "checkbox",
             "add_term": 1,
@@ -117,6 +127,8 @@
                 "class": "",
                 "id": "reve--contenu"
             },
+            "show_in_rest": 1,
+            "edit_in_rest": 1,
             "layouts": {
                 "layout_602ba77aa6f79": {
                     "key": "layout_602ba77aa6f79",
@@ -247,5 +259,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1624498537
+    "modified": 1624976231
 }
