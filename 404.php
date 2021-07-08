@@ -1,11 +1,13 @@
 <?php get_header(); ?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area content-error">
     <main id="main" class="site-main" role="main">
 
-        <?php get_template_part( 'template-parts/content' , 'none' ); ?>
+        <p>Erreur, cette page n'existe pas.</p>
 
-        <p>Template: 404.php</p>
+        <p>
+            <!-- <a href="<?php echo esc_url( get_permalink( 134 ) ); ?>" >Retourner sur le site.</a> -->
+        </p>
 
     </main>
 </div>

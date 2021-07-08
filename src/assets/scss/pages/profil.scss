@@ -27,6 +27,29 @@
     flex-direction: column;
     width: max-content;
 
+    .profil--header-links {
+        align-items: center;
+        display: flex;
+
+        a {
+            &:nth-of-type(2) {
+                margin: 0 $ratio2;
+            }
+        }
+
+        @include respond(tablet) {
+            flex-direction: column;
+
+            a {
+                margin: 0 0 $ratio2 0;
+
+                &:nth-of-type(2) {
+                    margin: 0 0 $ratio2 0;
+                }
+            }
+        }
+    }
+
     & > * {
         text-transform: uppercase;
     }
@@ -58,14 +81,27 @@
     }
 }
 
+// Container des différents rêves
 .profil--reve {
     width: 100%;
+
+    & > * {
+        margin: 0 0 $ratio 0;
+
+        &:nth-of-type(1) {
+            margin-top: calc( #{$ratio} * 2 );
+        }
+    }
 
     .profil--reve-new {
         border: 1px solid $color;
         display: grid;
         height: 200px;
         place-items: center;
+
+        &.profil--reve-new-inactive {
+            display: none;
+        }
 
         a {
             color: $color;

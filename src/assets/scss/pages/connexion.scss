@@ -82,6 +82,7 @@
         height: 28px;
         outline: none;
         padding: 10px 27px 10px 0;
+        text-align: center;
         width: 100%;
 
         &::-webkit-placeholder { /* Chrome/Opera/Safari */
@@ -200,3 +201,7 @@
     }
 }
 
+// Message d'erreur
+.login-msg {
+    margin: $ratio;
+}

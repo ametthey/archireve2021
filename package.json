@@ -10,7 +10,7 @@
     "isotope-layout": "^3.0.6",
     "splitting": "^1.0.6",
     "swiper": "^6.3.5",
-    "wpapi": "^1.2.2"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

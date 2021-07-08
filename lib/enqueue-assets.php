@@ -20,7 +20,7 @@ function _themename_assets() {
 
 
     // User
-    if ( is_page_template( 'page-inscription-alternative.php' ) ) {
+    if ( is_page_template( 'page-inscription-alternative.php' ) && is_page_template( 'page-profil.php' ) && is_page_template( 'page-back-office.php' ) ) {
         wp_enqueue_style( '_themename-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', [], '1.0.0' ,  'all' );
         wp_enqueue_script( '_themename-about', get_stylesheet_directory_uri() . '/dist/assets/js/user.js', [], '1.0.0' , true );
     } else {

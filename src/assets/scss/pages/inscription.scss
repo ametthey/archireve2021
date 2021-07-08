@@ -115,8 +115,9 @@
 
     .user-submit {
         background-color: $bg;
-        border: 1px solid #303030;
+        border: 1px solid $color;
         border-radius: 100px 100px 100px 100px;
+        color: $color;
         cursor: pointer;
         font-family: $covik;
         font-size: $h1;
@@ -154,6 +155,9 @@
     opacity: 0;
     visibility: hidden;
 
+    // TEMP
+    z-index: 2;
+
     &.is-active {
         pointer-events: auto;
         opacity: 1;
@@ -184,7 +188,7 @@
 .wrapper--merci {
     background-color: $bg;
     display: grid;
-    height: 100vh;
+    height: calc( 100vh - 100px );
     left: 50%;
     place-items: center;
     position: absolute;

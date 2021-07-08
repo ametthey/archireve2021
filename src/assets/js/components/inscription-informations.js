@@ -1,24 +1,31 @@
 // RANGE
 const allRanges = document.querySelectorAll('.container--range');
 allRanges.forEach(wrap => {
-  const range = wrap.querySelector(".range");
-  const bubble = wrap.querySelector(".bubble");
+    const range = wrap.querySelector(".range");
+    const bubble = wrap.querySelector(".bubble");
+    const rangeAge = wrap.querySelector('#age');
 
-  range.addEventListener("input", () => {
+    console.log( rangeAge );
+
+    range.addEventListener("input", () => {
+        setBubble(range, bubble);
+    });
     setBubble(range, bubble);
-  });
-  setBubble(range, bubble);
+
 });
 
-function setBubble(range, bubble) {
-  const val = range.value;
-  const min = range.min ? range.min : 0;
-  const max = range.max ? range.max : 100;
-  const newVal = Number(((val - min) * 100) / (max - min));
-  bubble.innerHTML = val;
+let finalValue;
 
-  // Sorta magic numbers based on size of the native UI thumb
-  bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+function setBubble(range, bubble) {
+    const val = range.value;
+    const min = range.min ? range.min : 0;
+    const max = range.max ? range.max : 100;
+    const newVal = Number(((val - min) * 100) / (max - min));
+    finalValue = bubble.innerHTML = val;
+    console.log( finalValue );
+
+    // Sorta magic numbers based on size of the native UI thumb
+    bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
 }
 
 // LANGUE - ADD ITEM
@@ -89,3 +96,20 @@ tooltipIcons.forEach( tooltip => {
 
 });
 
+
+
+/*
+ * get range value
+ */
+const containerRanges = document.querySelectorAll( '.container--range' );
+containerRanges.forEach( range => {
+    const rangeInput = range.querySelector( '.range' );
+    const rangeInputValue = range.querySelector( '.range' ).value;
+
+
+    rangeInput.addEventListener( 'input', (e) => {
+        // console.log(`les valeurs pour les range sonts ${rangeInputValue}`);
+    });
+
+
+});

@@ -1,3 +1,10 @@
+
+.button--squared,
+.button--rounded,
+.button--round {
+    cursor: pointer;
+}
+
 // BOUTON ROND
 .button--round {
     border-radius: 999px;
@@ -54,6 +61,7 @@
 // BOUTON ARRONDI AVEC MOT
 .button--rounded {
     border: 1px solid $color;
+    color: $color;
     padding: 1.5px 10px;
     border-radius: 100px 100px 100px 100px;
     transition: all 0.325s ease-in-out;
@@ -61,6 +69,7 @@
     &:hover {
         background-color: $color;
         border: 1px solid $color;
+        color: $bg;
 
         & > * {
             color: $bg;

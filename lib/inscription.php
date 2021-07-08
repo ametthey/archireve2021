@@ -2,6 +2,7 @@
 
 /*
  * https://code.tutsplus.com/fr/tutorials/creating-a-custom-wordpress-registration-form-plugin--cms-20968
+ * https://gist.github.com/deep-amristar/3cb0436e57ef01e1ab73745d63634229
  *
  */
 
@@ -34,6 +35,7 @@ function _themename_custom_registration_function() {
         $password,
         $email,
 		);
+
 }
 
 function registration_form( $username, $password, $email) {
@@ -42,7 +44,7 @@ function registration_form( $username, $password, $email) {
     <form action="' . $_SERVER['REQUEST_URI'] . '" method="post" class="form--inscription">
 
         <div class="username">
-            <label for="pseudo">Pseudo</label>
+            <label for="username">Pseudo</label>
             <input type="text" name="username" value="' . (isset($_POST['username']) ? $username : null) . '">
         </div>
 
@@ -110,24 +112,24 @@ function registration_validation( $username, $password, $email )  {
                         </div>
                 ';
             }
-
-            echo var_dump( $reg_errors );
-
         echo '</div>';
     }
 }
 
 function complete_registration() {
-    // global $reg_errors, $username, $password, $email, $website, $first_name, $last_name, $nickname, $bio;
     global $reg_errors, $username, $password, $email;
+
     if ( 1 > count( $reg_errors->get_error_messages() ) ) {
+
+        // Informations sur le user
         $userdata = array(
-        'user_login'	=> 	$username,
-        'user_email' 	=> 	$email,
-        'user_pass' 	=> 	$password,
+            'user_login'	=> 	$username,
+            'user_email' 	=> 	$email,
+            'user_pass' 	=> 	$password,
 		);
         $user = wp_insert_user( $userdata );
-        // echo 'Registration complete. Goto <a href="' . get_site_url() . '/wp-login.php">login page</a>.';
+
+        // Message indiquant que le user a bien été créé
         echo '
             <div class="wrapper--merci">
                 <div class="container--merci">
@@ -137,7 +139,15 @@ function complete_registration() {
                 </div>
             </div>
         ';
+
+        // Message to the console to check if the registration is successful
+        echo '<script>console.log("The user ' . $username . ' has won a new registration. And email is ' . $email . '");</script>';
+
+        // redirect to page inscription-informations
+        // $inscription_complementaire = home_url( '/inscription-informations/' );
+        // wp_redirect($inscription_complementaire);
 	}
+
 }
 
 // Register a new shortcode: [_themename_custom_registration]

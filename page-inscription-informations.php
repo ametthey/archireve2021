@@ -1,4 +1,4 @@
-<?php // acf_form_head(); ?>
+<?php acf_form_head(); ?>
 <?php
     /*
      * Template Name: inscription information
@@ -17,28 +17,28 @@ votre profil en quelques étapes</h2>
     <?php get_template_part( 'template-parts/inscription-informations/inscription', 'age' ); ?>
 
     <!-- GENRE -->
-    <?php get_template_part( 'template-parts/inscription-informations/inscription', 'genre' ); ?>
+    <?php // get_template_part( 'template-parts/inscription-informations/inscription', 'genre' ); ?>
 
     <!-- LANGUES MATERNELLES -->
-    <?php get_template_part( 'template-parts/inscription-informations/inscription', 'langue' ); ?>
+    <?php // get_template_part( 'template-parts/inscription-informations/inscription', 'langue' ); ?>
 
     <!-- PAYS D'ENFANCE -->
-    <?php get_template_part( 'template-parts/inscription-informations/inscription', 'pays' ); ?>
+    <?php // get_template_part( 'template-parts/inscription-informations/inscription', 'pays' ); ?>
 
     <!-- MILIEUX -->
-    <?php get_template_part( 'template-parts/inscription-informations/inscription', 'milieux' ); ?>
+    <?php // get_template_part( 'template-parts/inscription-informations/inscription', 'milieux' ); ?>
 
     <!-- RAPPORT AU TRAVAIL -->
-    <?php get_template_part( 'template-parts/inscription-informations/inscription', 'travail' ); ?>
+    <?php // get_template_part( 'template-parts/inscription-informations/inscription', 'travail' ); ?>
 
     <!-- RELATION À UN PAYSAGE -->
-    <?php get_template_part( 'template-parts/inscription-informations/inscription', 'paysage' ); ?>
+    <?php // get_template_part( 'template-parts/inscription-informations/inscription', 'paysage' ); ?>
 
     <!-- FOI SPIRITUELLE -->
-    <?php get_template_part( 'template-parts/inscription-informations/inscription', 'foi' ); ?>
+    <?php // get_template_part( 'template-parts/inscription-informations/inscription', 'foi' ); ?>
 
     <!-- RELATION AU SOMMEIL -->
-    <?php get_template_part( 'template-parts/inscription-informations/inscription', 'sommeil' ); ?>
+    <?php // get_template_part( 'template-parts/inscription-informations/inscription', 'sommeil' ); ?>
 
     <!-- RELATION AUX RÊVES -->
     <?php get_template_part( 'template-parts/inscription-informations/inscription', 'reve' ); ?>

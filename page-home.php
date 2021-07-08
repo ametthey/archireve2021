@@ -14,12 +14,6 @@ get_header(); ?>
     </div>
 
     <?php
-
-        /*
-         * ATTENTION, LE CONTENU DE LA QUERY EST LA MEME
-         * QUE DANS LE TEMPLATE-PARTS
-         */
-
         $args = array(
             'orderby' => 'date',
             'order'   => 'DESC',
@@ -29,141 +23,73 @@ get_header(); ?>
         $home_projects = new WP_Query( $args );
         if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;
 
+        // TYPOLOGIE
+        $typologie_de_reve = get_field( 'typologie_de_reve' );
+        $term_typologie = get_term_by( 'id', $typologie_de_reve, 'typologiedereve' );
+        set_query_var( 'term_typologie', $term_typologie );
+
+        // LUCIDITE
+        $niveau_de_lucidite = get_field( 'niveau_de_lucidite' );
+        $term_lucidite = get_term_by( 'id', $niveau_de_lucidite, 'niveaudelucidite' );
+        set_query_var( 'term_lucidite', $term_lucidite );
+
+        // TAG
+        $tagElement = get_field( 'tag' );
+        $get_terms_args = array(
+            'taxonomy' => 'customtag',
+            'hide_empty' => 0,
+            'include' => $tag,
+        );
+        $tags = get_the_terms( $post->ID, 'customtag' );
     ?>
 
-    <?php $typologie_de_reve = get_field( 'typologie_de_reve' ); ?>
-    <?php $term = get_term_by( 'id', $typologie_de_reve, 'typologiedereve' ); ?>
+        <?php if ( $term_lucidite  && $term_typologie  ) : ?>
 
-    <?php $niveau_de_lucidite = get_field( 'niveau_de_lucidite' ); ?>
-    <?php $term_lucidite = get_term_by( 'id', $niveau_de_lucidite, 'niveaudelucidite' ); ?>
+            <article
+                class="
+                article-reve article-<?php echo esc_html( $term_typologie->slug); ;?> border-<?php echo esc_html( $term_typologie->slug ); ?> <?php echo esc_html( $term_lucidite->slug ); ?> <?php echo esc_html( $term_typologie->slug ); ?>
+                    <?php
+                        if ( !empty( $tags ) ) {
+                            foreach( $tags as $tag ) {
+                                echo $tag->name . ' ';
+                            }
+                        }
+                    ?>
+                "
+                id="reve--<?php echo $i; ?>"
+                data-filter-date=""
+            >
 
-    <?php $tagElement = get_field( 'tag' ); ?>
-    <?php $get_terms_args = array(
-        'taxonomy' => 'customtag',
-        'hide_empty' => 0,
-        'include' => $tag,
-    ); ?>
-    <?php $tags = get_the_terms( $post->ID, 'customtag' ); ?>
+                <!-- HEADER DE L'ARTICLE -->
+                <div class="article-reve--header border-bottom-<?php echo esc_html( $term_typologie->slug ); ?>">
 
-    <?php if ( $term_lucidite  && $term  ) : ?>
-    <article
-        class="
-        article-reve article-<?php echo esc_html( $term->slug); ;?> border-<?php echo esc_html( $term->slug ); ?> <?php echo esc_html( $term_lucidite->slug ); ?> <?php echo esc_html( $term->slug ); ?>
-            <?php
-                if ( !empty( $tags ) ) {
-                    foreach( $tags as $tag ) {
-                        echo $tag->name . ' ';
-                    }
-                }
-            ?>
-        "
-        id="reve--<?php echo $i; ?>"
-        data-filter-date=""
-    >
+                    <?php get_template_part( 'template-parts/reve/header' ); ?>
 
+                </div>
 
-        <div class="article-reve--header border-bottom-<?php echo esc_html( $term->slug ); ?>">
-        <!-- AUTHOR ET DATE DU POST -->
-        <div class="article-header--author-and-date background-<?php echo esc_html( $term->slug ); ?>">
-            <span><?php echo get_the_author_meta( 'nickname', false ); ?></span> - <span class="article-header-date"><?php echo get_the_date( 'd/m/Y' );?></span>
-        </div>
+                <div class="article-reve--text border-bottom-<?php echo esc_html( $term_typologie->slug ); ?>">
+                    <!-- CONTENU -->
+                    <?php get_template_part( 'template-parts/reve/contenu' ); ?>
 
-        <!-- TITRE DU REVE -->
-        <h1><?php the_field( 'titre_du_reve' ); ?></h1>
+                </div>
 
-        <!-- LIEN DE TELECHARGEMENT -->
-        <div class="article-reve--download border-left-<?php echo esc_html( $term->slug ); ?>">
-        <div class="button--round round--white round--small button--select-to-download"></div>
+                <div class="article-reve--taxonomies border-top-<?php echo esc_html( $term_typologie->slug ); ?>">
 
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/contenu_texte.svg" alt="">
-        </div>
-        </div>
+                    <!-- TYPOLOGIE DE REVE -->
+                    <?php get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'typologie' ); ?>
 
-        <div class="article-reve--text border-bottom-<?php echo esc_html( $term->slug ); ?>">
-        <!-- CONTENU -->
-        <?php get_template_part( 'template-parts/reve/contenu' ); ?>
-    </div>
+                    <!-- CUSTOM TAG -->
+                    <?php get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'tag' ); ?>
 
-        <div class="article-reve--taxonomies border-top-<?php echo esc_html( $term->slug ); ?>">
+                    <!-- NIVEAU DE LUCIDITE -->
+                    <?php get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'lucidite' ); ?>
 
-        <!-- TYPOLOGIE DE REVE -->
-        <?php if ( $term ) : ?>
-        <?php if ( $term->name === 'Cauchemar' ) : ?>
-        <!-- CAUCHEMAR -->
-        <div class="article-taxonomies--typologie border-right-<?php echo esc_html( $term->slug ); ?>">
-        <img class="article-taxonomies--typologie-icone" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/cauchemar.svg">
-        </div>
-        <?php endif; ?>
-
-    <?php if ( $term->name === 'Rêve Concomitant' ) : ?>
-        <!-- REVE CONCOMITANT -->
-        <div class="article-taxonomies--typologie border-right-<?php echo esc_html( $term->slug ); ?>">
-        <img class="article-taxonomies--typologie-icone" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/reve-concomitant.svg">
-        </div>
-        <?php endif; ?>
-
-    <?php if ( $term->name === 'Rêve Créatif' ) : ?>
-        <!-- REVE CREATIF -->
-        <div class="article-taxonomies--typologie border-right-<?php echo esc_html( $term->slug ); ?>">
-        <img class="article-taxonomies--typologie-icone" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/reve-creatif.svg">
-        </div>
-        <?php endif; ?>
-
-    <?php if ( $term->name === 'Rêve d\'actualité' ) : ?>
-        <!-- REVE D ACTUALITE -->
-        <div class="article-taxonomies--typologie border-right-<?php echo esc_html( $term->slug ); ?>">
-        <img class="article-taxonomies--typologie-icone" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/reve-dactualite.svg">
-        </div>
-        <?php endif; ?>
-
-    <?php if ( $term->name === 'Rêve lucide') : ?>
-        <!-- REVE LUCIDE -->
-        <div class="article-taxonomies--typologie border-right-<?php echo esc_html( $term->slug ); ?>">
-        <img class="article-taxonomies--typologie-icone" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/reve-lucide.svg">
-        </div>
-        <?php endif; ?>
-
-    <?php if ( $term->name === 'Rêve prémonitoire') : ?>
-        <!-- REVE PREMONITOIRE -->
-        <div class="article-taxonomies--typologie border-right-<?php echo esc_html( $term->slug ); ?>">
-        <img class="article-taxonomies--typologie-icone" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/reve-premonitoire.svg">
-        </div>
-        <?php endif; ?>
-
-    <?php if ( $term->name === 'Rêve Récurrent') : ?>
-        <!-- REVE RECURRENT -->
-        <div class="article-taxonomies--typologie border-right-<?php echo esc_html( $term->slug ); ?>">
-        <img class="article-taxonomies--typologie-icone" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/reve-recurrent.svg">
-        </div>
-        <?php endif; ?>
-
-    <?php if ( $term->name === 'Rêve sexuel') : ?>
-        <!-- REVE SEXUEL -->
-        <div class="article-taxonomies--typologie border-right-<?php echo esc_html( $term->slug ); ?>">
-        <img class="article-taxonomies--typologie-icone" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/reve-sexuel.svg">
-        </div>
-        <?php endif; ?>
-
-    <?php endif; ?>
-    <?php // get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'typologie' ); ?>
-
-        <!-- CUSTOM TAG -->
-        <?php get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'tag' ); ?>
-
-    <!-- NIVEAU DE LUCIDITE -->
-        <?php // get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'lucidite' ); ?>
-
-    <?php if ( $term_lucidite ) : ?>
-        <div class="article-taxonomies--lucidite border-left-<?php echo esc_html( $term->slug ); ?>">
-            <div class="<?php echo esc_html( $term_lucidite->slug );?> button--rounded rounded--lucidite" id="rounded--<?php echo esc_html( $term->slug ); ?>"><p><?php echo esc_html( $term_lucidite->name ); ?></p></div>
-        </div>
-        <?php endif; ?>
-
-    </div>
+                </div>
 
 
 
-        </article>
+            </article>
+
         <?php endif; ?>
     <?php endwhile; endif; wp_reset_postdata(); ?> <!-- WP_Query for CPT project -->
 </div>

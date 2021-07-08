@@ -5,6 +5,11 @@
         <br>
         <br>
 faites don de vos rêves sur archirêve.fr, brûlez l’encfns sur l’autel de votre écran et participez à l’avancement de la recherche onirique, au delà de ses limites rituelles.</h2>
-    <div class="button--rounded rounded--bigger rounded--white-border"><p><a href="#">INSCRIPTION</a></p></div>
+    <div class="button--rounded rounded--bigger rounded--white-border"><p>
+                <a href="<?php echo esc_url( get_permalink( 190 ) ); ?>" >
+                    INSCRIPTION
+                </a>
+        </p>
+    </div>
 </div>
 

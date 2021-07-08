@@ -27,15 +27,12 @@ require_once( 'lib/users.php' );
 // Login and Register
 // require_once( 'lib/login-redirection.php' );
 // require_once( 'lib/login-register.php' );
+// require_once( 'lib/login-custom.php' );
 
-require_once( 'lib/login-custom.php' );
-
+// require_once( 'lib/connexion.php' );
 require_once( 'lib/inscription.php' );
-
-// require_once( 'lib/configurationgeneral-hwk.php' );
-// require_once( 'lib/connexion-hwk.php' );
-// require_once( 'lib/inscription-hwk.php' );
-// require_once( 'lib/redirection-hwk.php' );
+require_once( 'lib/inscription-test.php' );
+require_once( 'lib/inscription-email.php' );
 
 // https://gist.github.com/Rarst/1739714
 require_once( 'lib/r-debug.php' );

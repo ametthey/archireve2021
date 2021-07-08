@@ -19,3 +19,7 @@ img {
 	cursor: pointer;
 	outline: inherit;
 }
+
+.-is-hidden {
+    display: none !important;
+}

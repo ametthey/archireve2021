@@ -8,7 +8,8 @@ let dateReve, dayReve, monthReve, formattedMonthReve, yearReve, monthYearReve, m
 const home = document.querySelector('.content--home');
 const reves = document.querySelectorAll('.article-reve');
 
-if ( home ) {
+if ( home && calendrierYears) {
+// if ( home ) {
 
     // Empty Array to store Year from Reves
     reveYears = [];

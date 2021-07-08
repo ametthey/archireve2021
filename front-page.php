@@ -5,6 +5,6 @@
     <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/logo-two-lines.svg" alt="">
 </a>
 
-<h1 class="front-page-title">Travaux en cours</h1>
+<!-- <h1 class="front&#45;page&#45;title">Travaux en cours</h1> -->
 
 <?php get_footer( 'front-page' ); ?>

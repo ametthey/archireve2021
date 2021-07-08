@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <link rel="profile" href="https://gmpg.org/xfn/11" />
+        <link rel="stylesheet" href="https://use.typekit.net/gta0mfy.css">
 
         <?php wp_head(); ?>
     </head>
@@ -24,7 +25,7 @@
             </div>
 
             <!-- Connexion pour mobile -->
-            <div id="mobile--connexion" class="button--rounded"><a href="<?php echo esc_url( get_page_link( 85 ) ); ?>"><p>CONNEXION</p></a></div>
+            <div id="mobile--connexion" class="button--rounded"><a href="<?php echo esc_url( get_page_link( 194 ) ); ?>"><p>CONNEXION</p></a></div>
 
         </header>
 

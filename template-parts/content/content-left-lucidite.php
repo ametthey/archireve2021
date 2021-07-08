@@ -10,7 +10,7 @@
             $o++;
         }
         // TOUT
-        // echo '<input id="radio-input-' . $o . '"type="checkbox" value="*" class="lucidite--label-input lucidite--item-all"><label for="radio-input-' . $o . '" class="lucidite--label lucidite--label-radio lucidite--item button--rounded">Tout</label>';
+        echo '<input id="radio-input-' . $o . '"type="checkbox" value="*" class="lucidite--label-input"><label for="radio-input-' . $o . '" class="lucidite--label lucidite--label-radio lucidite--item button--rounded lucidite--item-all">Tout</label>';
 
     echo '</div>';
 ?>

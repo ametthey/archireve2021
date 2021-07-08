@@ -11,9 +11,9 @@ if( contentLeft ){
 
     });
 
-    // contentLeft.addEventListener( 'mouseleave', () => {
-    //     contentLeft.classList.remove('is-open');
-    // });
+    contentLeft.addEventListener( 'mouseleave', () => {
+        // contentLeft.classList.remove('is-open');
+    });
 
     if ( contentLeft.classList.contains('is-open') ) {
         contentHome.addEventListener( 'click', () => {

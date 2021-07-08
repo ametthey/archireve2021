@@ -1,6 +1,6 @@
 {
     "key": "group_6026ca6519373",
-    "title": "Rêves",
+    "title": "Rêves - Essential",
     "fields": [
         {
             "key": "field_602ba6887d298",
@@ -61,7 +61,7 @@
             "field_type": "radio",
             "allow_null": 0,
             "add_term": 0,
-            "save_terms": 1,
+            "save_terms": 0,
             "load_terms": 1,
             "return_format": "id",
             "multiple": 0
@@ -243,9 +243,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "options_page",
                 "operator": "==",
-                "value": "reve"
+                "value": ""
             }
         ]
     ],
@@ -259,5 +259,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1624976231
+    "modified": 1625581842
 }
