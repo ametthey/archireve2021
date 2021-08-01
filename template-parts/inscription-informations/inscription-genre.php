@@ -1,7 +1,6 @@
 <div class="questionnaire-categorie-tooltip questionnaire-categorie-tooltip-genre">
     <h2>
         GENRE
-
         <!-- bulle d'information -->
         <img class="tooltip-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/info-bulle.svg">
     </h2>

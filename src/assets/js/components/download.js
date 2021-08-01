@@ -1,103 +1,111 @@
-import XLSX from 'xlsx';
 
-const reves = document.querySelectorAll('.article-reve');
-let revesOBJECT;
-reves.forEach( reve => {
-    // Create json
-    const author = reve.querySelector('.article-header-author').innerHTML;
-    const date = reve.querySelector('.article-header-date').innerHTML;
-    const typologie = reve.querySelector('.article-taxonomies--typologie').classList[1].replace('border-right-','');
-    const tags = reve.querySelectorAll('.article-taxonomies--tag .button--squared');
-    let tagList = [];
-    tags.forEach( tag => {
-        const tagItem = tag.querySelector('p').innerHTML;
-        tagList.push(tagItem);
-    });
-    const lucidite = reve.querySelector('.article-taxonomies--lucidite p').innerHTML;
-    const titre = reve.querySelector('.article-reve--header h1').innerHTML;
-    const texte = reve.querySelector('.article-reve--text p').innerHTML;
+/*
+ * Export table to csv
+ * https://jsfiddle.net/gengns/j1jm2tjx/
+ */
+function download_csv(csv, filename) {
+    var csvFile;
+    var downloadLink;
 
-    revesOBJECT = {
-        "reve": {
-            "auteur": {},
-            "tag": {},
-            "niveauxdelucidite": {},
-            "titre": {},
-            "contenu": {}
-        }
+    // CSV FILE
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // We have to create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Make sure that the link is not displayed
+    downloadLink.style.display = "none";
+
+    // Add the link to your DOM
+    document.body.appendChild(downloadLink);
+
+    // Lanzamos
+    downloadLink.click();
+}
+
+function export_table_to_csv(html, filename) {
+    var csv = [];
+    var rows = document.querySelectorAll("table tr");
+
+    for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td, th");
+
+        for (var j = 0; j < cols.length; j++)
+            row.push(cols[j].innerText);
+
+        csv.push(row.join(","));
     }
 
-    console.log( author );
-    console.log( date );
-    console.log( typologie );
-    console.table( tagList );
-    console.log( lucidite );
-    console.log( titre );
-    console.log( texte );
+    // Download CSV
+    download_csv(csv.join("\n"), filename);
+}
+const tables = document.querySelectorAll('.table--print');
+let tableMatchingID;
+const reveSelected = [];
 
-    revesOBJECT.reve.auteur = author;
-    revesOBJECT.reve.date = date;
-    revesOBJECT.reve.typologie = typologie;
-    revesOBJECT.reve.tag = tagList;
-    revesOBJECT.reve.lucidite = lucidite;
-    revesOBJECT.reve.titre = titre;
-    revesOBJECT.reve.texte = texte;
+if ( tables ) {
+    tables.forEach( table => {
+        const reveTitle = table.querySelector('.table--print-title').textContent;
 
+        // Télécharger les rêves
+        const buttonDownload = document.querySelector('.button--download');
+        buttonDownload.addEventListener("click", function () {
+            if ( buttonSelectAll.classList.contains('-is-selected') ) {
+                var html = table.outerHTML;
+                export_table_to_csv(html, `${reveTitle}.csv`);
+            } else if ( reallyButton ) {
 
-    const year = date.substring(6,9);
-    const month = date.substring(4,5);
-    const day = date.substring(0,1);
+                // Modifying the table name
+                const tableFullName = table.closest('.reve--to-print').getAttribute('id');
+                tableMatchingID = tableFullName.replace( 'print', '');
 
+                const reveSelectedGood = JSON.stringify(reveSelected);
 
+                // Filter the selected reves
+                const reveFiltering = reveSelected.filter( reveMatched );
 
-    // Selection
-    const buttonForDownload = reve.querySelector('.button--select-to-download');
-    const selection = [];
+                function reveMatched(reve) {
+                    if ( reve === tableMatchingID ) {
+                        const html = table.outerHTML;
+                        export_table_to_csv(html, `${reveTitle}.csv`);
+                    } else {
+                        // Silence is golden
+                    }
+                }
 
-    buttonForDownload.addEventListener( 'click', (e) => {
-        e.preventDefault();
-        buttonForDownload.classList.toggle('is-active');
-
-        if ( buttonForDownload.classList.contains('is-active') ) {
-            const reveSelected = reve;
-        }
+            } else {
+                // Silence is golden
+            }
+        });
     });
+}
 
+// Selection de tout les rêves
+const buttonSelectAll = document.querySelector('.button--select');
+if ( buttonSelectAll ){
+    buttonSelectAll.addEventListener('click', function() {
+        buttonSelectAll.classList.toggle('-is-selected')
+    });
+}
 
-});
+// Selection custom des rêves
+const buttonSelecteds = document.querySelectorAll('.article-reve');
+let reallybutton;
+if ( buttonSelecteds ){
+    buttonSelecteds.forEach( selected => {
+        reallyButton = selected.querySelector('.button--select-to-download');
+        const selectedID = selected.getAttribute('id');
+        reallyButton.addEventListener('click', function(e) {
+            const buttonDownloadReve = e.target;
+            buttonDownloadReve.classList.toggle('-is-selected');
+            reveSelected.push(selectedID);
+        });
+    });
+}
 
-const revesJSON = JSON.stringify(revesOBJECT);
-console.log( revesJSON );
-
-// sheetjs
-// Creating a Workbook
-var wb = XLSX.utils.book_new();
-wb.Props = {
-    Title: 'Les rêves',
-    Subject: "Test",
-    Author: 'Archireve',
-    CreatedDate: new Date(2017,12,19)
-    // CreatedDate: new Date(year,month,day);
-};
-wb.SheetNames.push("Reves");
-// var ws = XLSX.utils.json_to_sheet(revesJSON);
-var ws = XLSX.utils.sheet_add_json(revesOBJECT);
-wb.Sheets["Reves"] = ws;
-
-console.log( wb );
-
-// Exporting Workbook for Download
-// var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
-// function s2ab(s) {
-//     var buf = new ArrayBuffer(s.length); //convert s to arrayBuffer
-//     var view = new Uint8Array(buf);  //create uint8array as viewer
-//     for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF; //convert to octet
-//     return buf;
-// }
-
-// const buttonDownload = document.querySelector('.button--download');
-// buttonDownload.addEventListener('click', (e) =>  {
-//     saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'reves.xlsx');
-// })
-
-// console.log( wb.Props );

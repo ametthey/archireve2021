@@ -2,10 +2,21 @@
     border-right: 1px solid $color;
     display: flex;
     flex-direction: column;
+    pointer-events: auto;
     position: relative;
     z-index: 2;
-    transition: width $rythm2 $rythm1 ease-in-out;
+    // transition: width $rythm2 $rythm1 ease-in-out;
     // transition: width $rythm2 $rythm3 ease-in-out;
+    // width: calc( 51px - 1px );
+    // width: 50px;
+    // transform: translateX(0);
+
+    background-color: $bg;
+
+    &.is-unclickable {
+        pointer-events: none !important;
+    }
+
 
     // Header de navigation avec les différents boutons
     // o + connexion + inscription
@@ -14,6 +25,7 @@
         margin: calc( #{$ratio} / 2 ) calc( #{$ratio} / 2 ) $ratio;
         display: flex;
         width: max-content;
+        // transition: transform $rythm1 $rythm1 ease-in-out, opacity $rythm1 $rythm3 ease-in-out !important;
 
         @include respond(tablet) {
             display: none;
@@ -26,14 +38,13 @@
 
         #left--connexion,
         #left--inscription {
-            opacity: 0;
+            overflow: hidden;
             pointer-events: none;
-            transition: transform $rythm1 $rythm1 ease-in-out, opacity $rythm1 $rythm3 ease-in-out !important;
-
         }
 
         #left--connexion {
-            transform: translateX(-100%);
+            // transform: translateX(-100%);
+            // transform: translateX(0);
 
             // Loggded-in user
             &.left--connexion-user {
@@ -45,7 +56,7 @@
         }
 
         #left--inscription {
-            transform: translateX(-200%);
+            // transform: translateX(-200%);
         }
     }
 
@@ -56,14 +67,12 @@
         display: flex;
         height: 100px;
         justify-content: flex-end;
-        opacity: 1;
         position: absolute;
         writing-mode: tb;
         text-orientation: mixed;
         top: 60px;
         transform: rotate(180deg);
         transform-origin: center;
-        transition: opacity $rythm1 ease-in-out;
         width: 50px;
 
         @include respond(tablet) {
@@ -90,6 +99,7 @@
 
     // Etat Actif du bandeau
     &.is-open {
+        cursor: auto;
         width: calc( 360px - 1px );
 
         @include respond(tablet) {
@@ -106,31 +116,29 @@
 
             #left--connexion {
                 margin: 0 5px 0 0;
-                transform: translate(0);
+                // transform: translate(0);
+                transform: translateX(0);
 
                 a {
                     color: $color;
 
-                    &:hover {
-                        color: $bg;
-                    }
                 }
             }
 
             #left--inscription {
-                transform: translate(0);
+                // transform: translate(0);
             }
 
             #left--connexion,
             #left--inscription {
-                opacity: 1;
+                // opacity: 1;
                 pointer-events: auto;
             }
         }
 
         .content--left-cover {
-            opacity: 0;
-            pointer-events: none;
+            // opacity: 0;
+            // pointer-events: none;
 
         }
 
@@ -177,7 +185,7 @@
         .calendrier--container,
         .button--download,
         .button--select {
-            opacity: 1;
+            // opacity: 1;
             pointer-events: auto;
 
         }

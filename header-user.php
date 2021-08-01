@@ -10,7 +10,9 @@
 
         <?php wp_head(); ?>
     </head>
-    <body <?php body_class( 'body-user' ) ?> >
+    <body <?php body_class( 'body-user' ) ?> data-barba="wrapper">
+        <!-- <div class="wrapper" data&#45;barba="container" data&#45;barba&#45;namespace="one&#45;pager"> -->
+
 
         <header id="header-user">
         </header>

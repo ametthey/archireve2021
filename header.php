@@ -10,7 +10,14 @@
 
         <?php wp_head(); ?>
     </head>
-    <body <?php body_class() ?> >
+    <body <?php body_class() ?> data-barba="wrapper">
+        <!-- <div class="wrapper" data&#45;barba="container" data&#45;barba&#45;namespace="one&#45;pager"> -->
+
+        <?php // get_template_part('template-parts/helpers/helper', 'user-id'); ?>
+        <?php // get_template_part('template-parts/helpers/helper', 'user-info'); ?>
+
+        <div class="content">
+
 
         <header id="masthead" class="site-header" role="banner">
 

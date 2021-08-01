@@ -1,16 +1,49 @@
 import { Isotope } from '../main.js';
+import { Swiper } from '../main.js';
 import { numberToDay } from '../components/helpers';
 
 /*
  * Get the date
  */
 let dateReve, dayReve, monthReve, formattedMonthReve, yearReve, monthYearReve, monthYearReveArray, titleReve, reveYears, calendrierYears ,filteredYearsToRemove;
-const home = document.querySelector('.content--home');
+const contentRight = document.querySelector('.content--right');
 const reves = document.querySelectorAll('.article-reve');
 
-if ( home && calendrierYears) {
-// if ( home ) {
+if ( contentRight ) {
 
+    // SWIPER
+    let swiperDate = new Swiper( '.swiper-container-date', {
+        // only way to swlide slide is by navigation
+        // allowTouchMove: false,
+        // centeredSlides: true,
+        directon: 'horizontal',
+        effect: 'slide',
+        // loop: true,
+        speed: 700,
+        slidesPerView: 2,
+        spaceBetween: 0,
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-date-button-next',
+            prevEl: '.swiper-date-button-prev',
+        },
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 2,
+                // spaceBetween: 20
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 2,
+                // spaceBetween: 30
+            },
+        }
+
+    });
+
+
+    // ISOTOPE
     // Empty Array to store Year from Reves
     reveYears = [];
     monthYearReveArray = [];
@@ -68,6 +101,7 @@ function clickTheDay(monthReve, yearReve) {
 
             // Click on the date
             mois.addEventListener( 'click', (e) => {
+                console.log( 'click on the month ' + e.target.innerHTML );
                 const matchingDate = mois.dataset.filterDate;
 
 

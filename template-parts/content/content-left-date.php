@@ -1,4 +1,4 @@
-<div class="calendrier--container">
+<div class="calendrier--container left--filter">
     <div class="swiper-container swiper-container-date">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">

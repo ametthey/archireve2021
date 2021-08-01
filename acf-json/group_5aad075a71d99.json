@@ -72,25 +72,6 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
-        },
-        {
-            "key": "field_5aae3805b6f0a",
-            "label": "Commentaire",
-            "name": "commentaire",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -98,7 +79,7 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "166"
+                "value": "182"
             }
         ]
     ],
@@ -110,5 +91,12 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622026930
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1627279751
 }

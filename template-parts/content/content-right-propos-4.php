@@ -5,9 +5,9 @@
 
     <!-- le questionnaire utilisateur -->
     <div class="collapse-container collapse-glyph">
-        <input type="checkbox" id="questionnaire-utilisateur2-desktop">
+        <input type="checkbox" id="questionnaire-utilisateur-two-desktop-">
         <h1>
-            <label for="questionnaire-utilisateur2-desktop">
+            <label for="questionnaire-utilisateur-two-desktop-">
                 <!-- Numéro -->
                 <span>b</span>
 
@@ -27,9 +27,9 @@
 
     <!-- les modalités du sommeil -->
     <div class="collapse-container collapse-glyph">
-        <input type="checkbox" id="la-recherche-desktop">
+        <input type="checkbox" id="la-recherche-desktop-">
         <h1>
-            <label for="la-recherche-desktop">
+            <label for="la-recherche-desktop-">
                 <!-- Numéro -->
                 <span>g</span>
 
@@ -44,9 +44,9 @@
 
     <!-- Lucidite -->
     <div class="collapse-container collapse-glyph">
-        <input type="checkbox" id="equipe-desktop">
+        <input type="checkbox" id="equipe-desktop-">
         <h1>
-            <label for="equipe-desktop">
+            <label for="equipe-desktop-">
                 <!-- Numéro -->
                 <span>H</span>
 

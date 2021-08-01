@@ -42,14 +42,14 @@
                     border-radius: 100px 100px 100px 100px;
                     transition: all 0.325s ease-in-out;
 
-                    &:hover {
-                        background-color: $color;
-                        border: 1px solid $color;
-
-                        & > * {
-                            color: $bg;
-                        }
-                    }
+                    // &:hover {
+                    //     background-color: $color;
+                    //     border: 1px solid $color;
+                    //
+                    //     & > * {
+                    //         color: $bg;
+                    //     }
+                    // }
 
                     input {
                         font-size: inherit;

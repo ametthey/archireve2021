@@ -143,9 +143,51 @@ function complete_registration() {
         // Message to the console to check if the registration is successful
         echo '<script>console.log("The user ' . $username . ' has won a new registration. And email is ' . $email . '");</script>';
 
-        // redirect to page inscription-informations
-        // $inscription_complementaire = home_url( '/inscription-informations/' );
-        // wp_redirect($inscription_complementaire);
+        // ENVOI D'UN EMAIL DE CONFIRMATION
+        // https://developer.wordpress.org/reference/hooks/wp_new_user_notification_email/
+        add_filter( 'wp_new_user_notification_email', 'custom_wp_new_user_notification_email', 10, 3 );
+        // function custom_wp_new_user_notification_email( $wp_new_user_notification_email, $username, $blogname ) {
+        //
+        //     $wp_new_user_notification_email['subject'] = sprintf( 'Confirmation de votre inscription sur le site Archirêve', $blogname, $username->user_login );
+        //
+        //     $message .= __('Merci de votre inscription à Archirêve');
+        //     $message .= __('Voici les identifiants que vous avez remplis sur la page d\'inscription');
+        //     $message .= __('Pseudo' . $username);
+        //     $message .= __('Email' . $email);
+        //     $message .= __('Mot de passe' . $password);
+        //     $message .= __('Vous pouvez maintenant vous connecter et remplir le formulaire d\informations avant de publier enfin votre premier rêve !');
+        //     $message .= __('<https:www.2021archireve.dev>');
+        //
+        //     $wp_new_user_notification_email['message'] = $message;
+        //
+        //     $wp_new_user_notification_email['headers'] = "De Archirêve";
+        //
+        //     return $wp_new_user_notification_email;
+        // }
+        /**
+            * Custom register email
+         */
+        add_filter( 'wp_new_user_notification_email', 'custom_wp_new_user_notification_email', 10, 3 );
+        function custom_wp_new_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
+
+            $user_login = stripslashes( $user->user_login );
+            $user_email = stripslashes( $user->user_email );
+            $login_url  = wp_login_url();
+            $message  = __( 'Hi there,' ) . "/r/n/r/n";
+            $message .= sprintf( __( "Welcome to %s! Here's how to log in:" ), get_option('blogname') ) . "/r/n/r/n";
+            $message .= wp_login_url() . "/r/n";
+            $message .= sprintf( __('Username: %s'), $user_login ) . "/r/n";
+            $message .= sprintf( __('Email: %s'), $user_email ) . "/r/n";
+            $message .= __( 'Password: The one you entered in the registration form. (For security reason, we save encripted password)' ) . "/r/n/r/n";
+            $message .= sprintf( __('If you have any problems, please contact me at %s.'), get_option('admin_email') ) . "/r/n/r/n";
+            $message .= __( 'bye!' );
+
+            $wp_new_user_notification_email['subject'] = sprintf( '[%s] Your credentials.', $blogname );
+            $wp_new_user_notification_email['headers'] = array('Content-Type: text/html; charset=UTF-8');
+            $wp_new_user_notification_email['message'] = $message;
+
+            return $wp_new_user_notification_email;
+        }
 	}
 
 }

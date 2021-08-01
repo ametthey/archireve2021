@@ -1,15 +1,15 @@
 import Isotope from 'isotope-layout';
+import Swiper from 'swiper/bundle';
+import { gsap } from "gsap";
+import barba from '@barba/core';
 
 import './components/helpers.js';
+import './components/helpers-debug.js';
 
-import './components/swiper.js';
 import './components/left.js';
-// import './components/right.js';
+import './components/right.js';
 import './components/articles.js';
-// import './components/apropos.js';
-import './components/calendrier.js';
 import './components/header.js';
-///// import './components/click-to-select.js';
 
 // Filtre de recherche
 // Combination filtres isotope
@@ -23,24 +23,37 @@ import './components/calendar.js';
 import './components/filters.js';
 
 // Download as
-// import './components/download.js';
+import './components/download.js';
 
 
 import './components/letter-splitting.js';
-import './components/inscription-informations.js';
-
+// import './components/inscription-informations.js';
+import './components/acf-inscription-informations.js';
+import './components/acf-inscription-informations-titles.js';
 import './components/nouveau-reve.js';
-
 import './components/inscription.js';
 import './components/back-office.js';
+import './components/tooltip.js';
+import './components/creation-reve.js';
+import './components/dessin.js';
+import './components/acf.js';
+import './components/animation.js';
+import './components/page-transition.js';
 
-// import './components/acf.js';
 
-// HWK
-// import './components/hwk-scripts.js';
+// pas sûr qu'il existe
+// import './components/collapse.js';
+// import './components/apropos.js';
+// import './components/click-to-select.js';
+// import './components/swiper.js';
 
-window.addEventListener('resize', () => {
-    console.log( window.innerWidth );
-});
 
-export { Isotope };
+
+
+
+
+
+
+
+
+export { Isotope, Swiper, gsap, barba };

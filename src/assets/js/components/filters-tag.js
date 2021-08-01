@@ -34,6 +34,17 @@ jQuery(document).ready(function($) {
             $containerTag.arrange();
         }, 200 ) );
 
+        // let tagSearch = document.querySelector('.tagsearch');
+        // let tagSearchValue = document.querySelector('.tagsearch').value;
+        // tagSearch.addEventListener( 'keyup' , (e) => {
+        //    console.log( tagSearch.value );
+        // });
+        // tagSearch.addEventListener( 'keyup', debounce( function() {
+        //     qsRegex = new RegExp( tagSearchValue , 'gi' );
+        //     $containerTag.arrange();
+        //     console.log('what ?');
+        // }, 200));
+
         // debounce so filtering doesn't happen every millisecond
         function debounce( fn, threshold ) {
             var timeout;

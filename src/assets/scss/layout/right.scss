@@ -1,46 +1,42 @@
 #page {
     .content--right {
-        border-right: 1px solid $color;
+        // border-right: 1px solid $color;
         display: flex;
         justify-content: space-evenly;
         overflow: scroll;
+        pointer-events: auto;
         position: relative;
         text-orientation: mixed;
         transform: rotate(180deg);
         transform-origin: center;
-        transition: width $rythm2 $rythm2 ease-in-out, background-color $rythm0 $rythm1 ease-in-out;
         writing-mode: tb;
+        width: 50px;
+
+        &.is-unclickable {
+            pointer-events: none !important;
+        }
 
         @include respond(tablet) {
             display: none;
         }
 
         &.is-open {
-            background-color: $color;
-            width: calc( 100% - 99px );
-
-            & > * {
-                opacity: 0;
-                pointer-events: none;
-            }
+            width: calc( 100% - 100px );
         }
 
-        &.-is-changing-color {
-            background: $violet;
-        }
-
-        &.is-back {
+        &.has-right-orientation {
             text-orientation: initial;
             transform: rotate(0);
             writing-mode: initial;
 
         }
 
+
         & > * {
-            opacity: 1;
+            // opacity: 1;
             pointer-events: auto;
             position: relative;
-            transition: opacity $rythm1 ease-in-out;
+            // transition: opacity $rythm1 ease-in-out;
             z-index: 1;
         }
 
@@ -67,6 +63,10 @@
                 font-family: $solid;
             }
 
+            a {
+                color: $color;
+            }
+
             .credits--contact {
 
                 &:before {
@@ -81,4 +81,12 @@
             }
         }
     }
+}
+
+.content--right-oriented {
+    background: $bg;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    width: 50px;
 }

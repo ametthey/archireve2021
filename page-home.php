@@ -7,7 +7,6 @@ get_header(); ?>
 
 <?php get_template_part( 'template-parts/content/content', 'left' ); ?>
 
-
 <div class="content--home">
     <div class="content--home-text-border">
         <h3>LES RÊVES</h3>
@@ -18,7 +17,7 @@ get_header(); ?>
             'orderby' => 'date',
             'order'   => 'DESC',
             'post_type'      => 'reve',
-            'posts_per_page' => -1
+            'posts_per_page' => -1,
         );
         $home_projects = new WP_Query( $args );
         if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;
@@ -41,54 +40,57 @@ get_header(); ?>
             'include' => $tag,
         );
         $tags = get_the_terms( $post->ID, 'customtag' );
+
+        set_query_var('i', $i);
     ?>
 
         <?php if ( $term_lucidite  && $term_typologie  ) : ?>
 
-            <article
-                class="
-                article-reve article-<?php echo esc_html( $term_typologie->slug); ;?> border-<?php echo esc_html( $term_typologie->slug ); ?> <?php echo esc_html( $term_lucidite->slug ); ?> <?php echo esc_html( $term_typologie->slug ); ?>
-                    <?php
-                        if ( !empty( $tags ) ) {
-                            foreach( $tags as $tag ) {
-                                echo $tag->name . ' ';
-                            }
+        <article
+            class="
+            article-reve article-<?php echo esc_html( $term_typologie->slug); ;?> border-<?php echo esc_html( $term_typologie->slug ); ?> <?php echo esc_html( $term_lucidite->slug ); ?> <?php echo esc_html( $term_typologie->slug ); ?>
+                <?php
+                    if ( !empty( $tags ) ) {
+                        foreach( $tags as $tag ) {
+                            echo $tag->name . ' ';
                         }
-                    ?>
-                "
-                id="reve--<?php echo $i; ?>"
-                data-filter-date=""
-            >
+                    }
+                ?>
+            "
+            id="reve--<?php echo $i; ?>"
+            data-filter-date=""
+        >
 
-                <!-- HEADER DE L'ARTICLE -->
-                <div class="article-reve--header border-bottom-<?php echo esc_html( $term_typologie->slug ); ?>">
+            <!-- HEADER DE L'ARTICLE -->
+            <div class="article-reve--header border-bottom-<?php echo esc_html( $term_typologie->slug ); ?>">
 
-                    <?php get_template_part( 'template-parts/reve/header' ); ?>
+                <?php get_template_part( 'template-parts/reve/header' ); ?>
 
-                </div>
+            </div>
 
-                <div class="article-reve--text border-bottom-<?php echo esc_html( $term_typologie->slug ); ?>">
-                    <!-- CONTENU -->
-                    <?php get_template_part( 'template-parts/reve/contenu' ); ?>
+            <div class="article-reve--text border-bottom-<?php echo esc_html( $term_typologie->slug ); ?>">
+                <!-- CONTENU -->
+                <?php get_template_part( 'template-parts/reve/contenu' ); ?>
 
-                </div>
+            </div>
 
-                <div class="article-reve--taxonomies border-top-<?php echo esc_html( $term_typologie->slug ); ?>">
+            <div class="article-reve--taxonomies border-top-<?php echo esc_html( $term_typologie->slug ); ?>">
 
-                    <!-- TYPOLOGIE DE REVE -->
-                    <?php get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'typologie' ); ?>
+                <!-- TYPOLOGIE DE REVE -->
+                <?php get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'typologie' ); ?>
 
-                    <!-- CUSTOM TAG -->
-                    <?php get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'tag' ); ?>
+                <!-- CUSTOM TAG -->
+                <?php get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'tag' ); ?>
 
-                    <!-- NIVEAU DE LUCIDITE -->
-                    <?php get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'lucidite' ); ?>
+                <!-- NIVEAU DE LUCIDITE -->
+                <?php get_template_part( 'template-parts/reve/taxonomy/taxonomy', 'lucidite' ); ?>
 
-                </div>
+            </div>
+
+        </article>
 
 
-
-            </article>
+        <?php get_template_part( 'template-parts/content', 'print' ); ?>
 
         <?php endif; ?>
     <?php endwhile; endif; wp_reset_postdata(); ?> <!-- WP_Query for CPT project -->

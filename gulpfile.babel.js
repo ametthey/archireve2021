@@ -24,7 +24,7 @@ const PRODUCTION = yargs.argv.prod;
 
 const path = {
     styles: {
-        src: ['src/assets/scss/bundle.scss', 'src/assets/scss/admin.scss', 'src/assets/scss/login.scss'],
+        src: ['src/assets/scss/bundle.scss', 'src/assets/scss/admin.scss', 'src/assets/scss/login.scss', 'src/assets/scss/profile.scss'],
         dest: 'dist/assets/css'
     },
     scripts: {
@@ -47,7 +47,7 @@ const path = {
 
 export const serve = (done) => {
     server.init({
-        proxy: "archireve2021.local",
+        proxy: "2021archireve.yo",
         /*
          * Disable cache via browsersync
          * https://www.udemy.com/course/the-complete-guide-to-building-premium-wordpress-themes/learn/lecture/11636118#questions/9850154

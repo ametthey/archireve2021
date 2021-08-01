@@ -19,20 +19,33 @@ require_once( 'lib/sidebar.php' );
 require_once( 'lib/custom-admin-bar.php' );
 require_once( 'lib/custom-post-type.php' );
 require_once( 'lib/custom-taxonomy.php' );
+require_once( 'lib/custom-taxonomy-tag.php' );
+require_once( 'lib/custom-taxonomy-typologie.php' );
 require_once( 'lib/custom-taxonomy-lucidite.php' );
+// Modalite du sommeil
+require_once( 'lib/custom-taxonomy-sommeil.php' );
+require_once( 'lib/custom-taxonomy-humeur.php' );
+require_once( 'lib/custom-taxonomy-sens.php' );
+require_once( 'lib/custom-taxonomy-lieu.php' );
 require_once( 'lib/images.php' );
 require_once( 'lib/acf.php' );
 require_once( 'lib/users.php' );
+require_once( 'lib/user-profile.php' );
 
 // Login and Register
 // require_once( 'lib/login-redirection.php' );
 // require_once( 'lib/login-register.php' );
 // require_once( 'lib/login-custom.php' );
 
-// require_once( 'lib/connexion.php' );
+require_once( 'lib/connexion.php' );
+require_once( 'lib/connexion-first-time.php' );
 require_once( 'lib/inscription.php' );
 require_once( 'lib/inscription-test.php' );
-require_once( 'lib/inscription-email.php' );
+// require_once( 'lib/inscription-email.php' );
+
+// DASHBOARD
+require_once( 'lib/dashboard.php' );
+
 
 // https://gist.github.com/Rarst/1739714
 require_once( 'lib/r-debug.php' );

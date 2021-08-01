@@ -1,0 +1,164 @@
+// STYLE ALL RANGE FROM ACF
+.acf-range {
+    .acf-label {
+        label {
+            font-size: $h2;
+            font-family: $covik, sans-serif;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            line-height: $h2;
+            text-align: center;
+
+            .acf-required {
+                display: none;
+            }
+        }
+    }
+
+    .acf-range-wrap {
+        align-items: center;
+        display: flex;
+        font-family: $covik;
+        font-size: $h3;
+        line-height: $h3;
+        flex-direction: column;
+        justify-content: center;
+        margin: $ratio 0;
+        position: relative;
+        width: 100%;
+
+        @include respond(tablet) {
+            width: 90%;
+            font-size: $h5;
+            line-height: $h5;
+            margin: calc( #{$ratio} / 2 ) 0;
+        }
+
+        &:before {
+            bottom: 44px;
+            content: '0';
+            position: absolute;
+            width: max-content;
+            height: max-content;
+            left: -14px;
+        }
+
+        &:after {
+            bottom: 44px;
+            content: '100+';
+            position: absolute;
+            width: max-content;
+            height: max-content;
+            right: -40px;
+
+        }
+
+        @include respond(tablet) {
+            &:after {
+                right: -20px;
+            }
+        }
+
+        input[type="range"] {
+            margin: calc( #{$ratio} * 2 ) 0 0 0;
+            width: 100%;
+
+            -webkit-appearance: none;  /* Override default CSS styles */
+            appearance: none;
+            width: 100%; /* Full-width */
+            height: 2px; /* Specified height */
+            background: $color; /* Grey background */
+            outline: none; /* Remove outline */
+            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+            transition: opacity .2s;
+
+            // barre horizontal du range
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none; /* Override default look */
+                appearance: none;
+                background: $bg;
+                border: 1px solid $color;
+                border-radius: 50%;
+                width: 19px; /* Set a specific slider handle width */
+                height: 19px; /* Slider handle height */
+                cursor: pointer; /* Cursor on hover */
+            }
+
+            // point de sélection pour changer de valeurs
+            &::-moz-range-thumb {
+                border: 1px solid $color;
+                border-radius: 50%;
+                width: 19px;
+                height: 19px;
+                background: $bg;
+                cursor: pointer;
+            }
+            &::-webkit-range-thumb {
+                border: 1px solid $color;
+                border-radius: 50%;
+                width: 19px;
+                height: 19px;
+                background: $bg;
+                cursor: pointer;
+            }
+        }
+
+        input[type="number"] {
+            border: none;
+            bottom: 37px;
+            color: $color;
+            font-family: $covik;
+            font-size: $h3;
+            line-height: $h3;
+            margin: 0;
+            // padding: 0;
+            position: absolute;
+            right: 164px;
+
+        }
+
+        .bubble-endpoints {
+            border-radius: 50%;
+            width: 19px;
+            height: 19px;
+            background: $color;
+
+            &.bubble-start {
+                bottom: -8px;
+                left: -18px;
+                position: absolute;
+            }
+
+            &.bubble-end {
+                bottom: -8px;
+                right: -19px;
+                position: absolute;
+            }
+
+        }
+
+        .bubble {
+            bottom: 0;
+            color: $color;
+            font-family: $covik;
+            font-size: $h3;
+            line-height: $h3;
+            // padding: 4px 12px;
+            margin-bottom: 22px;
+            position: absolute;
+            border-radius: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                // top: -1px;
+                left: 50%;
+            }
+        }
+    }
+}

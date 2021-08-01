@@ -1,24 +1,66 @@
 // HOVER CONTENT LEFT
 const contentLeft = document.querySelector('.content--left');
-const contentHome = document.querySelector('.content--home');
+const contentRight = document.querySelector('.content--right');
+const buttonLeft = document.querySelector('#left--button');
+const loupe = document.querySelector('.content--left-cover');
+const filters = document.querySelectorAll('.left--filter');
+
 if( contentLeft ){
-    contentLeft.addEventListener( 'mouseenter', () => {
-        contentLeft.classList.add('is-open');
+
+    buttonLeft.addEventListener( 'click', (e) => {
+        if ( contentLeft.classList.contains('is-open') ) {
+            contentLeft.classList.remove('is-open');
+            contentRight.classList.remove('is-unclickable');
+        } else {
+            contentLeft.classList.add('is-open');
+            contentRight.classList.add('is-unclickable');
+        }
     });
 
-    contentLeft.addEventListener( 'click', () => {
-        contentLeft.classList.add('is-open');
+    contentLeft.addEventListener( 'transitionstart', (e) => {
+        const contentLeftEvent = e.target;
 
+        if ( !contentLeftEvent.classList.contains('is-open')  ) {
+            if ( e.propertyName === 'width' ) {
+                buttonLeft.classList.remove('is-open');
+                filters.forEach( filter => {
+                    filter.classList.remove('is-visible');
+                });
+            }
+        }
+
+        if ( e.propertyName === 'width' ) {
+            loupe.classList.add('is-invisible');
+        }
     });
 
-    contentLeft.addEventListener( 'mouseleave', () => {
-        // contentLeft.classList.remove('is-open');
-    });
+    contentLeft.addEventListener( 'transitionend', (e) => {
+        const contentLeftEvent = e.target;
 
-    if ( contentLeft.classList.contains('is-open') ) {
-        contentHome.addEventListener( 'click', () => {
-            // contentLeft.classList.remove('is-open');
-        });
-    }
+        if ( contentLeftEvent.classList.contains('is-open')  ) {
+            if ( e.propertyName === 'width' ) {
+                buttonLeft.classList.add('is-open');
+                filters.forEach( filter => {
+                    filter.classList.add('is-visible');
+                });
+            }
+        }
+
+        if ( !contentLeftEvent.classList.contains('is-open')  ) {
+            if ( e.propertyName === 'width' ) {
+                loupe.classList.remove('is-invisible');
+            }
+        }
+    });
 
 }
+//
+// if ( contentRight.classList.contains('is-open') ) {
+//     contentLeft.classList.add('is-unclikable');
+//     contentLeft.classList.remove('is-unclikable');
+// } else {
+// }
+//
+// if ( contentLeft.classList.contains('is-open') ) {
+// } else {
+// }

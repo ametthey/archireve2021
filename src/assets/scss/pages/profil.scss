@@ -19,6 +19,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin: auto;
+    padding-top: 0 !important;
 }
 
 .profil--header {
@@ -30,6 +31,7 @@
     .profil--header-links {
         align-items: center;
         display: flex;
+        margin: 0 0 calc( #{$ratio} / 1 ) 0;
 
         a {
             &:nth-of-type(2) {
@@ -90,13 +92,13 @@
 
         &:nth-of-type(1) {
             margin-top: calc( #{$ratio} * 2 );
+            height: 200px;
         }
     }
 
     .profil--reve-new {
         border: 1px solid $color;
         display: grid;
-        height: 200px;
         place-items: center;
 
         &.profil--reve-new-inactive {
@@ -108,4 +110,17 @@
             text-decoration: underline;
         }
     }
+
+    .profil--reve-published {
+        border: none;
+    }
+}
+
+.backoffice-reve {
+    left: 0!important;
+    margin: 0 auto !important;
+    position: relative !important;
+    top: 0!important;
+    width: 100% !important;
+
 }

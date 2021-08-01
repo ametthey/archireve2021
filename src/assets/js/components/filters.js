@@ -1,4 +1,4 @@
-import Isotope from 'isotope-layout';
+import { Isotope } from '../main.js';
 
 Isotope.Item.prototype.layoutPosition = function() {
   this.emitEvent( 'layout', [ this ] );

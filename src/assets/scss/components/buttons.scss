@@ -18,22 +18,22 @@
         color: $bg;
         border: 1px solid $color;
 
-        &:hover {
-            background-color: $bg;
-            border: 1px solid $color;
-            color: $color;
-        }
+        // &:hover {
+        //     background-color: $bg;
+        //     border: 1px solid $color;
+        //     color: $color;
+        // }
     }
 
     &.round--white {
         background-color: $bg;
         border: 1px solid $color;
 
-        &:hover {
-            background-color: $color;
-            // border: 1px solid $bg;
-            color: $bg;
-        }
+        // &:hover {
+        //     background-color: $color;
+        //     // border: 1px solid $bg;
+        //     color: $bg;
+        // }
 
         &.is-active {
             background-color: $color;
@@ -67,31 +67,26 @@
     transition: all 0.325s ease-in-out;
 
     &:hover {
-        background-color: $color;
-        border: 1px solid $color;
-        color: $bg;
-
-        & > * {
-            color: $bg;
-        }
+        color: $color;
     }
 
     &.rounded--black {
         background-color: $color;
         border: 1px solid $bg;
+        color: $bg;
 
         a {
             color: $bg;
         }
 
-        &:hover {
-            background-color: $bg;
-            border: 1px solid $color;
-
-            & > * {
-                color: $color;
-            }
-        }
+        // &:hover {
+        //     background-color: $bg;
+        //     border: 1px solid $color;
+        //
+        //     & > * {
+        //         color: $color;
+        //     }
+        // }
     }
 
     &.rounded--white-border {
@@ -146,14 +141,14 @@
     border-radius: 0px;
     transition: all 0.325s ease-in-out;
 
-    &:hover {
-        background-color: $color;
-        border: 1px solid $color;
-
-        & > * {
-            color: $bg;
-        }
-    }
+    // &:hover {
+    //     background-color: $color;
+    //     border: 1px solid $color;
+    //
+    //     & > * {
+    //         color: $bg;
+    //     }
+    // }
 
     &.squared--black {
         background-color: $color;

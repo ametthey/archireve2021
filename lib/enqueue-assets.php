@@ -20,24 +20,34 @@ function _themename_assets() {
 
 
     // User
-    if ( is_page_template( 'page-inscription-alternative.php' ) && is_page_template( 'page-profil.php' ) && is_page_template( 'page-back-office.php' ) ) {
+    if ( is_page_template( 'page-inscription-informations.php' ) && is_page_template( 'page-profil.php' ) && is_page_template( 'page-back-office.php' ) ) {
         wp_enqueue_style( '_themename-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', [], '1.0.0' ,  'all' );
         wp_enqueue_script( '_themename-about', get_stylesheet_directory_uri() . '/dist/assets/js/user.js', [], '1.0.0' , true );
+        wp_deregister_script( 'wp-embed' );
+        wp_dequeue_script( 'wp-embed' );
+
+    // PROFILE
+    }  else if ( is_page( '199' ) ) {
+        wp_enqueue_style( '_themename-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/profile.css', [], '1.0.0' ,  'all' );
+        wp_enqueue_script( '_themename-scripts', get_stylesheet_directory_uri() . '/dist/assets/js/main.js', [ 'jquery' ], '1.0.1' ,   true );
+        wp_deregister_script( 'wp-embed' );
+        wp_dequeue_script( 'wp-embed' );
     } else {
         wp_enqueue_style( '_themename-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', [], '1.0.0' ,  'all' );
         wp_enqueue_script( '_themename-scripts', get_stylesheet_directory_uri() . '/dist/assets/js/main.js', [ 'jquery' ], '1.0.1' ,   true );
-
+        wp_deregister_script( 'wp-embed' );
+        wp_dequeue_script( 'wp-embed' );
     }
-
-
-    // HWK
-    // wp_enqueue_style( '_themename-stylesheet-boostrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', [], '4.0.0' ,  'all' );
-    // wp_enqueue_script( '_themename-script-jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', [], '4.0.0' ,  'all' );
-    // wp_enqueue_script( '_themename-script-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', [], '4.0.0' ,  'all' );
-    // wp_enqueue_script( '_themename-script-boostrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', [], '4.0.0' ,  'all' );
-
 }
+
 add_action( 'wp_enqueue_scripts', '_themename_assets' );
+
+// disable acf css on front-end acf forms
+// add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
+//
+// function my_deregister_styles() {
+//   wp_deregister_style( 'acf-input' );
+// }
 
 
 

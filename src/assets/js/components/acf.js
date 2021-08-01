@@ -1,4 +1,10 @@
 // get localized data
-const postID = acf.get('post_id');
-
-console.log( `L'ID du post est ${postID}` );
+// var postID = acf.get('post_id');
+//
+// console.log( postID );
+//
+//
+// acf.addAction('append', function( $el ){
+//     $el.find('.dessin--termine');
+//     console.log('youpi');
+// });

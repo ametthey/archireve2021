@@ -3,6 +3,12 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // E
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
 }
+
+    /*
+     * Template Name: Single New Reve
+     *
+     */
+
 get_header(); ?>
 
 <?php
@@ -28,7 +34,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { ?>
                 'return' => '%post_url%',
                 'submit_value' => 'Save Changes',
                 'post_title' => true,
-                'post_content' => true,
+                // 'post_content' => true,
             ));
         echo "</div>";
     }

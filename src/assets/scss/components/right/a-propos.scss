@@ -1,23 +1,16 @@
 .right--container-propos {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     height: auto;
-    left: 50px;
     margin: auto;
-    opacity: 1 !important;
     overflow: scroll;
+    padding: 0 50px;
     pointer-events: none;
     position: absolute !important;
-    transform: translateX(100%);
-    transition: transform $rythm1 ease-in-out !important;
-    width: calc( 100% - 100px );
+    right: 0;
+    width: 100%;
     z-index: 2 !important;
-
-    &.-is-visible {
-        pointer-events: auto!important;
-        transform: translateX(0);
-
-    }
 
     .propos--section {
         align-items: center;
@@ -30,7 +23,7 @@
         width: 100%;
 
         opacity: 1;
-        transition: opacity $rythm1 ease-in-out !important;
+        transition: opacity $rythm1 $easeIOE !important;
 
         &.is-hidden {
             opacity: 0;
@@ -50,7 +43,7 @@
                     &.char {
                         cursor: pointer;
                         text-transform: uppercase;
-                        transition: all $rythm0 ease-in-out !important;
+                        transition: all $rythm0 $easeIOE !important;
 
                         &:hover {
                             text-transform: lowercase;
@@ -140,7 +133,7 @@
             margin: 0;
             max-height: 0;
             // padding: 20px 0;
-            transition: all $rythm1 ease-out, padding $rythm1 ease-in-out;
+            transition: all $rythm1 ease-out, padding $rythm1 $easeIOE;
             width: 100%;
         }
 
@@ -152,7 +145,7 @@
             max-height: 0;
             margin: 0 auto 0 calc( 7% - 1px )!important;
             overflow: hidden;
-            transition: all $rythm1 ease-out, padding $rythm1 ease-in-out;
+            transition: all $rythm1 ease-out, padding $rythm1 $easeIOE;
             width: auto;
 
             &.is-active {

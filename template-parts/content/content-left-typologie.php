@@ -1,4 +1,4 @@
-<div class="typopologie--container">
+<div class="typopologie--container left--filter">
     <div class="swiper-container swiper-container-typologie">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">

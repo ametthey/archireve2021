@@ -4,7 +4,8 @@
 </div>
 
 <!-- TITRE DU REVE -->
-<h1><?php the_field( 'titre_du_reve' ); ?></h1>
+<?php the_title( '<h1>', '</h1>' ); ?>
+
 
 <!-- LIEN DE TELECHARGEMENT -->
 <div class="article-reve--download border-left-<?php echo esc_html( $term_typologie->slug ); ?>">

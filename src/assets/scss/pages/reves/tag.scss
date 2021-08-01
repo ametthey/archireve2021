@@ -3,12 +3,13 @@
     border: none;
     display: flex;
     flex-direction: column;
-    margin: auto;
-    width: 50%;
+    // margin: auto !important;
+    width: 60%;
+    margin: 0 auto calc( #{$ratio} *  2 ) auto !important;
 
     // Label
     .acf-label {
-        margin: 0;
+        margin: 0 0 $ratio 0 !important;
 
         label {
             font-family: $covik;
@@ -26,51 +27,51 @@
         width: 100%;
     }
 
-    .categorychecklist-holder {
-        border: none;
-        max-height: auto;
+}
+// textarea for tag
+.acf-field-60ec18ce6f727 {
 
-        .acf-checkbox-list {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        li {
-            border: 1px solid $color;
-            font-size: $h3;
-            line-height: $h3;
-            margin: 0 calc( #{$ratio} / 3 ) calc( #{$ratio} / 3 ) 0;
-            padding: 1.5px 10px;
-            // border-radius: 100px 100px 100px 100px;
-            transition: all 0.325s ease-in-out;
-            width: max-content;
-
-            &:hover {
-                background-color: $color;
-                border: 1px solid $color;
-
-                & > * {
-                    color: $bg;
-                }
-            }
-
-            input {
-                font-size: inherit;
-                line-height: inherit;
-            }
-
-            span {
-                font-size: inherit;
-                line-height: inherit;
-            }
-
-        }
+    &.as-drawing {
+        margin: 0 !important;
+        padding-bottom: 0 !important;
     }
 
-    // Bouton ajouter un nouveau tag
-    .acf-actions {
-        &.-hover {
-            display: block;
+    .acf-label {
+        // display: none;
+    }
+
+    .acf-input {
+        align-items: center;
+        border-bottom: 2px solid $color;
+        display: flex;
+        color: #000;
+        font-family: $covik;
+        height: 30px;
+        outline: none;
+        text-align: left;
+        width: 100%;
+
+        // textearea
+        #acf-field_60ec18ce6f727 {
+            border: none;
+            box-shadow: none !important;
+            font-size: $small;
+            line-height: 1.56;
+            font-family: $covik, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            height: 30px;
+            outline:0px !important;
+            overflow: hidden;
+            padding: 5px;
+            -webkit-appearance:none;
+
+
+            &:hover {
+                outline:0px !important;
+                -webkit-appearance:none;
+                box-shadow: none !important;
+            }
         }
     }
 }

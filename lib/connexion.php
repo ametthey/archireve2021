@@ -38,7 +38,8 @@ add_action( 'wp_login_failed', '_themename_login_failed' );
 function _themename_verify_username_password( $user, $username, $password ) {
   $login_page  = home_url( '/connexion/' );
     if( $username == "" || $password == "" ) {
-        wp_redirect( $login_page . "?login=empty" );
+        // wp_redirect( $login_page . "?login=empty" );
+        wp_redirect( $login_page );
         exit;
     }
 }

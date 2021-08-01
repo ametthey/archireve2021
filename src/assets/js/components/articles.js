@@ -18,19 +18,4 @@ articles.forEach( article => {
             articleTexte.style.maxHeight = articleTexte.scrollHeight + "px";
         }
     });
-
-
-    // select the dream for downloading
-    articleDownload.addEventListener( 'click', function(e) {
-        const theArticle = articleDownload.closest('.article-reve');
-        const theArticleAuthor = articleDownload.closest('.article-header--author-and-date')
-
-
-
-
-
-        articleDownload .classList.toggle( 'is-selected' );
-        console.log(theArticle);
-    });
-
 });

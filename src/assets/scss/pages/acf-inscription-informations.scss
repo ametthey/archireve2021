@@ -1,0 +1,99 @@
+body {
+    &.page-template-page-inscription-informations {
+        overflow: auto;
+    }
+}
+
+.container--inscription-informations {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin: auto;
+    width: 45%;
+
+    @include respond(tablet) {
+        margin: auto;
+        width: 90%;
+    }
+}
+
+.form-inscription-information {
+    position: relative;
+    width: 100%;
+}
+
+// STYLE ALL RANGE FROM ACF
+.acf-field {
+    .acf-label {
+        margin: 0 !important;
+        label {
+            font-size: $h2;
+            font-family: $covik, sans-serif;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            line-height: $h2;
+            text-align: center;
+
+            .acf-required {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+
+.travaille--pas {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .button--round {
+        margin: 0 8px 0 0;
+    }
+}
+
+// Bouton VALIDER
+.acf-button-inscription-information {
+    background-color: $bg;
+    border: 1px solid #303030;
+    color: $color;
+    padding: 10px 30px;
+    border-radius: 100px 100px 100px 100px;
+    transition: all 0.325s ease-in-out;
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: $covik;
+    font-size: $h1;
+    justify-content: center;
+    line-height: $h1;
+    margin: $ratio auto 0;
+
+    @include respond(tablet) {
+        font-size: $h2;
+        line-height: $h2;
+    }
+}
+
+.acf-fields {
+    & > .acf-field {
+        border-top: none !important;
+    }
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+.merci--beaucoup {
+    display: block !important;
+    margin-left: -10%;
+    width: 120%;
+}
+
+

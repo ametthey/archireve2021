@@ -10,7 +10,8 @@
 
         <?php wp_head(); ?>
     </head>
-    <body <?php body_class() ?> >
 
+    <body <?php body_class() ?> data-barba="wrapper">
+        <!-- <div class="wrapper" data&#45;barba="container" data&#45;barba&#45;namespace="one&#45;pager"> -->
         <div id="page" class="front-page">
 

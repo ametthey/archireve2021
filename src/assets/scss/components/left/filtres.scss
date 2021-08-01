@@ -1,14 +1,14 @@
-.tagsearch--container,
-.tagitems--container,
-.lucidite--container,
-.typopologie--container,
-.calendrier--container,
-.button--download,
-.button--select {
-    transition: opacity $rythm1 $rythm3 ease-in-out !important;
-    opacity: 0;
-    pointer-events: none;
-}
+// .tagsearch--container,
+// .tagitems--container,
+// .lucidite--container,
+// .typopologie--container,
+// .calendrier--container,
+// .button--download,
+// .button--select {
+//     transition: opacity $rythm1 $rythm3 ease-in-out !important;
+//     opacity: 0;
+//     pointer-events: none;
+// }
 
 
 // RECHERCHE DE TAGS
@@ -168,7 +168,7 @@
     cursor: pointer;
     margin: 0 calc( 30px / 2 ) 30px;
     position: relative;
-    transition: transform $rythm1 $rythm1 ease-in-out, opacity $rythm1 $rythm3 ease-in-out !important;
+    // transition: transform $rythm1 $rythm1 ease-in-out, opacity $rythm1 $rythm3 ease-in-out !important;
     width: calc( 100% - 30px );
 
     @include respond(tablet) {

@@ -56,6 +56,11 @@ h1 {
         font-size: $huge;
         line-height: $huge;
         overflow: hidden;
+
+        @include respond(md) {
+            font-size: $bigger;
+            line-height: $bigger;
+        }
     }
 
     &.front-page-title {

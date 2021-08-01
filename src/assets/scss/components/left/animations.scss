@@ -1,0 +1,80 @@
+.content--left {
+    transition: width $rythm3 $easeIOE !important;
+
+    .content--left-cover {
+        opacity: 1;
+        transition: all $rythm0 $easeIOE;
+
+        &.is-invisible {
+            opacity: 0;
+        }
+    }
+
+    .left--filter {
+        opacity: 0;
+        transition: all $rythm0 $easeIOE;
+    }
+
+    &.is-open {
+
+        #left--button {
+            &.is-open {
+                background-color: $color;
+                color: $bg;
+            }
+        }
+
+        .left--filter {
+            &.is-visible {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.content--right {
+    transition: width $rythm4 $easeIOE;
+    .content--right-oriented {
+        opacity: 1;
+        transition: all $rythm0 $easeIOE;
+
+        &.is-hidden {
+            opacity: 0;
+        }
+    }
+
+    .right--container-propos {
+        opacity: 0 !important;
+        transition: all $rythm0 $easeIOE;
+
+        &.-is-visible {
+            opacity: 1 !important;
+            pointer-events: auto!important;
+        }
+    }
+}
+
+.content--home {
+
+    .content--home-text-border {
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: auto;
+        transition: all $rythm0 $easeIOE;
+
+        &.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    .article-reve {
+        opacity: 1;
+        transition: opacity $rythm0 $easeIOE;
+
+        &.is-hidden {
+            opacity: 0;
+        }
+    }
+
+}

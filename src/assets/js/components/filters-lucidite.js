@@ -48,6 +48,6 @@ jQuery(document).ready(function($) {
 
 const tout = document.querySelector('.lucidite--item-all');
 
-if ( tout.classList.contains('.checkbox--is-selected') ) {
-    console.log('TOUT est sélectionné');
-}
+// if ( tout.classList.contains('.checkbox--is-selected') ) {
+//     console.log('TOUT est sélectionné');
+// }

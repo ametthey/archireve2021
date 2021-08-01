@@ -7,6 +7,9 @@
     "lib": "lib"
   },
   "dependencies": {
+    "@barba/core": "^2.9.7",
+    "animejs": "^3.2.1",
+    "gsap": "^3.7.1",
     "isotope-layout": "^3.0.6",
     "splitting": "^1.0.6",
     "swiper": "^6.3.5",
@@ -31,6 +34,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.0.2",
+    "intersection-observer-debugger": "^0.1.1",
     "node-sass": "^4.13.1",
     "postcss": "^8.1.10",
     "vinyl-named": "^1.1.0",

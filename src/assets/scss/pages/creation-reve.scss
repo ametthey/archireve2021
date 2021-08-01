@@ -1,0 +1,304 @@
+// Message d'update du formulaire
+#page {
+    .content--creation-reve {
+        #message {
+            align-items: center;
+            color: $cauchemar;
+            display: flex;
+            font-size: $h4;
+            justify-content: center;
+            line-height: $h4;
+            margin: 10px auto 0 auto;
+            text-transform: uppercase;
+            width: 37%;
+
+            &:before {
+                content: 'H';
+                font-family: $good;
+                font-size: $h1;
+                margin: 0 10px 0 0 ;
+            }
+        }
+    }
+}
+
+
+.content--creation-reve {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 0 !important;
+
+    .profil--header {
+        order: 1;
+    }
+
+    #message {
+        order: 3;
+    }
+
+    #form--creation-reve {
+        order: 2;
+    }
+}
+
+#form--creation-reve {
+    max-width: 90%;
+    width: 90%;
+}
+
+.acf-field {
+    margin: 0 0 calc( #{$ratio} *  2 ) 0 !important;
+}
+
+.acf-input {
+    margin: auto !important;
+    width: 60%;
+}
+
+// Input
+#acf-_post_title,
+.hasDatepicker {
+    border: none;
+    border-bottom: 2px solid $color;
+    color: #000;
+    font-family: $covik;
+    font-size: $h4 !important;
+    height: 35px;
+    outline: none;
+    margin: 10px 0 0 0 !important;
+    padding: 0 0 4px 0 !important;
+    text-align: center;
+    width: 100%;
+
+    &::-webkit-placeholder { /* Chrome/Opera/Safari */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $color;
+        font-family: $covik;
+        font-size: /$h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &:-ms-placeholder { /* IE 10+ */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::placeholder {
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+
+    &::-moz-placeholder {
+        color: #000;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+}
+
+#ui-datepicker-div {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+// Contenu
+.acf-field-contenu {
+    margin: 0 !important;
+}
+
+// Selection du contenu
+.contenu--buttons {
+    display: flex;
+    justify-content: center;
+    margin: calc( #{$ratio} *  0.5 ) 0 0 0 !important;
+
+    .button--rounded {
+        margin: 0 4px;
+    }
+}
+// Contenu
+.acf-field-610161fcb8f44,
+.acf-field-6101620bb8f45 {
+    // visibility: hidden;
+    opacity: 0.1;
+    transition: opacity $rythm0 ease-in-out;
+}
+
+.textearea--visible {
+    // visibility: visible;
+    opacity: 1;
+    pointer-events: auto!important;
+}
+
+// texte
+.acf-field-610161fcb8f44 {
+    pointer-events: none;
+    cursor: pointer;
+
+    &.as-drawing {
+        margin: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .acf-label {
+        display: none;
+    }
+
+    .acf-input {
+        align-items: flex-start;
+        border: 2px solid $color;
+        display: flex;
+        padding: 15px;
+
+        &:before {
+            background-image: url('../../assets/images/contenu_texte.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            content: '';
+            height: 22px;
+            margin-top: 4px;
+            transform: scale(0.6);
+            width: 20px;
+        }
+
+        // textearea
+        #acf-field_610161fcb8f44 {
+            border: none;
+            box-shadow: none !important;
+            font-size: $h4;
+            font-family: $covik, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            outline:0px !important;
+            padding: 0 0 0 10px;
+            -webkit-appearance:none;
+
+            &:hover {
+                outline:0px !important;
+                -webkit-appearance:none;
+                box-shadow: none !important;
+            }
+        }
+    }
+}
+
+// Dessin
+.acf-field-6101620bb8f45 {
+    .acf-label {
+        display: none;
+    }
+
+    .acf-input {
+        align-items: flex-start;
+        border: 2px solid $color;
+        display: flex;
+
+        &:before {
+            background-image: url('../../assets/images/contenu_dessin.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            content: '';
+            height: 22px;
+            left: 15px;
+            position: absolute;
+            top: 15px;
+            transform: scale(0.6);
+            width: 20px;
+            z-index: 2;
+        }
+
+        // textearea
+        #acf-field_6101620bb8f45 {
+            border: none;
+            box-shadow: none !important;
+            font-size: $h4;
+            font-family: $covik, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            outline:0px !important;
+            padding: 0 0 0 10px;
+            -webkit-appearance:none;
+
+            display: none;
+
+            &:hover {
+                outline:0px !important;
+                -webkit-appearance:none;
+                box-shadow: none !important;
+            }
+        }
+    }
+}
+
+// Niveau de lucidité
+#reve--lucidite{
+    &.acf-field-60ec18ce6f71f {
+        margin: auto !important;
+        width: 90%;
+
+        .acf-label {
+            margin: 0 0 calc( #{$ratio} *  0.5 ) 0 !important;
+        }
+    }
+}
+
+.acf-field-dessin {
+    .image-container {
+        margin: auto;
+        position: relative;
+        width: 60%;
+
+        &:before {
+            background-image: url('../../assets/images/contenu_dessin.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            content: '';
+            height: 22px;
+            left: 15px;
+            position: absolute;
+            top: 15px;
+            transform: scale(0.6);
+            width: 20px;
+            z-index: 2;
+        }
+
+        img {
+            border: 2px solid $color;
+        }
+    }
+}
+
+
+
+
+
