@@ -2,7 +2,7 @@
     border-right: 1px solid $color;
     display: flex;
     flex-direction: column;
-    pointer-events: auto;
+    // pointer-events: auto;
     position: relative;
     z-index: 2;
     // transition: width $rythm2 $rythm1 ease-in-out;
@@ -17,6 +17,10 @@
         pointer-events: none !important;
     }
 
+    & > *:not(.content--left-header) {
+        pointer-events: none;
+    }
+
 
     // Header de navigation avec les différents boutons
     // o + connexion + inscription
@@ -28,7 +32,7 @@
         // transition: transform $rythm1 $rythm1 ease-in-out, opacity $rythm1 $rythm3 ease-in-out !important;
 
         @include respond(tablet) {
-            display: none;
+            // display: none;
             margin: calc( #{$ratio} * 0.2 ) calc( #{$ratio} *0.2 ) $ratio;
         }
 
@@ -215,4 +219,13 @@
         }
     }
 
+}
+
+.content-left-container-title {
+    background-color: red;
+    display: inline;
+    // padding: $ratio 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
 }

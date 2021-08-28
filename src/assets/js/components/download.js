@@ -53,12 +53,18 @@ if ( tables ) {
     tables.forEach( table => {
         const reveTitle = table.querySelector('.table--print-title').textContent;
 
-        // Télécharger les rêves
+        // TÉLÉCHARGER TOUT LES RÊVES
         const buttonDownload = document.querySelector('.button--download');
         buttonDownload.addEventListener("click", function () {
             if ( buttonSelectAll.classList.contains('-is-selected') ) {
                 var html = table.outerHTML;
                 export_table_to_csv(html, `${reveTitle}.csv`);
+                console.log(`
+                Tout les rêves ont été sélectionnés.
+                rêve sélectioné: ${reveTitle}
+                `);
+
+            // SELECTION DE CERTAINS REVES
             } else if ( reallyButton ) {
 
                 // Modifying the table name
@@ -74,6 +80,8 @@ if ( tables ) {
                     if ( reve === tableMatchingID ) {
                         const html = table.outerHTML;
                         export_table_to_csv(html, `${reveTitle}.csv`);
+
+                        console.log(`${reveTitle}`);
                     } else {
                         // Silence is golden
                     }
@@ -87,24 +95,68 @@ if ( tables ) {
 }
 
 // Selection de tout les rêves
+const buttonSelecteds = document.querySelectorAll('.article-reve');
 const buttonSelectAll = document.querySelector('.button--select');
 if ( buttonSelectAll ){
     buttonSelectAll.addEventListener('click', function() {
         buttonSelectAll.classList.toggle('-is-selected')
+        console.log(`Tout les rêves ont été sélectionnés.`);
+        if ( buttonSelecteds ){
+            buttonSelecteds.forEach( selected => {
+                reallyButton = selected.querySelector('.button--select-to-download');
+                reallyButton.classList.toggle('-is-selected');
+            });
+        }
     });
 }
 
 // Selection custom des rêves
-const buttonSelecteds = document.querySelectorAll('.article-reve');
 let reallybutton;
 if ( buttonSelecteds ){
     buttonSelecteds.forEach( selected => {
         reallyButton = selected.querySelector('.button--select-to-download');
+        reallyButtonTitle = selected.querySelector('.article-reve--header h1').innerHTML;
         const selectedID = selected.getAttribute('id');
         reallyButton.addEventListener('click', function(e) {
             const buttonDownloadReve = e.target;
+            const buttonDownloadReveContainer = buttonDownloadReve.closest('.article-reve--download');
+            const articleReveHeaderContainer = buttonDownloadReveContainer.closest('.article-reve--header');
+            const articleReveTitle = articleReveHeaderContainer.querySelector('h1').innerHTML;
+            const selectedDreamsContainer = document.querySelector('.selected-dreams');
+            const selectedDreamsText = `<p class="selected-dreams-item">- ${articleReveTitle}</p>`;
             buttonDownloadReve.classList.toggle('-is-selected');
             reveSelected.push(selectedID);
+
+            if ( buttonDownloadReve.classList.contains('-is-selected') ) {
+                selectedDreamsContainer.classList.remove('is-hidden');
+                selectedDreamsContainer.insertAdjacentHTML('beforeend', selectedDreamsText);
+                console.log(`Le rêve sélectionné est ${articleReveTitle}`);
+            } else {
+                console.log('button is uncheck');
+                if ( selectedDreamsContainer.hasChildNodes() ) {
+                    const selectedDreamsTextItems = document.querySelectorAll('.selected-dreams-item');
+                    // selectedDreamsTextItems.forEach( item => {
+                    //     if( item.innerHTML = articleReveTitle ) {
+                    //         console.log('on doit supprimer' + articleReveTitle)
+                    //         item.remove();
+                    //     }
+                    // });
+                    const ArraySelectedDreamsTextItems = Array.from( selectedDreamsTextItems );
+                    console.log( typeof ArraySelectedDreamsTextItems );
+                    ArraySelectedDreamsTextItems.find( item => removeItem(item) )
+
+                    function removeItem(item) {
+                        if( item.innerHTML = articleReveTitle ) {
+                            console.log('on doit supprimer' + articleReveTitle)
+                            item.remove();
+                        }
+                    }
+                } else {
+                    // Silence is golden.
+                }
+            }
+
+
         });
     });
 }

@@ -22,12 +22,13 @@ function create_modalite_sommeil_tax() {
 		'hierarchical' => false,
 		'public' => true,
 		'publicly_queryable' => true,
+        // show in admin menu and edit post sidebar
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_nav_menus' => true,
 		'show_tagcloud' => true,
-		'show_in_quick_edit' => false,
-		'show_admin_column' => true,
+		'show_in_quick_edit' => true,
+		'show_admin_column' => false,
 		'show_in_rest' => true,
         // User can't add taxonomies
         'capabilities' => array(

@@ -3,6 +3,7 @@
     $terms = get_terms( 'niveaudelucidite' );
     $o = 0;
     echo '<div class="lucidite--container left--filter">';
+        echo '<h4 class="content-left-container-title">Niveau de lucidité <img class="tooltip-icon" src="https://www.perimetre.studio/wp-content/uploads/2021/07/infoBulle.png"></h4>';
         foreach ( $terms as $term ) {
 
             // EACH

@@ -33,7 +33,12 @@
 .container--inscription {
     display: grid;
     place-items: center;
-    width: 40%;
+    width: 50%;
+
+
+    // TEMP
+    // display: flex;
+
 
     h1 {
         margin-bottom: $ratio2;
@@ -44,33 +49,33 @@
 
     h2 {
         text-align: center;
-        margin-bottom: $ratio;
+        margin-bottom: calc( #{$ratio} * 2 );
         position: relative;
         z-index: 1;
     }
-
-    .form--inscription {
-        position: relative;
-        z-index: 1;
-
-        .username {
-            margin-bottom: $ratio;
-        }
-
-        .email {
-            margin-bottom: $ratio;
-        }
-
-        .password {
-            margin-bottom: $ratio;
-        }
-
-        label {
-            margin-bottom: calc( #{$ratio2} / 2 );
-        }
-    }
-
 }
+
+.form--inscription {
+    position: relative;
+    z-index: 1;
+
+    .username {
+        margin-bottom: $ratio;
+    }
+
+    .email {
+        margin-bottom: $ratio;
+    }
+
+    .password {
+        margin-bottom: $ratio;
+    }
+
+    label {
+        margin-bottom: calc( #{$ratio2} / 2 );
+    }
+}
+
 
 // STYLE SPECIFIQUE
 .form--inscription {
@@ -204,3 +209,5 @@
     position: absolute;
     width: 40%;
 }
+
+

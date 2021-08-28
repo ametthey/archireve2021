@@ -18,6 +18,7 @@ function _themename_assets() {
     // if ( is_page_template( 'page-home.php' ) && is_front_page() && is_home() ) {
     // }
 
+    wp_dequeue_style( 'user-registration-general' );
 
     // User
     if ( is_page_template( 'page-inscription-informations.php' ) && is_page_template( 'page-profil.php' ) && is_page_template( 'page-back-office.php' ) ) {
@@ -25,6 +26,14 @@ function _themename_assets() {
         wp_enqueue_script( '_themename-about', get_stylesheet_directory_uri() . '/dist/assets/js/user.js', [], '1.0.0' , true );
         wp_deregister_script( 'wp-embed' );
         wp_dequeue_script( 'wp-embed' );
+
+    // INSCRIPTION
+    } else if ( is_page_template( 'page-inscription.php' ) )  {
+        wp_enqueue_style( '_themename-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', [], '1.0.0' ,  'all' );
+        wp_enqueue_script( '_themename-about', get_stylesheet_directory_uri() . '/dist/assets/js/user.js', [], '1.0.0' , true );
+        wp_deregister_script( 'wp-embed' );
+        wp_dequeue_script( 'wp-embed' );
+        // Dequeue user-registration style
 
     // PROFILE
     }  else if ( is_page( '199' ) ) {
@@ -42,6 +51,11 @@ function _themename_assets() {
 
 add_action( 'wp_enqueue_scripts', '_themename_assets' );
 
+// DEQUEUE PLUGIN STYLES
+function dequeue_dequeue_plugin_style(){
+}
+add_action( 'wp_enqueue_scripts', 'dequeue_dequeue_plugin_style', 999 );
+
 // disable acf css on front-end acf forms
 // add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
 //
@@ -55,12 +69,12 @@ add_action( 'wp_enqueue_scripts', '_themename_assets' );
  * Admin stylesheet
  */
 
-// function _themename_admin_assets() {
-//     wp_enqueue_style( '_themename-admin-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/admin.css', [], '1.0.0', 'all');
-//     wp_enqueue_script( '_themename-admin-scripts', get_stylesheet_directory_uri() . '/dist/assets/js/admin.js', [], '1.0.0' , true );
-// }
+function _themename_admin_assets() {
+    wp_enqueue_style( '_themename-admin-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/admin.css', [], '1.0.0', 'all');
+    wp_enqueue_script( '_themename-admin-scripts', get_stylesheet_directory_uri() . '/dist/assets/js/admin.js', [], '1.0.0' , true );
+}
 
-// add_action( 'admin_enqueue_scripts', '_themename_admin_assets' );
+add_action( 'admin_enqueue_scripts', '_themename_admin_assets' );
 
 /*
  * Login Stylesheet

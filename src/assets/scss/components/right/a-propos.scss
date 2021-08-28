@@ -42,7 +42,7 @@
 
                     &.char {
                         cursor: pointer;
-                        text-transform: uppercase;
+                        // text-transform: uppercase;
                         transition: all $rythm0 $easeIOE !important;
 
                         &:hover {
@@ -55,6 +55,10 @@
 
         .button--rounded {
             background: transparent;
+
+            &:hover {
+                background-color: $color;
+            }
         }
 
         &.propos--section-1 {

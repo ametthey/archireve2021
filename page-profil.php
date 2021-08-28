@@ -15,18 +15,17 @@ get_header(); ?>
             echo 'Je suis administrator';
         } else if ( current_user_can('author') ){
             global $current_user;
-            // get_currentuserinfo();
             wp_get_current_user();
             ?>
 
         <div class="profil--header-links">
-            <a href="<?php echo esc_url( get_permalink( 199 ) ); ?>">
+            <a href="<?php echo get_permalink( get_page_by_title($pseudo , 'reveur_info') ); ?>">
                 <h3 class="button--rounded rounded--big">Modifier le profil</h3>
             </a>
             <a href="<?php echo esc_url( get_permalink( 182 ) ); ?>">
                 <h3 class="button--rounded rounded--big">Voir mes rêves</h3>
             </a>
-            <a href="<?php echo wp_logout_url( home_url( '/home/' ) ); ?>">
+            <a href="<?php echo wp_logout_url( get_permalink( 194 ) ); ?>">
                 <h3 class="button--rounded rounded--big">Se déconnecter</h3>
             </a>
         </div>
@@ -40,12 +39,11 @@ get_header(); ?>
     </div>
 
     <div class="profil--utilisateur">
-    <?php
 
-        echo do_shortcode( '[my_acf_user_form field_group="454"]' );
+        <?php
 
-    ?>
 
+        ?>
 
     </div>
 

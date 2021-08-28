@@ -584,23 +584,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "post_type",
                 "operator": "==",
-                "value": "182"
-            }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "182"
-            }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "182"
+                "value": "reveur_info"
             }
         ]
     ],
@@ -635,5 +621,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1627687474
+    "modified": 1628273502
 }

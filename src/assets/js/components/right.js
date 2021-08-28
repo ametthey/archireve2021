@@ -1,3 +1,6 @@
+import { LocomotiveScroll } from '../main.js';
+
+
 // HOVER CONTENT RIGHT
 const contentRight = document.querySelector('.content--right');
 const contentHome = document.querySelector('.content--home');
@@ -16,6 +19,12 @@ if ( contentRight ){
 
     contentHome.addEventListener( 'click', () => {
         contentRightEventsOff();
+    });
+
+
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true
     });
 }
 

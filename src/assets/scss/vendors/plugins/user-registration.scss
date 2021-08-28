@@ -1,0 +1,96 @@
+.user-registration--custom {
+    width: 100%;
+
+    .ur-field-item {
+        margin-bottom: calc( #{$ratio} * 2 );
+
+        .form-row {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    label {
+        font-family: $covik;
+        font-size: $h3;
+        line-height: $h3;
+
+        abbr[title] {
+            text-decoration: none;
+        }
+    }
+
+    .input-wrapper {
+        width: 50%;
+        input {
+            background: none;
+            border-radius: 0px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 2px solid $color;
+            box-shadow: none;
+            color: $color;
+            font-family: $covik;
+            font-size: $h3;
+            line-height: $h3;
+            outline: none;
+            padding: 0 !important;
+            margin: 0 !important;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .ur-button-container {
+        text-align: center;
+
+        .ur-submit-button {
+            background-color: $bg;
+            border: 1px solid $color;
+            border-radius: 100px 100px 100px 100px;
+            color: $color;
+            cursor: pointer;
+            font-family: $covik;
+            font-size: $h1;
+            line-height: $h1;
+            padding: 10px 30px;
+            transition: all 0.325s ease-in-out;
+            text-transform: uppercase;
+            width: auto;
+
+            @include respond(tablet) {
+                font-size: $mh1;
+                line-height: $mh1;
+            }
+
+            &:hover {
+                background-color: $color;
+                border-color: $bg;
+                color: $bg;
+            }
+        }
+    }
+}
+
+// HIDDEN USER IF USER IS LOGGED IN
+#ur_register_pre_form_message {
+    a {
+        color: $color;
+    }
+}
+
+// REGISTRATION USER DONE
+#ur-submit-message-node {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    ul {
+        color: $color;
+        font-family: $covik;
+        font-size: $small;
+        line-height: $small;
+        margin: calc( #{$ratio} / 2 ) 0 0 0;
+}
+}

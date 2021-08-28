@@ -28,15 +28,14 @@ get_header(); ?>
 
     <div class="profil--header">
         <h1><?php echo $pseudo; ?></h1>
-
         <div class="profil--header-links">
-            <a href="<?php echo esc_url( get_permalink( 199 ) ); ?>">
+            <a href="<?php echo get_permalink( get_page_by_title($pseudo , 'reveur_info') ); ?>">
                 <h3 class="button--rounded rounded--big">Modifier le profil</h3>
             </a>
             <a href="<?php echo esc_url( get_permalink( 134 ) ); ?>">
                 <h3 class="button--rounded rounded--big">Voir les rêves</h3>
             </a>
-            <a href="<?php echo wp_logout_url( home_url( '/home/' ) ); ?>">
+            <a href="<?php echo wp_logout_url( get_permalink( 194 ) ); ?>">
                 <h3 class="button--rounded rounded--big">Se déconnecter</h3>
             </a>
         </div>
@@ -57,6 +56,7 @@ get_header(); ?>
                 'orderby' => 'date',
                 'order'   => 'DESC',
                 'post_type'      => 'reve',
+                'post_status' => array('publish', 'pending'),
                 'posts_per_page' => -1
             );
 
@@ -81,6 +81,21 @@ get_header(); ?>
                 'include' => $tag,
             );
             $tags = get_the_terms( $post->ID, 'customtag' );
+
+            // POST CLASSES
+            // for creating the opacity effect
+            $post_class_1 = 'article-<?php echo esc_html( $term_typologie->slug)';
+            $post_class_2 = 'border-<?php echo esc_html( $term_typologie->slug )';
+            $post_class_3 = '<?php echo esc_html( $term_lucidite->slug ); ?>';
+            $post_class_4 = '<?php echo esc_html( $term_typologie->slug ); ?>';
+            $classes = array(
+                'backoffice-reve',
+                'article-reve',
+                // $post_class_1,
+                // $post_class_2,
+                // $post_class_3,
+                // $post_class_4,
+            )
             ?>
 
                 <div class="profil--reve-published profil--reve-new">

@@ -1,4 +1,5 @@
 <div class="calendrier--container left--filter">
+    <h4 class="content-left-container-title">Période</h4>
     <div class="swiper-container swiper-container-date">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">

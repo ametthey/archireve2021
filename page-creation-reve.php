@@ -1,8 +1,9 @@
 <?php
 
+ob_get_clean();
 acf_form_head();
 /*
- * Template Name: creation reve
+ * Template Name: modification reve
  */
 get_header();
 ?>
@@ -20,7 +21,8 @@ get_header();
             global $current_user;
             // get_currentuserinfo();
             wp_get_current_user();
-            ?>
+
+    ?>
 
     <div class="profil--header">
         <h1><?php echo $pseudo; ?></h1>
@@ -56,14 +58,14 @@ get_header();
 		'post_title'	=> true,
 		'new_post'		=> array(
 			'post_type'		=> 'reve',
-			'post_status'	=> 'publish'
+			'post_status'	=> 'pending'
         ),
         'submit_value' => __("Publier", 'acf'),
         'html_submit_button'  => '<input type="submit" class="acf-button-inscription-information" value="%s" />',
         'updated_message' => __("MERCI ton RêVE est en cours de validation,
 il sera bientôt en ligne ! ", 'acf'),
         'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
-        'return' => '',
+        'return' => '/back-office/',
 	));
 
 	?>
@@ -93,6 +95,14 @@ il sera bientôt en ligne ! ", 'acf'),
                     <div id="orange" class="color"></div>
                     <div id="black" class="color"></div>
                     <div id="white" class="color"></div>
+                    <div id="cauchemar" class="color"></div>
+                    <div id="concomitant" class="color"></div>
+                    <div id="creatif" class="color"></div>
+                    <div id="actualite" class="color"></div>
+                    <div id="recurrent" class="color"></div>
+                    <div id="sexuel" class="color"></div>
+                    <div id="premonitoire" class="color"></div>
+                    <div id="lucide" class="color"></div>
                 </div>
             </div>
 

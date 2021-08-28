@@ -72,7 +72,6 @@
 
 
 .site-branding {
-
     @include respond(tablet) {
         position: absolute;
         left: 50%;
@@ -81,7 +80,8 @@
 
     svg {
         transition: filter $rythm2 ease-in-out;
-        height: 19px;
+        // height: 19px;
+        width: 210px;
 
         @include respond(tablet) {
             height: 10px;

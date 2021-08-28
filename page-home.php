@@ -3,7 +3,8 @@
  * Template Name: home
  */
 
-get_header(); ?>
+get_header( 'home' ); ?>
+
 
 <?php get_template_part( 'template-parts/content/content', 'left' ); ?>
 

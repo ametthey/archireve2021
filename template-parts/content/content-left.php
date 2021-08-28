@@ -45,7 +45,7 @@
 
     <div class="content--left-cover"><h3>filtres</h3> <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/loupe.svg"></div>
 
-    <?php get_template_part('template-parts/content/content', 'left-tag'); ?>
+    <?php // get_template_part('template-parts/content/content', 'left-tag'); ?>
 
     <?php get_template_part('template-parts/content/content', 'left-lucidite'); ?>
 
@@ -53,14 +53,9 @@
 
     <?php get_template_part('template-parts/content/content', 'left-date'); ?>
 
-    <!-- TÉLÉCHARGER ET SÉLECTIONNER -->
-    <div class="button--download left--filter">
-        <div class="button--rounded rounded--big">
-            <h4>TÉLÉCHARGER LES RÊVES</h4>
-        </div>
-    </div>
-    <div class="button--select left--filter">
-        <div class="button--round round--white"></div>
-        <p>TOUT SÉLECTIONNER</p>
-    </div>
+    <?php get_template_part('template-parts/content/content', 'left-buttons'); ?>
+
+    <?php get_template_part('template-parts/content/content', 'selected-dreams'); ?>
+
+
 </div>

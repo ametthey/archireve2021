@@ -3,9 +3,9 @@
     "title": "A Propos",
     "fields": [
         {
-            "key": "field_610075acea209",
-            "label": "Texte 1",
-            "name": "texte_1",
+            "key": "field_61261e437994c",
+            "label": "Bienvenu",
+            "name": "bienvenu",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -19,13 +19,13 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "",
+            "new_lines": "br",
             "acfe_textarea_code": 0
         },
         {
-            "key": "field_610075baea20a",
-            "label": "Texte 2",
-            "name": "texte_2",
+            "key": "field_61261e4e7994d",
+            "label": "Archirêveur",
+            "name": "archireveur",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -39,271 +39,13 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "",
+            "new_lines": "br",
             "acfe_textarea_code": 0
         },
         {
-            "key": "field_61007610ea20b",
-            "label": "Informations 1",
-            "name": "informations_1",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "acfe_seamless_style": 0,
-            "acfe_group_modal": 0,
-            "sub_fields": [
-                {
-                    "key": "field_61007689ea20c",
-                    "label": "Le questionnaire utilisateur",
-                    "name": "le_questionnaire_utilisateur",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "acfe_textarea_code": 0
-                },
-                {
-                    "key": "field_6100769eea20d",
-                    "label": "Les modalités du sommeil",
-                    "name": "les_modalites_du_sommeil",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "acfe_textarea_code": 0
-                },
-                {
-                    "key": "field_610076a9ea20e",
-                    "label": "Lucidité",
-                    "name": "lucidite",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "acfe_textarea_code": 0
-                },
-                {
-                    "key": "field_610076b0ea20f",
-                    "label": "Les typologies de rêves",
-                    "name": "les_typologies_de_reves",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "acfe_textarea_code": 0
-                },
-                {
-                    "key": "field_610076b8ea210",
-                    "label": "Le rappel",
-                    "name": "le_rappel",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "acfe_textarea_code": 0
-                },
-                {
-                    "key": "field_610076bcea211",
-                    "label": "Le dessin",
-                    "name": "le_dessin",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "acfe_textarea_code": 0
-                },
-                {
-                    "key": "field_61007782ea216",
-                    "label": "Contact texte",
-                    "name": "contact_texte",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "acfe_textarea_code": 0
-                },
-                {
-                    "key": "field_6100779aea217",
-                    "label": "Protection et droit texte",
-                    "name": "protection_et_droit_texte",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "acfe_textarea_code": 0
-                }
-            ]
-        },
-        {
-            "key": "field_6100770cea212",
-            "label": "Informations 2",
-            "name": "informations_2",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "acfe_seamless_style": 0,
-            "acfe_group_modal": 0,
-            "sub_fields": [
-                {
-                    "key": "field_61007719ea213",
-                    "label": "Le questionnaire utilisateur",
-                    "name": "le_questionnaire_utilisateur",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "acfe_textarea_code": 0
-                },
-                {
-                    "key": "field_6100776fea214",
-                    "label": "La recherche",
-                    "name": "la_recherche_",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "acfe_textarea_code": 0
-                },
-                {
-                    "key": "field_61007779ea215",
-                    "label": "L'équipe",
-                    "name": "lequipe",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "acfe_textarea_code": 0
-                }
-            ]
-        },
-        {
-            "key": "field_610077bbea218",
-            "label": "Contact texte",
-            "name": "contact_texte",
+            "key": "field_61261f4279959",
+            "label": "Collapse 1 - Questionnaire Utilisateur",
+            "name": "collapse_1_-_questionnaire_utilisateur",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -317,13 +59,13 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "",
+            "new_lines": "br",
             "acfe_textarea_code": 0
         },
         {
-            "key": "field_610077c1ea219",
-            "label": "Protection et Droit texte",
-            "name": "protection_et_droit_texte",
+            "key": "field_61261f507995a",
+            "label": "Collapse 1 - Les modalités du sommeil",
+            "name": "collapse_1_-_les_modalites_du_sommeil",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -337,7 +79,167 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "",
+            "new_lines": "br",
+            "acfe_textarea_code": 0
+        },
+        {
+            "key": "field_61261f587995b",
+            "label": "Collapse 1 - Lucidité",
+            "name": "collapse_1_-_lucidite",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br",
+            "acfe_textarea_code": 0
+        },
+        {
+            "key": "field_61261f6a7995c",
+            "label": "Collapse 1 - Les typologies de rêves",
+            "name": "collapse_1_-_les_typologies_de_reves",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br",
+            "acfe_textarea_code": 0
+        },
+        {
+            "key": "field_61261f757995d",
+            "label": "Collapse 1 - Le rappel",
+            "name": "collapse_1_-_le_rappel",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br",
+            "acfe_textarea_code": 0
+        },
+        {
+            "key": "field_61261f827995e",
+            "label": "Collapse 1 - Le dessin",
+            "name": "collapse_1_-_le_dessin",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br",
+            "acfe_textarea_code": 0
+        },
+        {
+            "key": "field_61261f8c7995f",
+            "label": "Collapse 2 - Le questionnaire utilisateur",
+            "name": "collapse_2_-_le_questionnaire_utilisateur",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br",
+            "acfe_textarea_code": 0
+        },
+        {
+            "key": "field_61261f9879960",
+            "label": "Collapse 2 - La recherche",
+            "name": "collapse_2_-_la_recherche",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br",
+            "acfe_textarea_code": 0
+        },
+        {
+            "key": "field_61261fa079961",
+            "label": "Collapse 2 - L'équipe",
+            "name": "collapse_2_-_lequipe",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br",
+            "acfe_textarea_code": 0
+        },
+        {
+            "key": "field_61261fa979962",
+            "label": "Contact",
+            "name": "contact",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br",
             "acfe_textarea_code": 0
         }
     ],
@@ -365,5 +267,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1627420678
+    "modified": 1629888788
 }

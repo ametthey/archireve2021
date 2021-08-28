@@ -7,8 +7,7 @@
 
     if ( is_user_logged_in() ) {
         // echo '<div class="user--id">L\'ID de l\'utilisateur est ' . $user_id_1 . '';
-        echo '<div class="user--id">L\'ID de l\'utilisateur est ' . $user_id_2 . '</div>';
-        echo '<br>L\'ID de la page est ' . $page_id . '</div>';
+        echo '<div class="user--id">L\'ID de l\'utilisateur est ' . $user_id_2 . '<br>L\'ID de la page est ' . $page_id . '</div>';
     } else {
         // Silence is golden;
     }

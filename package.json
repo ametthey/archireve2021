@@ -1,62 +1,64 @@
 {
-  "name": "archireve",
-  "version": "1.0.0",
-  "description": "this is a description",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "dependencies": {
-    "@barba/core": "^2.9.7",
-    "animejs": "^3.2.1",
-    "gsap": "^3.7.1",
-    "isotope-layout": "^3.0.6",
-    "splitting": "^1.0.6",
-    "swiper": "^6.3.5",
-    "xlsx": "^0.17.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/register": "^7.12.1",
-    "autoprefixer": "^10.0.4",
-    "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.13",
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-if": "^3.0.0",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-postcss": "^9.0.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
-    "gulp-zip": "^5.0.2",
-    "intersection-observer-debugger": "^0.1.1",
-    "node-sass": "^4.13.1",
-    "postcss": "^8.1.10",
-    "vinyl-named": "^1.1.0",
-    "webpack-stream": "^5.2.1",
-    "yargs": "^15.4.1"
-  },
-  "browserslist": [
-    ">0.1%",
-    "last 2 Chrome versions",
-    "last 2 Firefox versions",
-    "last 2 Edge versions",
-    "last 2 Samsung versions",
-    "Safari >= 9",
-    "ie 8-11",
-    "iOS >= 9"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp",
-    "build": "gulp build --prod",
-    "bundle": "gulp bundle --prod"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "archireve",
+    "version": "1.0.0",
+    "description": "this is a description",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "dependencies": {
+        "@barba/core": "^2.9.7",
+        "animejs": "^3.2.1",
+        "canvas2svg": "^1.0.16",
+        "gsap": "^3.7.1",
+        "isotope-layout": "^3.0.6",
+        "locomotive-scroll": "^4.1.1",
+        "splitting": "^1.0.6",
+        "swiper": "^6.3.5",
+        "xlsx": "^0.17.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.3",
+        "@babel/preset-env": "^7.12.1",
+        "@babel/register": "^7.12.1",
+        "autoprefixer": "^10.0.4",
+        "babel-loader": "^8.1.0",
+        "browser-sync": "^2.26.13",
+        "del": "^5.1.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-if": "^3.0.0",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-postcss": "^9.0.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-uglify": "^3.0.2",
+        "gulp-zip": "^5.0.2",
+        "intersection-observer-debugger": "^0.1.1",
+        "node-sass": "^4.13.1",
+        "postcss": "^8.1.10",
+        "vinyl-named": "^1.1.0",
+        "webpack-stream": "^5.2.1",
+        "yargs": "^15.4.1"
+    },
+    "browserslist": [
+        ">0.1%",
+        "last 2 Chrome versions",
+        "last 2 Firefox versions",
+        "last 2 Edge versions",
+        "last 2 Samsung versions",
+        "Safari >= 9",
+        "ie 8-11",
+        "iOS >= 9"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "gulp",
+        "build": "gulp build --prod",
+        "bundle": "gulp bundle --prod"
+    },
+    "author": "",
+    "license": "ISC"
 }

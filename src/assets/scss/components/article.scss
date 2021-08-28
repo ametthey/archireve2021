@@ -3,6 +3,7 @@
     flex-direction: column;
     margin: 0 auto $ratio;
     position: relative !important;
+    user-select: none;
     width: 90%;
 
     @include respond(tablet) {

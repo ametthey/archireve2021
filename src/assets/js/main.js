@@ -1,7 +1,18 @@
 import Isotope from 'isotope-layout';
 import Swiper from 'swiper/bundle';
-import { gsap } from "gsap";
-import barba from '@barba/core';
+// import { gsap } from "gsap";
+// import barba from '@barba/core';
+// import canvas2svg from 'canvas2svg';
+// import anime from 'animejs/lib/anime.es.js';
+import LocomotiveScroll from 'locomotive-scroll';
+import Splitting from 'splitting';
+
+/*
+ * Dependencies installed but not used
+ * animejs
+ * canvas2svg
+ * xlsx
+ */
 
 import './components/helpers.js';
 import './components/helpers-debug.js';
@@ -39,6 +50,7 @@ import './components/dessin.js';
 import './components/acf.js';
 import './components/animation.js';
 import './components/page-transition.js';
+import './components/home-logo-animation.js';
 
 
 // pas sûr qu'il existe
@@ -55,5 +67,5 @@ import './components/page-transition.js';
 
 
 
-
-export { Isotope, Swiper, gsap, barba };
+// export { Isotope, Swiper, gsap, barba };
+export { Isotope, Swiper, LocomotiveScroll, Splitting };

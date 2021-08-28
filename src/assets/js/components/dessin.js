@@ -1,3 +1,4 @@
+// import canvas2svg from 'canvas2svg';
 
 // https://getbutterfly.com/how-to-draw-on-canvas-and-save-the-result-using-vanilla-javascript/
 const container = document.querySelector('.dessin--container');
@@ -63,8 +64,16 @@ const heightContainer =  container.offsetHeight;
         //////////////////////////////////////////////////////////////////////////
         // Colors
         //////////////////////////////////////////////////////////////////////////
+        const cauchemar =  '#6755AA';
+        const concomitant =  '#2CAF38';
+        const creatif =  '#F79D65';
+        const actualite =  '#99BA22';
+        const recurrent =  '#DB5931';
+        const sexuel =  '#D67083';
+        const premonitoire =  '#4CA58E';
+        const lucide =  '#c12b2b';
 
-        const colors = ['red', 'blue', 'green', 'purple', 'orange', 'black', 'white'];
+        const colors = [ 'cauchemar', 'concomitant', 'creatif', 'actualite', 'recurrent', 'sexuel', 'premonitoire', 'lucide' ];
 
         function listener(i) {
             document.getElementById(colors[i]).addEventListener('click', function(){
@@ -88,6 +97,10 @@ const heightContainer =  container.offsetHeight;
         document.getElementById('upload-button').addEventListener('click', () => {
             let image = canvas.toDataURL("image/png");
             let imageDownloaded = this.href = image;
+
+            // let imageSVG = ctx.getSVG();
+
+            // console.log( imageSVG );
 
             dessinHTML = `
                     <div class="acf-field acf-field-dessin">

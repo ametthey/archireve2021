@@ -18,8 +18,9 @@ require_once( 'lib/menu.php' );
 require_once( 'lib/sidebar.php' );
 require_once( 'lib/custom-admin-bar.php' );
 require_once( 'lib/custom-post-type.php' );
+require_once( 'lib/custom-post-type-user.php' );
 require_once( 'lib/custom-taxonomy.php' );
-require_once( 'lib/custom-taxonomy-tag.php' );
+// require_once( 'lib/custom-taxonomy-tag.php' );
 require_once( 'lib/custom-taxonomy-typologie.php' );
 require_once( 'lib/custom-taxonomy-lucidite.php' );
 // Modalite du sommeil
@@ -40,7 +41,7 @@ require_once( 'lib/user-profile.php' );
 require_once( 'lib/connexion.php' );
 require_once( 'lib/connexion-first-time.php' );
 require_once( 'lib/inscription.php' );
-require_once( 'lib/inscription-test.php' );
+// require_once( 'lib/inscription-test.php' );
 // require_once( 'lib/inscription-email.php' );
 
 // DASHBOARD

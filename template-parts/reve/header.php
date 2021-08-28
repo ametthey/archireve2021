@@ -9,6 +9,28 @@
 
 <!-- LIEN DE TELECHARGEMENT -->
 <div class="article-reve--download border-left-<?php echo esc_html( $term_typologie->slug ); ?>">
-    <div class="button--round round--white round--small button--select-to-download"></div>
+
+    <?php
+        if ( is_page_template('page-back-office.php') ) {
+?>
+
+<a href="<?php the_permalink(); ?>">
+    <button class="contenu--edit">
+        <img class="contenu--edit" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/contenu_edit.svg" alt="">
+    </button>
+</a>
+<?php
+
+        } else {
+?>
+<div class="button--round round--white round--small button--select-to-download"></div>
     <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/contenu_texte.svg" alt="">
+
+<?php
+
+        }
+
+?>
+
+
 </div>

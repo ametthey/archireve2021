@@ -1,9 +1,19 @@
-import Splitting from 'splitting';
+import { Splitting } from '../main.js';
 
 const target = document.querySelectorAll('.colored-hover');
 const results = Splitting({ target: target, by: 'chars' });
 
-const colors = ['#303030','#6453A3', '#6755AA', '#2CAF28', '#F79D65', '#99BA22', '#C12B2B', '#4CA58E', '#DB5931', '#D67083' ];
+// Colors
+const cauchemar =  '#6755AA';
+const concomitant =  '#2CAF38';
+const creatif =  '#F79D65';
+const actualite =  '#99BA22';
+const recurrent =  '#DB5931';
+const sexuel =  '#D67083';
+const premonitoire =  '#4CA58E';
+const lucide =  '#c12b2b';
+
+const colors = [ cauchemar, concomitant, creatif, actualite, recurrent, sexuel, premonitoire, lucide ];
 
 // https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
 

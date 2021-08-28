@@ -65,7 +65,7 @@ add_filter( 'login_redirect', '_themename_redirect_user_after_login', 10, 3 );
  *
  */
 function _themename_auto_redirect_after_logout(){
-  wp_safe_redirect( home_url( '/home/' ) );
+  wp_safe_redirect( home_url( '/connexion/' ) );
   exit;
 }
 add_action('wp_logout','_themename_auto_redirect_after_logout');

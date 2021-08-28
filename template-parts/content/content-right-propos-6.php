@@ -1,4 +1,4 @@
-<div class="propos--section is-hidden propos--section-6">
+<div data-scroll-section class="propos--section is-hidden propos--section-6">
     <h1 class="bigger">PROTECTION ET DROIT</h1>
     <h2>
         Il ne faut pas raconter ses rêves à n’importe qui, car le rêve est le pistil de la fleur de l’intime.

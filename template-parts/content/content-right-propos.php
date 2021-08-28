@@ -1,4 +1,4 @@
-<div class="right--container-propos">
+<div data-scroll-container class="right--container-propos">
 
     <!-- Section 1 -->
     <?php get_template_part( 'template-parts/content/content', 'right-propos-1' ); ?>

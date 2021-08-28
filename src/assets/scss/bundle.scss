@@ -1,15 +1,3 @@
-/*
- * SCSS Structures
- *
- * # Sass Guidelines
- * @link: https://sass-guidelin.es/fr/#architecture
- *
- * # Sass Boilereplate
- * @link: https://github.com/HugoGiraudel/sass-boilerplate/tree/master/stylesheets/abstracts
- */
-
-
-
 // Abstracts
 @import 'abstract/mixins';
 @import 'abstract/variables';
@@ -18,10 +6,12 @@
 // Vendors
 @import 'vendors/reset';
 @import 'vendors/normalize';
+@import 'vendors/normalize-button';
 @import 'vendors/wordpress-core';
 // @import 'vendors/hamburger';
 @import 'vendors/swiper';
 @import 'vendors/acf/daypicker';
+@import 'vendors/plugins/user-registration';
 
 // Base
 @import 'base/base';
@@ -45,10 +35,10 @@
 @import 'components/left/filtres/lucidite';
 @import 'components/left/filtres/typologie';
 @import 'components/left/flatpickr';
-
+@import 'components/left/selected-dreams';
 @import 'components/buttons';
-
 @import 'components/animations';
+@import 'components/logo-home-animation';
 
 // Layout
 @import 'layout/header';
@@ -60,7 +50,7 @@
 @import 'pages/front-page';
 @import 'pages/front-articles';
 @import 'pages/connexion';
-// @import 'pages/inscription-informations';
+@import 'pages/inscription-informations';
 @import 'pages/inscription';
 @import 'pages/erreur';
 
@@ -97,3 +87,11 @@
 @import 'pages/creation-reve/dessin';
 
 @import 'components/print';
+
+
+
+.acf-debug {
+    position: absolute;
+    background-color: red;
+    z-index: 1000000;
+}
