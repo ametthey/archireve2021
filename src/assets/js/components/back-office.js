@@ -1,4 +1,5 @@
 const postsBackOffice = document.querySelectorAll('.profil--reve .profil--reve-new');
+const postsPublishedStatus = document.querySelectorAll('.profil--reve-published');
 
 if ( postsBackOffice ) {
     if ( postsBackOffice.length === 1 ) {
@@ -10,3 +11,13 @@ if ( postsBackOffice ) {
     }
 }
 
+
+if ( postsPublishedStatus ) {
+    postsPublishedStatus.forEach( post => {
+        const postMessage = post.querySelector('.message--status-pending');
+
+        if ( post.classList.contains('status-publish') ) {
+            postMessage.classList.add('is-hidden');
+        }
+    });
+}

@@ -98,7 +98,7 @@ get_header(); ?>
             )
             ?>
 
-                <div class="profil--reve-published profil--reve-new">
+                    <div <?php post_class('profil--reve-published profil--reve-new');?> >
                     <?php if ( $term_lucidite  && $term_typologie  ) : ?>
 
                         <article
@@ -145,6 +145,10 @@ get_header(); ?>
                         </article>
 
                     <?php endif; ?>
+
+                    <div class="message--status-pending">
+                        <h3>Votre rêve est en attente de validation</h3>
+                    </div>
                 </div>
 
 

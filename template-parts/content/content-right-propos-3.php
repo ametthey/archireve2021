@@ -1,105 +1,71 @@
-<div  data-scroll-section class="propos--section is-hidden propos--section-3">
-    <!-- le questionnaire utilisateur -->
-    <div class="collapse-container">
-        <input type="checkbox" id="questionnaire-utilisateur-desktop">
-        <h1>
-            <label for="questionnaire-utilisateur-desktop">
-                <!-- Numéro -->
-                <span>1</span>
+<!-- SECTION 3 - COLLAPSE #1 -->
+<div data-scroll-section class="propos--section propos--section-3 propos--section-collapse">
 
-                <!-- Titre -->
-                <h2 class="collapse-title-texte">le questionnaire utilisateur</h2>
-            </label>
-        </h1>
-        <div class="collapse-texte">
-            <p><?php the_field( 'collapse_1_-_questionnaire_utilisateur', 'option' ); ?></p>
+    <!-- LE QUESTIONNAIRE UTILISATEUR -->
+    <div class="propos--collapse-container">
+        <div class="propos--collapse-header">
+            <span class="propos--collapse-number">1</span>
+            <div class="propos--collapse-title">Le questionnaire utilisateur</div>
+        </div>
+
+        <div class="propos--collapse-texte">
+            <span class="propos--collapse-number"><p>1</p></span>
+            <div class="propos--collapse-title"><?php the_field( 'collapse_1_-_questionnaire_utilisateur', 'option' ); ?></div>
         </div>
     </div>
 
-    <!-- les modalités du sommeil -->
-    <div class="collapse-container">
-        <input type="checkbox" id="modalite-sommeil-desktop">
-        <h1>
-            <label for="modalite-sommeil-desktop">
-                <!-- Numéro -->
-                <span>2</span>
+    <!-- LES MODALITÉS DU SOMMEIL -->
+    <div class="propos--collapse-container">
+        <div class="propos--collapse-header">
+            <span class="propos--collapse-number">2</span>
+            <div class="propos--collapse-title">les modalités du sommeil</div>
+        </div>
 
-                <!-- Titre -->
-                <h2 class="collapse-title-texte">les modalités du sommeil</h2>
-            </label>
-        </h1>
-        <div class="collapse-texte">
-            <p><?php the_field( 'collapse_1_-_les_modalites_du_sommeil', 'option' ); ?></p>
+        <div class="propos--collapse-texte">
+            <span class="propos--collapse-number"><p>1</p></span>
+            <div class="propos--collapse-title"><?php the_field( 'collapse_1_-_les_modalites_du_sommeil', 'option' ); ?></div>
         </div>
     </div>
 
-    <!-- Lucidite -->
-    <div class="collapse-container">
-        <input type="checkbox" id="lucidite-desktop">
-        <h1>
-            <label for="lucidite-desktop">
-                <!-- Numéro -->
-                <span>3</span>
+    <!-- LUCIDITÉS -->
+    <div class="propos--collapse-container">
+        <div class="propos--collapse-header">
+            <span class="propos--collapse-number">3</span>
+            <div class="propos--collapse-title">Lucidité</div>
+        </div>
 
-                <!-- Titre -->
-                <h2 class="collapse-title-texte">Lucidité</h2>
-            </label>
-        </h1>
-        <div class="collapse-texte">
-            <p><?php the_field( 'collapse_1_-_lucidite', 'option' ); ?></p>
+        <div class="propos--collapse-texte">
+            <span class="propos--collapse-number"><p>1</p></span>
+            <div class="propos--collapse-title"><?php the_field( 'collapse_1_-_lucidite', 'option' ); ?></div>
         </div>
     </div>
 
-    <!-- les typologies de rêves -->
-    <div class="collapse-container">
-        <input type="checkbox" id="typologie-reve-desktop">
-        <h1>
-            <label for="typologie-reve-desktop">
-                <!-- Numéro -->
-                <span>4</span>
+    <!-- LES TYPOLOGIES DE RÊVES -->
+    <div class="propos--collapse-container">
+        <div class="propos--collapse-header">
+            <span class="propos--collapse-number">4</span>
+            <div class="propos--collapse-title">LES TYPOLOGIES DE RÊVES</div>
+        </div>
 
-                <!-- Titre -->
-                <h2 class="collapse-title-texte">Les typologies de rêves</h2>
-            </label>
-        </h1>
-        <div class="collapse-texte">
-            <p><?php the_field( 'collapse_1_-_les_typologies_de_reves', 'option' ); ?></p>
+        <div class="propos--collapse-texte">
+            <span class="propos--collapse-number"><p>1</p></span>
+            <div class="propos--collapse-title"><?php the_field( 'collapse_1_-_les_typologies_de_reves', 'option' ); ?></div>
         </div>
     </div>
 
-    <!-- Le rappel -->
-    <div class="collapse-container">
-        <input type="checkbox" id="rappel-desktop">
-        <h1>
-            <label for="rappel-desktop">
-                <!-- Numéro -->
-                <span>5</span>
+    <!-- LE RAPPEL -->
+    <div class="propos--collapse-container">
+        <div class="propos--collapse-header">
+            <span class="propos--collapse-number">5</span>
+            <div class="propos--collapse-title">LE RAPPEL</div>
+        </div>
 
-                <!-- Titre -->
-                <h2 class="collapse-title-texte">Le rappel</h2>
-            </label>
-        </h1>
-        <div class="collapse-texte">
-            <p><?php the_field( 'collapse_1_-_le_rappel', 'option' ); ?></p>
+        <div class="propos--collapse-texte">
+            <span class="propos--collapse-number"><p>1</p></span>
+            <div class="propos--collapse-title"><?php the_field( 'collapse_1_-_le_rappel', 'option' ); ?></div>
         </div>
     </div>
 
-    <!-- Le dessin -->
-    <div class="collapse-container">
-        <input type="checkbox" id="dessin-desktop">
-        <h1>
-            <label for="dessin-desktop">
-                <!-- Numéro -->
-                <span>6</span>
-
-                <!-- Titre -->
-                <h2 class="collapse-title-texte">Le dessin</h2>
-            </label>
-        </h1>
-        <div class="collapse-texte">
-            <p><?php the_field( 'collapse_1_-_le_dessin', 'option' ); ?></p>
-        </div>
-    </div>
 
     <div class="collapse-texte-follow">
         <p>Toutes ces informations permettent, tout en individualisant chaque archireveur·euse, de comprendre un instant de notre histoire commune et d’y voir l'altérité de nos alteregos, tous·tes en chœur.</p>

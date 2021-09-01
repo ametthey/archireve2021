@@ -112,7 +112,8 @@ if ( buttonSelectAll ){
 
 // Selection custom des rêves
 let reallybutton;
-if ( buttonSelecteds ){
+// if ( buttonSelecteds ){
+if ( buttonSelectAll ){
     buttonSelecteds.forEach( selected => {
         reallyButton = selected.querySelector('.button--select-to-download');
         reallyButtonTitle = selected.querySelector('.article-reve--header h1').innerHTML;

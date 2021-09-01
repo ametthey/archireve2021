@@ -142,3 +142,30 @@ function whatWidth() {
     //     console.clear();
     // }, 5000 );
 }
+
+if ( contentRight ){
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true
+    });
+}
+
+const contentAPropos = document.querySelector('.content--apropos');
+const contentAProposFading = document.querySelector('.content--apropos-fading-container');
+window.addEventListener( 'scroll', (e) => {
+    var scrollBarPosition = contentAPropos.pageYOffset | contentAProposFading.scrollTop;
+
+    // At specifiv position do what you want
+    if(scrollBarPosition == 0) {
+        console.log( scrollBarPosition );
+        // document.getElementById('status').innerHTML = "User is on top of the page, position=" + scrollBarPosition;
+    }
+    else {
+        console.log( scrollBarPosition );
+        // document.getElementById('status').innerHTML = "User is not on top of the page, position="  + scrollBarPosition;
+    }
+});
+
+
+
+

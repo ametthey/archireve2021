@@ -119,6 +119,34 @@
 
     .profil--reve-published {
         border: none;
+        position: relative;
+
+        &.status-pending {
+            article {
+                opacity: 0.5;
+            }
+        }
+
+        &.status-publish {
+            article {
+                opacity: 1;
+            }
+        }
+
+        .message--status-pending {
+            background-color: $bg;
+            border: 1px solid $color;
+            padding: $ratio;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%, -50% );
+            width: max-content;
+
+            &.is-hidden {
+                display: none;
+            }
+        }
     }
 }
 

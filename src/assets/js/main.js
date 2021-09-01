@@ -19,6 +19,7 @@ import './components/helpers-debug.js';
 
 import './components/left.js';
 import './components/right.js';
+import './components/apropos.js'; // temp
 import './components/articles.js';
 import './components/header.js';
 

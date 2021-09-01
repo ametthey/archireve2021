@@ -1,57 +1,45 @@
-<div data-scroll-section class="propos--section is-hidden propos--section-4">
+<!-- SECTION 4 - COLLAPSE #2  -->
+<div data-scroll-section class="propos--section propos--section-4 propos--section-collapse">
     <div class="collapse-texte-follow">
-        <h1>Pour aller plus loin…</h1>
+        <h1>Pour aller plus loin</h1>
     </div>
 
-    <!-- le questionnaire utilisateur -->
-    <div class="collapse-container collapse-glyph">
-        <input type="checkbox" id="questionnaire-utilisateur-two-desktop-">
-        <h1>
-            <label for="questionnaire-utilisateur-two-desktop-">
-                <!-- Numéro -->
-                <span>b</span>
+    <!-- LE QUESTIONNAIRE UTILISATEUR -->
+    <div class="propos--collapse-container">
+        <div class="propos--collapse-header">
+            <span class="propos--collapse-number">1</span>
+            <div class="propos--collapse-title">Le questionnaire utilisateur</div>
+        </div>
 
-                <!-- Titre -->
-                <h2 class="collapse-title-texte">le questionnaire utilisateur</h2>
-            </label>
-        </h1>
-        <div class="collapse-texte">
-            <p><?php the_field( 'collapse_2_-_le_questionnaire_utilisateur', 'option' ); ?></p>
+        <div class="propos--collapse-texte">
+            <span class="propos--collapse-number"><p>1</p></span>
+            <div class="propos--collapse-title"><?php the_field( 'collapse_2_-_le_questionnaire_utilisateur', 'option' ); ?></div>
         </div>
     </div>
 
-    <!-- les modalités du sommeil -->
-    <div class="collapse-container collapse-glyph">
-        <input type="checkbox" id="la-recherche-desktop-">
-        <h1>
-            <label for="la-recherche-desktop-">
-                <!-- Numéro -->
-                <span>g</span>
+    <!-- LA RECHERCHE -->
+    <div class="propos--collapse-container">
+        <div class="propos--collapse-header">
+            <span class="propos--collapse-number">2</span>
+            <div class="propos--collapse-title">la recherche</div>
+        </div>
 
-                <!-- Titre -->
-                <h2 class="collapse-title-texte">La recherche</h2>
-            </label>
-        </h1>
-        <div class="collapse-texte">
-            <p><?php the_field( 'collapse_2_-_la_recherche', 'option' ); ?></p>
+        <div class="propos--collapse-texte">
+            <span class="propos--collapse-number"><p>1</p></span>
+            <div class="propos--collapse-title"><?php the_field( 'collapse_2_-_la_recherche', 'option' ); ?></div>
         </div>
     </div>
 
-    <!-- Lucidite -->
-    <div class="collapse-container collapse-glyph">
-        <input type="checkbox" id="equipe-desktop-">
-        <h1>
-            <label for="equipe-desktop-">
-                <!-- Numéro -->
-                <span>H</span>
+    <!-- L'EQUIPE -->
+    <div class="propos--collapse-container">
+        <div class="propos--collapse-header">
+            <span class="propos--collapse-number">3</span>
+            <div class="propos--collapse-title">l'équipe</div>
+        </div>
 
-                <!-- Titre -->
-                <h2 class="collapse-title-texte">L'équipe</h2>
-            </label>
-        </h1>
-        <div class="collapse-texte">
-            <p><?php the_field( 'collapse_2_-_lequipe', 'option' ); ?></p>
+        <div class="propos--collapse-texte">
+            <span class="propos--collapse-number"><p>1</p></span>
+            <div class="propos--collapse-title"><?php the_field( 'collapse_2_-_lequipe', 'option' ); ?></div>
         </div>
     </div>
-
 </div>
