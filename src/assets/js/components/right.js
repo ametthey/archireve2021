@@ -1,4 +1,5 @@
 import { LocomotiveScroll } from '../main.js';
+import { Splitting } from '../main.js';
 
 
 // HOVER CONTENT RIGHT
@@ -14,24 +15,29 @@ const titreReve = document.querySelector('.content--home-text-border');
 
 if ( contentRight ){
     contentRight.addEventListener( 'click', () => {
-        contentRightEvents();
+        if ( contentLeft.classList.contains('is-open') ) {
+            // CAN'T WITH IN THE RIGHT BANDEAU
+        } else {
+            contentRightEvents();
+        }
     });
 
     contentHome.addEventListener( 'click', () => {
-        contentRightEventsOff();
-    });
-
-
-    const scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true
+        if ( contentLeft.classList.contains('is-open') ) {
+            // CAN'T WITH IN THE RIGHT BANDEAU
+        } else {
+            contentRightEventsOff();
+        }
     });
 }
 
 function contentRightEvents(){
     articleReves.forEach( article => {
+
+        // Hide all reves
         article.classList.add('is-hidden');
 
+        // After reves have opacity 0, add multiples classes
         article.addEventListener( 'transitionend', (e) => {
             const articleOpacity = getComputedStyle(article).getPropertyValue('opacity');
 
@@ -59,45 +65,40 @@ function contentRightEvents(){
         }
     });
 
-    removeAllClassesIfResize();
+    contentLeft.classList.add('is-unclickable');
 
-    whatWidth();
+    removeAllClassesIfResize();
 }
 
 function contentRightEventsOff(){
-    const proposSections = document.querySelectorAll('.propos--section');
-    proposSections.forEach( section => {
-        section.classList.add('is-hidden');
-        section.addEventListener( 'transitionend', (e) => {
-            const sectionOpacity = getComputedStyle(section).getPropertyValue('opacity');
 
-            if ( sectionOpacity === '0' ) {
-                contentHome.classList.remove('right-is-open');
-                contentRight.classList.remove('is-open');
+    if ( contentRight.classList.contains('is-open') ) {
+
+        // REMOVES ALL STYLES FROM A PROPOS SECTION
+        titreReve.classList.remove('is-visible');
+        rightContainerPropos.classList.remove('-is-visible');
+        contentRight.classList.remove('has-right-orientation');
+        const proposSections = document.querySelectorAll('.propos--section');
+        proposSections.forEach( section => {
+            section.classList.add('is-hidden');
+        });
+
+        // REMOVES ALL STYLES FROM BANDEAU
+        header.classList.remove('right-is-open');
+        contentHome.classList.remove('right-is-open');
+        contentRight.classList.remove('is-open');
+        contentRightO.classList.remove('is-hidden');
+
+        articleReves.forEach( article => {
+            if ( article.classList.contains('is-hidden') ) {
+                // ici trouver quel animation doit être terminé pour finir l'animation
+                article.classList.remove('is-hidden');
             }
         });
-    });
+    }
 
-    titreReve.classList.remove('is-visible');
+    contentLeft.classList.remove('is-unclickable');
 
-
-    contentRight.addEventListener( 'transitionend', (e) => {
-        if ( !contentRight.classList.contains('is-open') ) {
-            if( e.propertyName === 'width' ) {
-                header.classList.remove('right-is-open');
-
-                articleReves.forEach( article => {
-                    article.classList.remove('is-hidden');
-                });
-
-                contentRightO.classList.remove('is-hidden');
-
-                rightContainerPropos.classList.remove('-is-visible');
-
-                contentRight.classList.remove('has-right-orientation');
-            }
-        }
-    });
 
 }
 
@@ -132,40 +133,30 @@ function removeAllClassesIfResize() {
     }
 }
 
-function whatWidth() {
-    console.log( `content left is ${contentLeft.offsetWidth}px` );
-    console.log( `content center is ${contentHome.offsetWidth}px` );
-    console.log( `content right is ${contentRight.offsetWidth}px` );
-    console.log( `window is ${window.innerWidth}px` );
+const target = document.querySelectorAll('.colored-hover');
+const results = Splitting({ target: target, by: 'chars' });
 
-    // setTimeout( function() {
-    //     console.clear();
-    // }, 5000 );
-}
+// Colors
+const cauchemar =  '#6755AA';
+const concomitant =  '#2CAF38';
+const creatif =  '#F79D65';
+const actualite =  '#99BA22';
+const recurrent =  '#DB5931';
+const sexuel =  '#D67083';
+const premonitoire =  '#4CA58E';
+const lucide =  '#c12b2b';
 
-if ( contentRight ){
-    const scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true
+const colors = [ cauchemar, concomitant, creatif, actualite, recurrent, sexuel, premonitoire, lucide ];
+
+// https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
+
+const chars = document.querySelectorAll('.char');
+chars.forEach( char => {
+    char.addEventListener( 'mouseenter', (e) => {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        char.style.color = randomColor;
     });
-}
-
-const contentAPropos = document.querySelector('.content--apropos');
-const contentAProposFading = document.querySelector('.content--apropos-fading-container');
-window.addEventListener( 'scroll', (e) => {
-    var scrollBarPosition = contentAPropos.pageYOffset | contentAProposFading.scrollTop;
-
-    // At specifiv position do what you want
-    if(scrollBarPosition == 0) {
-        console.log( scrollBarPosition );
-        // document.getElementById('status').innerHTML = "User is on top of the page, position=" + scrollBarPosition;
-    }
-    else {
-        console.log( scrollBarPosition );
-        // document.getElementById('status').innerHTML = "User is not on top of the page, position="  + scrollBarPosition;
-    }
+    char.addEventListener( 'mouseleave', (e) => {
+        char.style.color = '#fff';
+    });
 });
-
-
-
-

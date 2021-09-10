@@ -1,0 +1,146 @@
+// HEADER
+.article-reve--header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+
+    // ADD AND REMOVE BORDER ON ACTIVE STATE
+    border-bottom-width: 1px !important;
+
+    &.-is-active {
+        border-bottom-width: 2px !important;
+    }
+
+    // TEMP HEIGHT (TEXT)
+    height: 130px;
+    width: 100%;
+
+    @include respond(tablet) {
+        height: 100%;
+    }
+
+
+    // TITLE
+    h1 {
+        cursor: pointer;
+        margin: 11px 0 0 22px;
+        text-transform: uppercase;
+        width: calc( 100% - calc( 42px + 22px ) );
+
+        @include respond(mil) {
+            font-size: $mh1;
+        }
+
+        @include respond(tablet) {
+            font-size: $mh2;
+            margin: 24px 0 24px 24px;
+            height: calc( 100% - 24px );
+            width: calc( 100% - calc( 22px + 24px ) );
+
+            align-items: flex-start;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+    }
+
+    // SECTION DOWNLOAD
+    .article-reve--download {
+        background-color: $bg;
+        height: 100%;
+        width: 42px;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        padding: 24px 0 0 0;
+
+        @include respond(tablet) {
+            padding: 4px 0 0 0;
+            width: 18px;
+        }
+
+
+        .button--round {
+            cursor: pointer;
+            transition: none;
+
+            @include respond(tablet) {
+                height: 9px;
+                width: 9px;
+            }
+            // CLICK
+            &.-is-selected {
+                background-color: #303030;
+                border: 1px solid #303030;
+                color: #FFF;
+            }
+        }
+
+        .contenu--edit {
+            img {
+                margin: 0;
+            }
+        }
+
+        // ICONE TEXTE OU DESSIN
+        #contenu--texte {
+            margin: 14px 0 0 0;
+
+            @include respond(tablet) {
+                margin: 6px 0 0 0;
+                width: 11px;
+            }
+
+            &.is-selected {
+                .rect--short {
+                    animation: linesShort 1s both running ease-out;
+                }
+                .rect--long {
+                    animation: linesLong 1s both running ease-out;
+                }
+            }
+
+            .rect--long {
+                width: 21px;
+            }
+
+            .rect--short {
+                width: 15px;
+            }
+        }
+    }
+}
+
+// AUTHOR AND DATE
+.article-header--author-and-date {
+    color: $bg;
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    padding: 0 6px;
+
+    @include respond(tablet) {
+        padding: 0 4px;
+    }
+
+    span {
+        // AUTHOR
+        &:nth-of-type(1) {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        // DATE
+        &:nth-of-type(2) {
+            font-style: italic;
+        }
+    }
+}

@@ -55,11 +55,16 @@ h1 {
     &.huge{
         font-size: $huge;
         line-height: $huge;
-        overflow: hidden;
+        // overflow: hidden;
 
         @include respond(md) {
-            font-size: $bigger;
-            line-height: $bigger;
+            font-size: $bigger !important;
+            line-height: $bigger !important;
+        }
+
+        @include respond(mobile) {
+            font-size: $h2 !important;
+            line-height: $h2 !important;
         }
     }
 

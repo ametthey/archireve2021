@@ -4,6 +4,7 @@
  */
 
 $pseudo = $current_user->user_nicename;
+$home_url = home_url();
 
 get_header(); ?>
 
@@ -29,7 +30,7 @@ get_header(); ?>
     <div class="profil--header">
         <h1><?php echo $pseudo; ?></h1>
         <div class="profil--header-links">
-            <a href="<?php echo get_permalink( get_page_by_title($pseudo , 'reveur_info') ); ?>">
+            <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
                 <h3 class="button--rounded rounded--big">Modifier le profil</h3>
             </a>
             <a href="<?php echo esc_url( get_permalink( 134 ) ); ?>">

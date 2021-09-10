@@ -1,6 +1,9 @@
 import { Isotope } from '../main.js';
 import { Swiper } from '../main.js';
-import { numberToDay } from '../components/helpers';
+
+function numberToDay(j) {
+    return ('0' + j).slice(-2);
+}
 
 /*
  * Get the date
@@ -14,14 +17,15 @@ if ( contentRight ) {
     // SWIPER
     let swiperDate = new Swiper( '.swiper-container-date', {
         // only way to swlide slide is by navigation
-        // allowTouchMove: false,
+        allowTouchMove: false,
         // centeredSlides: true,
         directon: 'horizontal',
         effect: 'slide',
         // loop: true,
         speed: 700,
+        // preventClicks: true,
         slidesPerView: 2,
-        spaceBetween: 0,
+        spaceBetween: 20,
         // Navigation arrows
         navigation: {
             nextEl: '.swiper-date-button-next',
@@ -99,11 +103,13 @@ function clickTheDay(monthReve, yearReve) {
         const moisIndividuel = container.querySelectorAll('.mois--item');
         moisIndividuel.forEach( mois => {
 
+
             // Click on the date
             mois.addEventListener( 'click', (e) => {
-                console.log( 'click on the month ' + e.target.innerHTML );
+                console.log(`On clique sur ${e.target.innerHTML} ${annee}`);
                 const matchingDate = mois.dataset.filterDate;
 
+                // mois.classList.toggle('-is-selected');
 
                 reves.forEach( matchingReve => {
                     const matchingReveData = matchingReve.dataset.filterDate;
@@ -112,12 +118,20 @@ function clickTheDay(monthReve, yearReve) {
                         const goodMatchingReveData = matchingReve;
                         goodMatchingReveData.classList.toggle('-match-date');
 
+                        console.log( goodMatchingReveData );
+
                         // Add class to month
                         mois.classList.toggle( 'is-active' );
+                        // mois.classList.toggle( '-is-selected' );
                         reves.forEach( hidingMatchingReve => {
                             if ( !hidingMatchingReve.classList.contains('-match-date') ) {
                                 hidingMatchingReve.classList.toggle('-no-match-date');
+                            } else if ( !mois.classList.contains('is-active') ) {
+                                if( hidingMatchingReve.classList.contains('-match-date') ) {
+                                    hidingMatchingReve.classList.remove('-no-match-date');
+                                }
                             }
+
                         });
                     }
                     // else if ( matchingReveData !== matchingDate ) {

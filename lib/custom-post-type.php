@@ -60,4 +60,30 @@ function create_reve_cpt() {
 }
 add_action( 'init', 'create_reve_cpt', 0 );
 
+// Add the custom columns to the book post type:
+add_filter( 'manage_reve_posts_columns', 'set_custom_edit_reve_columns' );
+function set_custom_edit_reve_columns($columns) {
+    unset( $columns['author'] );
+    $columns['reveur'] = __( 'Author', '_themename' );
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the book post type:
+add_action( 'manage_reve_posts_custom_column' , 'custom_reve_column', 10, 2 );
+function custom_reve_column( $column, $post_id ) {
+    switch ( $column ) {
+
+        case 'reveur' :
+            $terms = get_the_term_list( $post_id , 'reveur' , '' , ',' , '' );
+            if ( is_string( $terms ) )
+                echo $terms;
+            else
+                _e( 'Unable to get author(s)', '_themename' );
+            break;
+
+
+    }
+}
+
 ?>

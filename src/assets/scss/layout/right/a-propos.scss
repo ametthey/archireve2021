@@ -1,0 +1,257 @@
+$numero: 200px;
+$numeroSmall: 80px;
+
+// temp for debug
+.page-template-page-a-propos {
+    overflow: scroll;
+
+    #page {
+        overflow: scroll;
+        height: 100%;
+    }
+}
+
+.right--container-propos {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: auto;
+    overflow: scroll;
+    padding: 0 50px;
+    pointer-events: none;
+    position: absolute !important;
+    right: 0;
+    width: 100%;
+    z-index: 2 !important;
+}
+
+.content--apropos {
+    background-color: $color;
+    transition: background-color $rythm4 $easeIOE, opacity $rythm0 $easeIOE !important;
+    width: 100%;
+
+    &.is-fading {
+        background-color: $violet;
+    }
+
+}
+.propos--section {
+    align-items: center;
+    color: $bg;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    margin: auto;
+    opacity: 0;
+    transition: opacity $rythm1 $easeIOE !important;
+    width: 92%;
+
+    &.is-visible {
+        opacity: 1;
+    }
+
+    // CUSTOM MEDIA QUERIES
+    @media only screen and (max-width: 1104px) {
+        height: 100%;
+        margin: 0 auto calc( #{$ratio} * 3 ) auto;
+        width: 80%;
+    }
+    // TITRE GLOBAL
+    h1 {
+        margin: 0 0 5% 0;
+        text-align: center;
+    }
+
+    // TEXTE GLOBAL
+    h2 {
+        margin: 0 0 5% 0;
+    }
+
+    // LIEN DE LA SECTION CONTACT
+    .propos-links {
+        color: $bg;
+        margin: 0 0 5% 0;
+
+        h1 {
+            font-family: $covik !important;
+            margin: 0;
+        }
+    }
+
+
+}
+
+.propos--section-texte {
+    // TEXTE QUI CHANGE AU HOVER
+    h2 {
+        font-family: $solid;
+        overflow: hidden;
+
+        &.colored-hover {
+            span {
+                font-family: inherit;
+                font-size: inherit;
+
+                &.char {
+                    cursor: pointer;
+                    // text-transform: uppercase;
+                    transition: all $rythm0 $easeIOE !important;
+
+                    &:hover {
+                        text-transform: lowercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.propos--section-collapse {
+
+    // CONTAINER DES COLLAPES
+    .propos--collapse-container {
+        color: $bg;
+        width: 100%;
+
+        // TITRE
+        .propos--collapse-header {
+            border: 1px solid $bg;
+            border-bottom: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+
+            .propos--collapse-title {
+                font-size: $h1 !important;
+                font-family: $solid;
+                line-height: 1.2 !important;
+                text-transform: uppercase;
+
+                @include respond(mobile) {
+                    font-size: $h3 !important;
+                }
+            }
+        }
+
+        // TEXTE CACHE
+        .propos--collapse-texte {
+            border: 1px solid $bg;
+            border-top: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height $rythm1 $easeIOE;
+
+
+            display: flex;
+            justify-content: center;
+
+            // NUMEROTATION CACHE DANS TEXTE
+            .propos--collapse-number {
+                p {
+                    opacity: 0;
+                }
+            }
+
+            // STYLE DU TEXTE
+            .propos--collapse-title {
+                font-family: $covik !important;
+                font-style: normal;
+                font-weight: 400;
+                font-size: $h2;
+                line-height: 35px;
+                text-transform: uppercase;
+
+                height: 100%;
+
+                @include respond(mobile) {
+                    font-size: $h3 !important;
+                }
+            }
+        }
+
+        // STYLE GLOBAL DES TEXTE DE COLLAPSE
+        .propos--collapse-title {
+            align-items: center;
+            display: flex;
+            justify-content: flex-start;
+            padding: $ratio;
+            width: calc( 100% - #{ $numero } );
+
+            @include respond(custommd) {
+                width: calc( 100% - #{ $numeroSmall } );
+            }
+
+        }
+
+        // STYLE DES NUMEROTATIONS DES COLLAPSES
+        .propos--collapse-number {
+            border-right: 1px solid $bg;
+            display: grid;
+            font-size: calc( #{$h1} * 1.4 ) !important;
+            font-family: $covik;
+            line-height: calc( #{$h1} * 1.4 ) !important;
+            place-items: center;
+            text-transform: uppercase;
+
+            width: $numero;
+            padding: $ratio2;
+
+            @include respond(mobile) {
+                font-size: $h1 !important;
+            }
+
+            @include respond(custommd) {
+                width: $numeroSmall;
+            }
+        }
+    }
+
+    // TEXTE QUI ACCOMPAGNE LES COLLAPSES
+    .collapse-texte-follow{
+        align-self: flex-start;
+
+        p {
+            color: $bg;
+            font-family: $covik !important;
+            font-style: normal;
+            font-weight: 400;
+            font-size: $h2;
+            line-height: 35px;
+            padding: $ratio2 $ratio2 $ratio2 0;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            color: $bg;
+            font-family: $covik !important;
+            font-style: normal;
+            font-weight: 400;
+            font-size: $h1;
+            line-height: 35px;
+            padding: $ratio2 $ratio2 $ratio2 0;
+            text-transform: uppercase;
+        }
+    }
+}
+
+// SPECIFIC STYLE TO SECTION
+.propos--section-2 {
+    h1 {
+        opacity: 0;
+        visibility: hidden;
+
+
+        @media only screen and (max-width: 1104px) {
+            display: none;
+        }
+    }
+}
+
+.propos--section-4 {
+    .propos--collapse-number {
+        font-family: "GoodGlyphs" !important;
+        text-transform: inherit !important;
+    }
+}

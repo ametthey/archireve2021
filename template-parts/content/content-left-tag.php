@@ -5,16 +5,25 @@
 </div>
 
 <?php
-
-    // https://designorbital.com/snippets/how-to-get-all-taxonomies-for-a-post-type/
-    $terms = get_terms( 'customtag' );
-
-    // Afficher de tags sur 3 rangées,
-    // peut varié en fonction de la longueur du mot
-    $terms = array_slice($terms, 0, 10);
     echo '<div class="tagitems--container left--filter">';
-        foreach ( $terms as $term ) {
-            echo '<button class="tagitem button--squared no-button-style" data-filter=".' . $term->slug . '"><h4>' . $term->name . '</h4></button>';
-        }
+        $args = array(
+            'orderby' => 'date',
+            'order'   => 'DESC',
+            'post_type'      => 'reve',
+            'posts_per_page' => -1,
+        );
+        $home_projects = new WP_Query( $args );
+        if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;
+
+            $tagString = get_field( 'tag' );
+            $tagArray = explode(",", str_replace(" ","",$tagString));
+            shuffle( $tagArray );
+
+            foreach ( $tagArray as $tag ) {
+                echo '<button class="tagitem button--squared no-button-style"><h4>' .  $tag . '</h4></button>';
+            }
+
+        endwhile; endif; wp_reset_postdata();
+
     echo '</div>';
 ?>

@@ -10,8 +10,7 @@
 
         <?php wp_head(); ?>
     </head>
-    <body <?php body_class() ?> data-barba="wrapper">
-        <!-- <div class="wrapper" data&#45;barba="container" data&#45;barba&#45;namespace="one&#45;pager"> -->
+    <body <?php body_class() ?>>
 
         <?php // get_template_part('template-parts/helpers/helper', 'user-id'); ?>
         <?php // get_template_part('template-parts/helpers/helper', 'user-info'); ?>
@@ -39,5 +38,6 @@
         <!-- A Propos for mobile -->
         <?php get_template_part( 'template-parts/content/content', 'right-propos-header' ); ?>
 
+        <!-- <main id="swup" class="transition&#45;fade"> -->
         <div id="page">
 

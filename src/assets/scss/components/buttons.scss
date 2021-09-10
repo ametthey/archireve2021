@@ -65,6 +65,7 @@
     padding: 1.5px 10px;
     border-radius: 100px 100px 100px 100px;
     transition: all 0.325s ease-in-out;
+    overflow: hidden;
 
     &:hover {
         color: $color;

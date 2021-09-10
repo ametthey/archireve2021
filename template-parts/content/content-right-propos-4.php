@@ -7,7 +7,7 @@
     <!-- LE QUESTIONNAIRE UTILISATEUR -->
     <div class="propos--collapse-container">
         <div class="propos--collapse-header">
-            <span class="propos--collapse-number">1</span>
+            <span class="propos--collapse-number">b</span>
             <div class="propos--collapse-title">Le questionnaire utilisateur</div>
         </div>
 
@@ -20,7 +20,7 @@
     <!-- LA RECHERCHE -->
     <div class="propos--collapse-container">
         <div class="propos--collapse-header">
-            <span class="propos--collapse-number">2</span>
+            <span class="propos--collapse-number">g</span>
             <div class="propos--collapse-title">la recherche</div>
         </div>
 
@@ -33,7 +33,7 @@
     <!-- L'EQUIPE -->
     <div class="propos--collapse-container">
         <div class="propos--collapse-header">
-            <span class="propos--collapse-number">3</span>
+            <span class="propos--collapse-number">H</span>
             <div class="propos--collapse-title">l'équipe</div>
         </div>
 

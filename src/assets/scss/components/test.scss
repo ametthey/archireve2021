@@ -1,0 +1,142 @@
+.page-template-page-test {
+    overflow: auto;
+}
+
+
+.container-test {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    margin-top: 200px;
+    overflow: auto;
+    width: 80%;
+
+    .container-test-filtres {
+        text-align: center;
+
+        h3 {
+            margin: 10px 0;
+        }
+    }
+}
+
+.container-test-grid {
+    margin: 50px 0;
+}
+
+@keyframes linesLong {
+    0% {
+        width: 21px;
+    }
+    50% {
+        width: 15px;
+    }
+    100% {
+        width: 21px;
+    }
+}
+
+@keyframes linesShort {
+    0% {
+        width: 15px;
+    }
+    50% {
+        width: 21px;
+    }
+    100% {
+        width: 15px;
+    }
+}
+
+.rect--short {
+    // animation-name: linesShort;
+    // animation-duration: 1s;
+    // animation-fill-mode: both;
+    // animation-play-state: running;
+    // animation-timing-function: ease-out;
+}
+
+.rect--long {
+    // animation-name: linesLong;
+    // animation-duration: 1s;
+    // animation-fill-mode: both;
+    // animation-play-state: running;
+    // animation-timing-function: ease-out;
+}
+
+
+$number: 100;
+
+@keyframes lineThrough {
+    to {
+        stroke-dasharray: $number, 0;
+    }
+}
+
+#contenu--texte {
+    // transform: scale(4);
+    //
+    // .rect--long,
+    // #haut--long,
+    // #bas--long {
+    //     stroke-dasharray: 0, $number;
+    //     // stroke-dashoffset: 100;
+    //     // animation-name: linesLong;
+    //     animation-name: lineThrough;
+    //     animation-duration: 5s;
+    //     animation-fill-mode: forwards;
+    //     animation-iteration-count: infinite;
+    //     // animation-play-state: running;
+    //     animation-timing-function: ease-out;
+    //
+    // }
+    // #haut--court,
+    // #bas--court {
+    //     stroke-dasharray: 0, $number;
+    //     // stroke-dashoffset: 100;
+    //     // animation-name: linesLong;
+    //     animation-name: lineThrough;
+    //     animation-duration: 5s;
+    //     animation-fill-mode: forwards;
+    //     animation-iteration-count: infinite;
+    //     // animation-play-state: running;
+    //     animation-timing-function: ease-out;
+    // }
+    // .rect--short {
+    // }
+}
+
+.borderSVG {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    // overflow: hidden;
+    background: #ddd;
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        line {
+            stroke-width: 10;
+            stroke: #000;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            fill: none;
+            stroke-dasharray: 200;
+            transition: transform .6s ease-out;
+        }
+    }
+
+
+    &:hover {
+        svg {
+            line {
+                transform: translateX(-400px);
+            }
+        }
+    }
+}

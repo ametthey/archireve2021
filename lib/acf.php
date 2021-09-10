@@ -1,5 +1,17 @@
 <?php
 
+if ( function_exists( 'acf_add_options_page' ) ) {
+
+	acf_add_options_page( array(
+		'page_title'	=> 'Barre de recherce',
+		'menu_title'	=> 'Barre de recherce',
+		'menu_slug' 	=> 'acf-barre-de-recherce',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false,
+	));
+
+}
+
 // Enable the option show in rest
 add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
 
@@ -68,41 +80,41 @@ add_filter('acf/update_value/key=field_60ec18ce6f727', 'my_acf_update_value', 10
 // update_field("field_5693402ab8561", $attach_id, $post[0]->ID );
 
 // Create Profile Page
-function my_acf_user_form_func( $atts ) {
-
-    $a = shortcode_atts( array(
-        'field_group' => '454'
-    ), $atts );
-
-    $uid = get_current_user_id();
-
-    if ( ! empty ( $a['field_group'] ) && ! empty ( $uid ) ) {
-        $options = array(
-            'post_id' => 'user_'.$uid,
-            'field_groups' => array( intval( $a['field_group'] ) ),
-            'return' => add_query_arg( 'updated', 'true', get_permalink() )
-        );
-
-        ob_start();
-
-        acf_form( $options );
-        $form = ob_get_contents();
-
-        ob_end_clean();
-    }
-
-    return $form;
-}
-add_shortcode( 'my_acf_user_form', 'my_acf_user_form_func' );
-
-//adding AFC form head
-function add_acf_form_head(){
-    global $post;
-
-    if ( !empty($post) && has_shortcode( $post->post_content, 'my_acf_user_form' ) ) {
-        acf_form_head();
-    }
-}
-add_action( 'wp_head', 'add_acf_form_head', 7 );
+// function my_acf_user_form_func( $atts ) {
+//
+//     $a = shortcode_atts( array(
+//         'field_group' => '454'
+//     ), $atts );
+//
+//     $uid = get_current_user_id();
+//
+//     if ( ! empty ( $a['field_group'] ) && ! empty ( $uid ) ) {
+//         $options = array(
+//             'post_id' => 'user_'.$uid,
+//             'field_groups' => array( intval( $a['field_group'] ) ),
+//             'return' => add_query_arg( 'updated', 'true', get_permalink() )
+//         );
+//
+//         ob_start();
+//
+//         acf_form( $options );
+//         $form = ob_get_contents();
+//
+//         ob_end_clean();
+//     }
+//
+//     return $form;
+// }
+// add_shortcode( 'my_acf_user_form', 'my_acf_user_form_func' );
+//
+// //adding AFC form head
+// function add_acf_form_head(){
+//     global $post;
+//
+//     if ( !empty($post) && has_shortcode( $post->post_content, 'my_acf_user_form' ) ) {
+//         acf_form_head();
+//     }
+// }
+// add_action( 'wp_head', 'add_acf_form_head', 7 );
 
 ?>

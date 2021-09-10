@@ -43,16 +43,31 @@ body {
     }
 }
 
+#acf-range-metier-type {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
 
+#ne-travaille-pas {
+    height: max-content;
+    padding-top: 0;
 
+    .acf-radio-list {
+        li {
+            width: inherit;
+            label {
+                align-items: center;
+                display: flex !important;
+                flex-direction: row;
+                &:before {
+                    display: none;
+                }
 
-.travaille--pas {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-
-    .button--round {
-        margin: 0 8px 0 0;
+                input {
+                    margin: 0 10px 0 0 !important;
+                }
+            }
+        }
     }
 }
 

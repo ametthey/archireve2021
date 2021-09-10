@@ -10,18 +10,14 @@
 
         <?php wp_head(); ?>
     </head>
-    <body <?php body_class() ?> data-barba="wrapper">
-
-        <?php // get_template_part('template-parts/helpers/helper', 'user-id'); ?>
-
-        <?php // get_template_part('template-parts/helpers/helper', 'user-info'); ?>
+    <body <?php body_class() ?>>
 
         <?php get_template_part('template-parts/content', 'logo-home-animation'); ?>
 
         <div class="content">
 
 
-        <header id="masthead" class="site-header" role="banner">
+        <header id="masthead" class="site-header header-home" role="banner">
 
             <!-- Trigger a propos pour mobile -->
             <div id="header--mobile-apropos" class="button--round round--black"></div>
@@ -41,5 +37,6 @@
         <!-- A Propos for mobile -->
         <?php get_template_part( 'template-parts/content/content', 'right-propos-header' ); ?>
 
+        <!-- <main id="swup" class="transition&#45;fade"> -->
         <div id="page">
 

@@ -13,7 +13,7 @@
             ?>
 
             <div id="left--connexion" class="left--filter button--rounded left--connexion-user">
-                <a href="<?php echo esc_url( get_page_link( 199 ) ); ?>">
+                <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
                     <p><?php echo $pseudo; ?></p>
                 </a>
             </div>
@@ -45,17 +45,27 @@
 
     <div class="content--left-cover"><h3>filtres</h3> <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/loupe.svg"></div>
 
-    <?php // get_template_part('template-parts/content/content', 'left-tag'); ?>
+    <?php get_template_part('template-parts/content/content', 'left-tag'); ?>
 
+    <h4 class="content-left-container-title left--filter">Niveau de lucidité <img class="tooltip-icon" src="https://www.perimetre.studio/wp-content/uploads/2021/07/infoBulle.png">
+        <span class="tooltip-text"><?php the_field( 'niveau_de_lucidite_tooltip', 'option'  ); ?></span>
+    </h4>
     <?php get_template_part('template-parts/content/content', 'left-lucidite'); ?>
 
+    <h4 class="content-left-container-title left--filter">Typologie de rêve <img class="tooltip-icon" src="https://www.perimetre.studio/wp-content/uploads/2021/07/infoBulle.png">
+        <span class="tooltip-text"><?php the_field( 'recherce_typologie_de_reves', 'option'  ); ?></span>
+    </h4>
     <?php get_template_part('template-parts/content/content', 'left-typologie'); ?>
 
+    <!-- NEW FILTERS TEMPLATE PARTS -->
+    <?php get_template_part( 'template-parts/left/filters'); ?>
+
+    <h4 class="content-left-container-title left--filter">Période <img class="tooltip-icon" src="https://www.perimetre.studio/wp-content/uploads/2021/07/infoBulle.png">
+        <span class="tooltip-text"><?php the_field( 'recherche_periode', 'option'  ); ?></span>
+    </h4>
     <?php get_template_part('template-parts/content/content', 'left-date'); ?>
 
     <?php get_template_part('template-parts/content/content', 'left-buttons'); ?>
-
-    <?php get_template_part('template-parts/content/content', 'selected-dreams'); ?>
 
 
 </div>

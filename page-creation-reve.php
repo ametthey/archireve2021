@@ -54,7 +54,25 @@ get_header();
 	acf_form(array(
         'id' => 'form--creation-reve',
 		'post_id'		=> 'new_post',
-        'fields' => array( 'field_60ec18ce6f70f', 'field_61015e94be047', 'field_610161fcb8f44', 'field_6101620bb8f45', 'field_60ec18ce6f717', 'field_60ec18ce6f727' ,'field_60ec18ce6f71f', 'field_60ec18ce6f737', 'field_6101cb13a88d4', 'field_6101cc6fc7157', 'field_6101cf1188fbe', 'field_6101cf2cc0b64', 'field_6101d0f126bbf','field_6101d12d26bc0', 'field_6101d13426bc1', 'field_6101b366df9c6'),
+        'fields' => array(
+            'field_60ec18ce6f70f',
+            'field_61015e94be047', // Date du rêve
+            'field_610161fcb8f44', // Contenu du rêve
+            'field_6104fb96d7330', // Contenu du rêve (dessin)
+            'field_6101620bb8f45',
+            'field_60ec18ce6f717', // Typologie de rêve
+            'field_60ec18ce6f727', // Tag
+            'field_60ec18ce6f71f', // Niveau de lucidité
+            'field_60ec18ce6f737', // Modalité du sommeil
+            'field_6101cb13a88d4', // Humeur
+            'field_6101cc6fc7157', // Sens
+            'field_6101cf1188fbe',
+            'field_6101cf2cc0b64', // Lieu
+            'field_6101d0f126bbf', // Quand
+            'field_6101d12d26bc0', // Ou
+            'field_6101d13426bc1', // Comment
+            'field_6101b366df9c6'
+        ),
 		'post_title'	=> true,
 		'new_post'		=> array(
 			'post_type'		=> 'reve',
@@ -67,6 +85,7 @@ il sera bientôt en ligne ! ", 'acf'),
         'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
         'return' => '/back-office/',
 	));
+
 
 	?>
 
@@ -88,13 +107,7 @@ il sera bientôt en ligne ! ", 'acf'),
                     <h4>Couleur</h4>
                 </div>
                 <div class="color--choice">
-                    <div id="red" class="color"></div>
-                    <div id="blue" class="color"></div>
-                    <div id="green" class="color"></div>
-                    <div id="purple" class="color"></div>
-                    <div id="orange" class="color"></div>
-                    <div id="black" class="color"></div>
-                    <div id="white" class="color"></div>
+                    <div id="noir" class="color"></div>
                     <div id="cauchemar" class="color"></div>
                     <div id="concomitant" class="color"></div>
                     <div id="creatif" class="color"></div>
@@ -114,10 +127,19 @@ il sera bientôt en ligne ! ", 'acf'),
                 </div>
             </div>
 
+            <div class="eraser--container color--container">
+                <div class="color--texte">
+                    <h4>Gomme</h4>
+                </div>
+                <div class="color--choice">
+                    <div id="eraser" class="eraser"></div>
+                </div>
+            </div>
+
         </div>
         <div id="buttons-commandes">
             <div class="button--rounded" id="reset"><h4>Recommencer</h4></div>
-            <input class="button--rounded" href="#" download="illustration.png" type="button" name="upload-button" id="upload-button" value="Sauvegarder son dessin">
+            <input class="button--rounded" href="#" download="illustration.png" type="button" name="upload-button" id="upload-button" value="Valider son dessin">
             <input type="hidden" name="image-url" id="image-url" value="">
 
         </div>

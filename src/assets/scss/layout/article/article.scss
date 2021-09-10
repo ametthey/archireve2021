@@ -1,0 +1,62 @@
+
+.article-reve {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto $ratio;
+    position: relative !important;
+    user-select: none;
+    width: 90%;
+
+    @include respond(tablet) {
+        margin: 0 $ratio2 $ratio2;
+        width: auto;
+    }
+
+    &.reve-lucidite-not-selected {
+        display: none;
+    }
+
+    &.reve-lucidite-selected {
+        // Silence is golden
+    }
+
+    &.-no-match-date {
+        display: none;
+    }
+
+    &.-match-date {
+        display: flex;
+    }
+
+    &.-leave-match-date {
+        display: flex;
+    }
+
+    &.is-visible {
+        .article-taxonomies--typologie-icone {
+            // transform: translateX(0);
+        }
+
+        .article-taxonomies--lucidite {
+            .button--rounded {
+                opacity: 1;
+                transform: scale(1);
+            }
+            p {
+            }
+        }
+
+        #contenu--texte {
+            .rect--long {
+                // animation: linesLong 1s 1s infinite cubic-bezier(1,-.01,.43,1.01) both;
+            }
+            .rect--short {
+                // animation: linesShort 1s 1s infinite cubic-bezier(1,-.01,.43,1.01) both;
+            }
+        }
+    }
+}
+
+
+
+

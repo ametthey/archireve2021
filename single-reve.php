@@ -12,6 +12,7 @@ get_header();
 
     <?php
 
+                        echo '<button class="button is-checked" data-filter="">TOUT</button>';
     $pseudo = $current_user->user_nicename;
 
     if ( is_user_logged_in() ) {
@@ -56,11 +57,43 @@ get_header();
 	acf_form(array(
         'id' => 'form--creation-reve',
 		'post_id'		=> $id,
-        'fields' => array( 'field_60ec18ce6f70f', 'field_61015e94be047', 'field_610161fcb8f44', 'field_6101620bb8f45', 'field_60ec18ce6f717', 'field_60ec18ce6f727' ,'field_60ec18ce6f71f', 'field_60ec18ce6f737', 'field_6101cb13a88d4', 'field_6101cc6fc7157', 'field_6101cf1188fbe', 'field_6101cf2cc0b64', 'field_6101d0f126bbf','field_6101d12d26bc0', 'field_6101d13426bc1', 'field_6101b366df9c6'),
+        'fields' => array(
+            'field_60ec18ce6f70f',
+            'field_61015e94be047', // Date du rêve
+            'field_610161fcb8f44', // Contenu du rêve (texte)
+            'field_6104fb96d7330', // Contenu du rêve (dessin)
+            'field_6101620bb8f45',
+            'field_60ec18ce6f717', // Typologie de rêve
+            'field_60ec18ce6f727', // Tag
+            'field_60ec18ce6f71f', // Niveau de lucidité
+            'field_60ec18ce6f737', // Modalité du sommeil
+            'field_6101cb13a88d4', // Humeur
+            'field_6101cc6fc7157', // Sens
+            'field_6101cf1188fbe',
+            'field_6101cf2cc0b64', // Lieu
+            'field_6101d0f126bbf', // Quand
+            'field_6101d12d26bc0', // Ou
+            'field_6101d13426bc1', // Comment
+            'field_6101b366df9c6'
+        ),
 		'post_title'	=> true,
         'submit_value'  => __('MODIFIER LE RÊVE'),
         'html_submit_button'  => '<input type="submit" class="acf-button-inscription-information" value="%s" />',
 	));
+
+    function _themename_append_dessin_to_content_texte($post_id) {
+        function _themename_add_content_to_content_texte($field) {
+            $years = 'Je suis le contenu à ajouter';
+
+            $field = $years;
+
+            return $field;
+        }
+        add_filter('acf/load_field/name=contenu_texte', '_themename_add_content_to_content_texte');
+
+    }
+
+    add_action('acf/save_post', '_themename_append_dessin_to_content_texte', 10, 3);
 
 	?>
 
@@ -82,13 +115,7 @@ get_header();
                     <h4>Couleur</h4>
                 </div>
                 <div class="color--choice">
-                    <div id="red" class="color"></div>
-                    <div id="blue" class="color"></div>
-                    <div id="green" class="color"></div>
-                    <div id="purple" class="color"></div>
-                    <div id="orange" class="color"></div>
-                    <div id="black" class="color"></div>
-                    <div id="white" class="color"></div>
+                    <div id="noir" class="color"></div>
                     <div id="cauchemar" class="color"></div>
                     <div id="concomitant" class="color"></div>
                     <div id="creatif" class="color"></div>

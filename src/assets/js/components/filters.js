@@ -26,11 +26,13 @@ if ( elem ) {
 
 // CLICK TO FILTER THE CATEGORIES
 var filtersElem = document.querySelector('.lucidite--container');
-if ( filtersElem ) {
-    filtersElem.addEventListener( 'click', function( event ) {
-        var filterValue = event.target.getAttribute('data-filter');
-        var filterValueItem = event.target;
-        iso.arrange({ filter: filterValue });
-    });
+if ( elem ) {
+    if ( filtersElem ) {
+        filtersElem.addEventListener( 'click', function( event ) {
+            var filterValue = event.target.getAttribute('data-filter');
+            var filterValueItem = event.target;
+            iso.arrange({ filter: filterValue });
+        });
+    }
 }
 

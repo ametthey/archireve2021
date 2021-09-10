@@ -1,9 +1,9 @@
 <?php
     // https://designorbital.com/snippets/how-to-get-all-taxonomies-for-a-post-type/
     $terms = get_terms( 'niveaudelucidite' );
+    $field_lucidite = the_field('niveau_de_lucidite_tooltip');
     $o = 0;
-    echo '<div class="lucidite--container left--filter">';
-        echo '<h4 class="content-left-container-title">Niveau de lucidité <img class="tooltip-icon" src="https://www.perimetre.studio/wp-content/uploads/2021/07/infoBulle.png"></h4>';
+        echo '<div class="lucidite--container left--filter">';
         foreach ( $terms as $term ) {
 
             // EACH

@@ -1,5 +1,4 @@
 <div class="typopologie--container left--filter">
-    <h4 class="content-left-container-title">Typologie de rêve</h4>
     <div class="swiper-container swiper-container-typologie">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">

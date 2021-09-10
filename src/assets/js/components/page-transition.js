@@ -1,18 +1,9 @@
-import { barba } from '../main.js';
-import { gsap } from '../main.js';
-
-// barba.init({
-//   transitions: [{
-//     name: 'opacity-transition',
-//     leave(data) {
-//       return gsap.to(data.current.container, {
-//         opacity: 0
-//       });
-//     },
-//     enter(data) {
-//       return gsap.from(data.next.container, {
-//         opacity: 0
-//       });
-//     }
-//   }]
-// });
+// const swup = new Swup(); // only this line when included with script tag
+//
+// const options = {
+//     containers:["#swup"],
+//     linkSelector:
+//     'a[href^="' +
+//     window.location.origin +
+//     '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])'
+// };

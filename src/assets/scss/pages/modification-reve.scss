@@ -1,0 +1,13 @@
+.single-reve {
+    // Supprimer marge en dessous du contenu texte
+    .acf-field-610161fcb8f44 {
+        margin: 0 !important;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .contenu--button-dessin-edit {
+        width: max-content;
+        margin: calc( #{$ratio} / 2  ) auto;
+    }
+}

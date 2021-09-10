@@ -91,10 +91,11 @@ get_header( 'home' ); ?>
         </article>
 
 
-        <?php get_template_part( 'template-parts/content', 'print' ); ?>
 
         <?php endif; ?>
     <?php endwhile; endif; wp_reset_postdata(); ?> <!-- WP_Query for CPT project -->
+
+        <?php get_template_part( 'template-parts/content', 'print' ); ?>
 </div>
 
 <?php get_template_part( 'template-parts/content/content', 'right' ); ?>

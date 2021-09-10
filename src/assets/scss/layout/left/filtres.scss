@@ -1,0 +1,251 @@
+// .tagsearch--container,
+// .tagitems--container,
+// .lucidite--container,
+// .typopologie--container,
+// .calendrier--container,
+// .button--download,
+// .button--select {
+//     transition: opacity $rythm1 $rythm3 ease-in-out !important;
+//     opacity: 0;
+//     pointer-events: none;
+// }
+
+
+// RECHERCHE DE TAGS
+.tagsearch--container {
+    margin: 0 calc( 30px / 2 ) 30px;
+    position: relative;
+    width: calc( 100% - 30px );
+
+    img {
+        background-color: $bg;
+        margin: 0 0 0 2px;
+        padding: 0 0 0 2px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.tagsearch {
+    border: none;
+    border-bottom: 1px solid $color;
+    color: #000;
+    font-family: $covik;
+    font-size: $h4;
+    height: 28px;
+    outline: none;
+    padding: 10px 27px 10px 0;
+    width: 100%;
+
+    &::-webkit-placeholder { /* Chrome/Opera/Safari */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $color;
+        font-family: $covik;
+        font-size: /$h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &:-ms-placeholder { /* IE 10+ */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+    &::placeholder {
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+
+    &::-moz-placeholder {
+        color: #000;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+    }
+
+}
+
+// LISTE DES DIFFERENTS TAGS
+.tagitems--container {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc( 30px / 2 ) 30px;
+    position: relative;
+    pointer-events: none;
+    width: calc( 100% - 30px );
+
+    .tagitem {
+        display: none;
+        // cursor: not-allowed;
+        margin: 0 8px 8px 0;
+        pointer-events: none;
+        width: auto;
+
+        // show the first 3 results
+        &:nth-child(-n+3) {
+            display: block;
+        }
+
+        button {
+            all: none !important;
+        }
+
+        h4 {
+            font-size: $h5;
+            text-transform: uppercase;
+        }
+    }
+}
+
+
+
+.calendrier--container {
+    margin: 0 calc( 30px / 2 ) 30px;
+
+    .calendrier--item{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        &.is-inactive {
+            display: none;
+        }
+
+        h4 {
+            margin: 0 0 calc( #{$ratio} / 2 ) 0;
+        }
+
+        .calendrier--mois {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 6px 6px;
+
+            .mois--item {
+                cursor: pointer;
+                display: grid;
+                font-family: $covik;
+                font-size: $smaller;
+                overflow: hidden;
+                padding: 3px;
+                place-items: center;
+                text-transform: uppercase;
+
+                &.-is-selected {
+                    background-color: $color;
+                    color: $bg;
+                }
+            }
+        }
+    }
+
+}
+
+// BOUTON TÉLÉCHARGER ET SÉLECTIONNER
+.button--download {
+    cursor: pointer;
+    margin: 0 calc( 30px / 2 ) 30px;
+    position: relative;
+    // transition: transform $rythm1 $rythm1 ease-in-out, opacity $rythm1 $rythm3 ease-in-out !important;
+    width: calc( 100% - 30px );
+
+    @include respond(tablet) {
+        // margin: 0 auto 30px;
+        margin: 0 auto calc( 30px / 2 );
+        width: 80%;
+    }
+
+    // CLICK
+    &.-is-selected {
+        .button--rounded {
+            background-color: #303030;
+            border: 1px solid #303030;
+            color: #FFF;
+        }
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+    .button--rounded {
+        position: relative;
+    }
+
+    // PASTILLE AVEC LE NOMBRE DE RÊVES SÉLECTIONNÉS
+    .button--selected-number {
+        display: block;
+        height: 25px;
+        right: 15px;
+        opacity: 0;
+        position: absolute;
+        top: 20px;
+        transition: opacity $rythm1 $easeIOE !important;
+        width: 25px;
+
+        &.is-visible {
+            opacity: 1;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}
+.button--select {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: 0 calc( 30px / 2 ) 30px;
+    position: relative;
+    width: calc( 100% - 30px );
+
+    &:hover {
+        .button--round {
+            background-color: $color;
+            border-color: $bg;
+        }
+    }
+
+    // CLICK
+    &.-is-selected {
+        .button--round {
+            background-color: #303030;
+            border: 1px solid #303030;
+            color: #FFF;
+        }
+    }
+
+    p {
+        margin: 0 0 0 4px;
+    }
+}

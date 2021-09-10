@@ -15,8 +15,15 @@
     left: 50%;
     transform: translateX( -50% );
     transition: background-color $rythm1 ease-in-out;
-    width: calc( 100% - calc( 70px * 2 ) ); // en attente des bandeau latéraux
+    width: 100%;
     z-index: 2;
+
+    &.header-home {
+        width: calc( 100% - calc( 70px * 2 ) ) !important; // en attente des bandeau latéraux
+        @include respond(tablet) {
+            width: 100% !important;
+        }
+    }
 
     &.is-faded {
         background-color: $color;
@@ -106,8 +113,10 @@
 #header--mobile-apropos{
     display: none;
 
-    // position: absolute;
-    // left: 6px;
+    &.is-faded {
+        background-color: $bg;
+        border: 1px solid $bg;
+    }
 
     @include respond(tablet) {
         display: block;

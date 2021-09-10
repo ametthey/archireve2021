@@ -1,0 +1,179 @@
+.page-template-page-profil {
+
+    #masthead {
+        border-bottom: none;
+
+        #header--mobile-apropos {
+            display: none;
+        }
+
+        #mobile--connexion {
+            display: none;
+        }
+    }
+}
+
+.content--profil {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 0 !important;
+}
+
+.profil--header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+
+    .profil--header-links {
+        align-items: center;
+        display: flex;
+        margin: 0 0 calc( #{$ratio} / 1 ) 0;
+
+        a {
+            &:nth-of-type(2) {
+                margin: 0 $ratio2;
+            }
+        }
+
+        @include respond(tablet) {
+            flex-direction: column;
+
+            a {
+                margin: 0 0 $ratio2 0;
+
+                &:nth-of-type(2) {
+                    margin: 0 0 $ratio2 0;
+                }
+            }
+        }
+    }
+
+    & > * {
+        text-transform: uppercase;
+    }
+
+    // Nom de l'utilisateur
+    h1 {
+        margin: calc( #{$ratio} * 3 ) 0 calc( #{$ratio} / 1 ) 0;
+        text-align: center;
+
+        @include respond(tablet) {
+            width: min-content;
+        }
+    }
+
+    // Modifier le profil
+    h3 {
+        width: max-content;
+
+        &:hover {
+            background-color: $color;
+            border-color: $bg;
+            color: $bg;
+        }
+    }
+}
+
+.profil--no-reve {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    a {
+        color: $color;
+        text-decoration: underline;
+    }
+}
+
+// Container des différents rêves
+.profil--reve {
+    width: 100%;
+
+    & > * {
+        margin: 0 0 $ratio 0;
+
+        &:nth-of-type(1) {
+            margin-top: calc( #{$ratio} * 2 );
+            height: 200px;
+        }
+    }
+
+    .profil--reve-new {
+        border: 1px solid $color;
+        display: grid;
+        place-items: center;
+
+        &.profil--reve-new-inactive {
+            display: none;
+        }
+
+        a {
+            color: $color;
+            text-decoration: underline;
+        }
+    }
+
+    .profil--reve-published {
+        border: none;
+        position: relative;
+
+        &.status-pending {
+            article {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+
+        &.status-publish {
+            article {
+                opacity: 1;
+            }
+        }
+
+        .message--status-pending {
+            background-color: $bg;
+            border: 1px solid $color;
+            padding: $ratio;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%, -50% );
+            width: max-content;
+
+            &.is-hidden {
+                display: none;
+            }
+        }
+
+        .article-reve--download {
+            padding: 12px 0 0 0;
+        }
+    }
+
+    button.contenu--edit {
+
+        img {
+            transform: scale(0.8) rotate(0);
+            transition: transform $rythm1 cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.1) rotate(10deg);
+            }
+        }
+    }
+}
+
+.backoffice-reve {
+    left: 0!important;
+    margin: 0 auto !important;
+    position: relative !important;
+    top: 0!important;
+    width: 100% !important;
+
+}

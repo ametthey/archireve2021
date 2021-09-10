@@ -24,7 +24,15 @@
         } else {
 ?>
 <div class="button--round round--white round--small button--select-to-download"></div>
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/contenu_texte.svg" alt="">
+    <!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/contenu_texte.svg" alt=""> -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="21.819" height="20.326" id="contenu--texte">
+        <g fill="#303030">
+            <rect class="rect--long" width="21" height="2" rx="1.24"/>
+            <rect class="rect--short" width="15" height="2" rx="1.24" transform="translate(0 5.949)"/>
+            <rect class="rect--long" width="21" height="2" rx="1.24" transform="translate(0 11.897)"/>
+            <rect class="rect--short" width="15" height="2" rx="1.24" transform="translate(0 17.846)"/>
+        </g>
+    </svg>
 
 <?php
 

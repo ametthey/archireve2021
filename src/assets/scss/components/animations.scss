@@ -1,48 +1,152 @@
-.wrapper-logo {
-    display: flex;
-    flex-direction: column;
+// ANIMATION DU LOGO EN SVG ET DEPLACEMENT POUR ALLER SUR LE HEADER
+@keyframes logo {
+    0% {
+        stroke-dashoffset:800;
+    }
+    50% {
+        /* stroke-dashoffset:0; */
+        fill-opacity:0;
+    }
+    85% {
+        fill: rgba(0, 0, 0, 0);
+    }
+    100% {
+        stroke-dashoffset:0;
+        fill: rgba(0, 0, 0, 1);
+        fill-opacity:1;
+    }
 }
 
-.container-logo {
-    // align-items: center;
-    border-bottom: 1px solid $color;
+.content--home-logo {
     background-color: $bg;
-    display: flex;
-    height: 50vh;
-    justify-content: center;
-    width: 100vw;
+    display: grid !important;
+    height: 100%;
+    opacity: 1;
+    place-items: center;
+    pointer-events: auto;
+    position: absolute;
+    transition: all $rythm1 ease-in-out;
+    transition-delay: $rythm1;
+    width: 100%;
+    z-index: 1000;
 
-    // position: absolute;
-    // transform: translate( -50%, -50% );
+    &.is-hidden {
+        pointer-events: none;
+        opacity: 0;
+    }
 
-    // display: none;
+    svg {
+        cursor: pointer;
+        left: 50%;
+        opacity: 1;
+        top: 50%;
+        transform: translate( -50%, -50% );
+        transition: top $rythm3 ease-in-out, width $rythm3 ease-in-out, opacity $rythm3 $rythm3 ease-in-out;
+        position: absolute;
+        width: 90vmin;
+
+        &.is-animated {
+            top: 22px;
+            width: 210px;
+
+            @include respond(tablet) {
+                top: 16px;
+                width: 111px;
+            }
+        }
+
+        .line {
+            animation: logo 3s $easeP $rythm1 both;
+            fill: rgba( 255, 255, 255, 0 );
+            fill-opacity:1;
+            stroke:#000;
+            stroke-width:.2;
+            stroke-dasharray: 800;
+            stroke-dashoffset:800;
+        }
+
+    }
 }
 
-.container-logo-haut {
-    align-items: flex-end;
+
+// ANIMATION DES DIFFERENTS BANDEAUX
+.content--left {
+    transition: width $rythm3 $easeIOE !important;
+
+    .content--left-cover {
+        opacity: 1;
+        transition: all $rythm0 $easeIOE;
+
+        &.is-invisible {
+            opacity: 0;
+        }
+    }
+
+    .left--filter {
+        opacity: 0;
+        transition: all $rythm0 $easeIOE;
+    }
+
+    &.is-open {
+
+        #left--button {
+            &.is-open {
+                background-color: $color;
+                color: $bg;
+            }
+        }
+
+        .left--filter {
+            &.is-visible {
+                opacity: 1;
+            }
+        }
+    }
 }
 
-.container-logo-bas {
-    align-items: flex-start;
-    position: relative;
+.content--right {
+    transition: width $rythm4 $easeIOE;
+    .content--right-oriented {
+        opacity: 1;
+        transition: all $rythm0 $easeIOE;
+
+        &.is-hidden {
+            opacity: 0;
+        }
+    }
+
+    .right--container-propos {
+        opacity: 0 !important;
+        transition: all $rythm0 $easeIOE;
+
+        &.-is-visible {
+            opacity: 1 !important;
+            pointer-events: auto!important;
+        }
+    }
 }
 
-// Container de ARCHI
-.archi--container {
-    display: flex;
-}
+.content--home {
 
-// Container lettre
-.letter--container {
-    height: 180px;
-    width: 180px;
-}
-$stroke: $color;
-$stroke-width: 1px;
+    .content--home-text-border {
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: auto;
+        transition: all $rythm0 $easeIOE;
 
-#a {
-    // fill: none;
-    // stroke-width: $stroke-width;
-    // stroke: $stroke;
-}
+        &.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
 
+    .article-reve {
+        opacity: 1;
+        transition: opacity $rythm0 $easeIOE;
+
+        &.is-hidden {
+            opacity: 0;
+        }
+    }
+
+}

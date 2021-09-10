@@ -15,11 +15,10 @@ require_once( 'lib/theme-supports.php' );
 require_once( 'lib/cleanup.php');
 require_once( 'lib/enqueue-assets.php' );
 require_once( 'lib/menu.php' );
-require_once( 'lib/sidebar.php' );
 require_once( 'lib/custom-admin-bar.php' );
 require_once( 'lib/custom-post-type.php' );
 require_once( 'lib/custom-post-type-user.php' );
-require_once( 'lib/custom-taxonomy.php' );
+// require_once( 'lib/custom-taxonomy.php' );
 // require_once( 'lib/custom-taxonomy-tag.php' );
 require_once( 'lib/custom-taxonomy-typologie.php' );
 require_once( 'lib/custom-taxonomy-lucidite.php' );
@@ -31,7 +30,7 @@ require_once( 'lib/custom-taxonomy-lieu.php' );
 require_once( 'lib/images.php' );
 require_once( 'lib/acf.php' );
 require_once( 'lib/users.php' );
-require_once( 'lib/user-profile.php' );
+// require_once( 'lib/user-profile.php' );
 
 // Login and Register
 // require_once( 'lib/login-redirection.php' );

@@ -7,14 +7,14 @@ const filters = document.querySelectorAll('.left--filter');
 
 if( contentLeft ){
 
-    // buttonLeft.addEventListener( 'click', (e) => {
-    contentLeft.addEventListener( 'click', (e) => {
+    buttonLeft.addEventListener( 'click', (e) => {
+    // contentLeft.addEventListener( 'click', (e) => {
         if ( contentLeft.classList.contains('is-open') ) {
             contentLeft.classList.remove('is-open');
-            contentRight.classList.remove('is-unclickable');
+            // contentRight.classList.remove('is-unclickable');
         } else {
             contentLeft.classList.add('is-open');
-            contentRight.classList.add('is-unclickable');
+            // contentRight.classList.add('is-unclickable');
             console.log('is open on content left')
         }
     });
@@ -56,13 +56,3 @@ if( contentLeft ){
     });
 
 }
-//
-// if ( contentRight.classList.contains('is-open') ) {
-//     contentLeft.classList.add('is-unclikable');
-//     contentLeft.classList.remove('is-unclikable');
-// } else {
-// }
-//
-// if ( contentLeft.classList.contains('is-open') ) {
-// } else {
-// }

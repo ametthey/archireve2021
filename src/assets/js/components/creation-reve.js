@@ -56,6 +56,10 @@ window.addEventListener( 'DOMContentLoaded', (e) => {
         buttonDessin.addEventListener( 'click', (e) => {
             buttonDessin.classList.toggle('rounded--black');
             containerDessin.classList.add('-is-active');
+            console.log(`
+            On click sur .contenu--button-dessin pour ouvrir le canvas de dessin
+            fichier: creation-reve.js
+            `);
         });
     }
 });
@@ -135,36 +139,3 @@ modaliteLieuInputs.forEach( input => {
         }
     });
 });
-
-
-/*
- * tag
- */
-
-// const tagContainer = document.querySelector('#reve--tag');
-// const tags = tagContainer.querySelector('.acf-input #acf-field_60ec18ce6f727');
-// tags.addEventListener( 'keyup', (e) => {
-//     const tagsValues = tags.value;
-//     console.log( tagsValues );
-//     console.log( tagsValues.split(' ') );
-// });
-
-
-// acf.add_action('ready', function( $el ){
-//
-// 	// $el will be equivalent to $('body')
-//
-//
-// 	// find a specific field
-// 	var $field = $('#acf-field_60ec18ce6f727');
-//     tags.addEventListener( 'keyup', (e) => {
-//         const tagsValues = tags.value;
-//         console.log( tagsValues );
-//         console.log( tagsValues.split(' ') );
-//     });
-//
-//
-// 	// do something to $field
-//
-// });
-
